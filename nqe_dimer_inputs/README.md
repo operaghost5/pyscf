@@ -14,6 +14,11 @@ protocol and its provenance.
   C–H···F–H local minimum with PBE, PW91, BP86, BLYP and B97 in
   aug-cc-pVDZ/TZ/QZ, both protons quantum (PB4-D), starting from the
   February 2026 CNEO-DFT geometries. See `hcn_hf/README.md`.
+- `hcn_hcl/` — HCN···HCl. The same protocol for the linear N···H–Cl
+  global minimum, the bent C–H···Cl–H local minimum and the linear
+  halogen-bonded N···Cl–H isomer, plus a translational sum-rule repair of
+  the Hessian that removes a chlorine-localized defect responsible for
+  spurious imaginary bends in the February runs. See `hcn_hcl/README.md`.
 
 ## Requirements
 
