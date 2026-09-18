@@ -1,0 +1,185 @@
+(HF)2 dimer, CNEO-DFT April 2026 runs: classification (aug-cc-pV5Z excluded)
+Masses: PySCF isotope-averaged (H 1.008, F 18.998). Atom order in every log: H0 F1 H2 F3.
+
+PART 0: run status
+start      xc    basis        opt steps  status
+global_min PBE   aug-cc-pVDZ         38  optimizer converged; Hessian done
+global_min PW91  aug-cc-pVDZ         87  optimizer converged; Hessian done
+global_min BP86  aug-cc-pVDZ         56  optimizer converged; Hessian done
+global_min BLYP  aug-cc-pVDZ         46  optimizer converged; Hessian done
+global_min B97   aug-cc-pVDZ        103  optimizer converged; Hessian done
+global_min PBE   aug-cc-pVTZ         59  optimizer converged; Hessian done
+global_min PW91  aug-cc-pVTZ         44  optimizer converged; Hessian done
+global_min BP86  aug-cc-pVTZ         50  optimizer converged; Hessian done
+global_min BLYP  aug-cc-pVTZ         51  optimizer converged; Hessian done
+global_min B97   aug-cc-pVTZ         62  optimizer converged; Hessian done
+global_min PBE   aug-cc-pVQZ         42  optimizer converged; Hessian done
+global_min PW91  aug-cc-pVQZ         46  optimizer converged; Hessian done
+global_min BP86  aug-cc-pVQZ         49  optimizer converged; Hessian done
+global_min BLYP  aug-cc-pVQZ         36  optimizer converged; Hessian done
+global_min B97   aug-cc-pVQZ         73  optimizer converged; Hessian done
+local_min  PBE   aug-cc-pVDZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  PW91  aug-cc-pVDZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  BP86  aug-cc-pVDZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  BLYP  aug-cc-pVDZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  B97   aug-cc-pVDZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  PBE   aug-cc-pVTZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  PW91  aug-cc-pVTZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  BP86  aug-cc-pVTZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  BLYP  aug-cc-pVTZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  B97   aug-cc-pVTZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  PBE   aug-cc-pVQZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  PW91  aug-cc-pVQZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  BP86  aug-cc-pVQZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  BLYP  aug-cc-pVQZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+local_min  B97   aug-cc-pVQZ          0  DIED BEFORE THE FIRST SCF (2 lines; last line: 'calling the dft.RKS class before initialization of KohnShamDFT class')
+
+PART 1: geometry, energy and classification of the runs that produced a Hessian
+  r(F-H)d = donor F3-H0, r(H..F) = H0...F1 hydrogen bond, r(F-H)a = acceptor F1-H2, r(F..F);
+  angles: F3-H0...F1 (linearity of the H bond), H0...F1-H2 (tilt of the acceptor).
+start      xc    basis                  E (Eh)   F-Hd   H..F   F-Ha   F..F   FH..F   H..FH  F sum rule  vibrations (cm^-1), 3N-6 = 6            imag  class
+global_min PBE   aug-cc-pVDZ    -200.695416783  0.969  1.748  0.938  2.705   169.3   108.9     1.5e-03  179.8, 245.0, 515.7, 652.0, 3492.5, 3887.1   0  MINIMUM
+global_min PW91  aug-cc-pVDZ    -200.831635650  0.968  1.734  0.938  2.691   169.4   109.1     5.2e-04  188.9, 250.2, 524.3, 657.7, 3490.4, 3889.2   0  MINIMUM
+global_min BP86  aug-cc-pVDZ    -200.887513053  0.970  1.746  0.939  2.706   169.9   109.1     1.2e-03  179.8, 252.0, 525.1, 659.3, 3484.3, 3880.5   0  MINIMUM
+global_min BLYP  aug-cc-pVDZ    -200.867906636  0.970  1.784  0.940  2.744   170.3   111.0     1.2e-03  170.4, 237.7, 498.2, 622.7, 3489.8, 3852.1   0  MINIMUM
+global_min B97   aug-cc-pVDZ    -200.822615632  0.954  1.809  0.926  2.753   169.8   112.5     1.3e-03  160.9, 228.9, 484.8, 601.5, 3700.5, 4050.0   0  MINIMUM
+global_min PBE   aug-cc-pVTZ    -200.751711636  0.966  1.751  0.936  2.707   169.4   109.6     1.5e-03  182.6, 250.3, 511.5, 647.9, 3538.5, 3911.6   0  MINIMUM
+global_min PW91  aug-cc-pVTZ    -200.889295961  0.966  1.737  0.935  2.692   169.3   109.4     8.2e-04  182.4, 250.5, 523.6, 658.4, 3534.2, 3914.9   0  MINIMUM
+global_min BP86  aug-cc-pVTZ    -200.944082628  0.968  1.750  0.937  2.707   169.6   109.3     1.4e-03  182.7, 254.9, 518.6, 654.4, 3523.7, 3899.1   0  MINIMUM
+global_min BLYP  aug-cc-pVTZ    -200.927299218  0.968  1.789  0.939  2.747   170.2   111.5     1.6e-03  174.2, 242.8, 492.9, 617.9, 3528.5, 3867.2   0  MINIMUM
+global_min B97   aug-cc-pVTZ    -200.877878890  0.952  1.810  0.925  2.752   170.0   113.5     9.2e-04  157.8, 231.4, 482.9, 596.2, 3738.0, 4066.6   0  MINIMUM
+global_min PBE   aug-cc-pVQZ    -200.768153658  0.965  1.754  0.934  2.708   169.2   109.8     8.8e-03  199.7, 256.0, 502.9, 641.3, 3538.9, 3916.0   0  MINIMUM
+global_min PW91  aug-cc-pVQZ    -200.906235810  0.965  1.741  0.933  2.694   169.2   109.8     4.2e-03  195.5, 255.9, 512.6, 648.9, 3537.6, 3920.9   0  MINIMUM
+global_min BP86  aug-cc-pVQZ    -200.960557155  0.966  1.752  0.935  2.707   169.4   109.5     9.2e-03  202.2, 260.3, 511.0, 649.1, 3526.6, 3906.1   0  MINIMUM
+global_min BLYP  aug-cc-pVQZ    -200.944032984  0.966  1.790  0.937  2.747   170.0   111.7     8.6e-03  193.7, 247.7, 484.5, 611.7, 3532.3, 3874.6   0  MINIMUM
+global_min B97   aug-cc-pVQZ    -200.893630826  0.950  1.811  0.923  2.752   169.8   113.6     5.6e-03  174.6, 234.5, 478.7, 591.3, 3741.7, 4071.9   0  MINIMUM
+
+PART 2: external modes and the fluorine sum-rule defect
+  'full 3N' is the unprojected spectrum: 6 external modes should be ~0 but are displaced by the
+  fluorine diagonal-block defect; 'repaired' resets each diagonal block to minus the sum of its
+  off-diagonal blocks (the production repair).  The vibrations are compared before/after.
+====================================================================================================
+global_min PBE aug-cc-pVDZ   sum rule per atom (Eh/Bohr^2): H0 1.8e-06, F1 1.5e-03, H2 3.2e-06, F3 1.1e-03
+  PySCF logged (3N-6)      : 179.8, 245.0, 515.7, 652.0, 3492.5, 3887.1
+  re-diagonalized, projected: 179.8, 245.0, 515.7, 652.0, 3492.5, 3887.1
+  full 3N, raw              : 44.7i, 39.0i, 33.6i, 30.6i, 27.8i, 1.3i, 179.8, 245.0, 515.7, 652.0, 3492.5, 3887.1
+  full 3N, repaired         : 9.3i, 0.7i, 0.7i, 0.0i, 0.0, 1.5, 181.8, 245.5, 515.8, 652.0, 3492.5, 3887.1
+  repaired, projected       : 181.8, 245.5, 515.8, 652.0, 3492.5, 3887.1
+  max |raw - repaired| over the 6 vibrations: 2.02 cm^-1
+====================================================================================================
+global_min PW91 aug-cc-pVDZ   sum rule per atom (Eh/Bohr^2): H0 2.1e-04, F1 5.2e-04, H2 1.6e-04, F3 3.7e-04
+  PySCF logged (3N-6)      : 188.9, 250.2, 524.3, 657.7, 3490.4, 3889.2
+  re-diagonalized, projected: 188.9, 250.2, 524.3, 657.7, 3490.4, 3889.2
+  full 3N, raw              : 18.3i, 15.6, 17.6, 23.7, 30.0, 51.6, 188.9, 250.2, 524.3, 657.7, 3490.4, 3889.2
+  full 3N, repaired         : 29.5i, 3.2i, 2.3i, 0.1i, 0.0, 1.1, 186.2, 247.4, 521.8, 660.1, 3490.5, 3889.1
+  repaired, projected       : 186.2, 247.4, 521.8, 660.1, 3490.5, 3889.1
+  max |raw - repaired| over the 6 vibrations: 2.74 cm^-1
+====================================================================================================
+global_min BP86 aug-cc-pVDZ   sum rule per atom (Eh/Bohr^2): H0 1.6e-05, F1 1.2e-03, H2 4.5e-06, F3 1.1e-03
+  PySCF logged (3N-6)      : 179.8, 252.0, 525.1, 659.3, 3484.3, 3880.5
+  re-diagonalized, projected: 179.8, 252.0, 525.1, 659.3, 3484.3, 3880.5
+  full 3N, raw              : 41.7i, 38.1i, 34.1i, 32.6i, 29.2i, 6.7i, 179.8, 252.0, 525.1, 659.3, 3484.3, 3880.5
+  full 3N, repaired         : 1.0i, 0.3i, 0.0i, 0.0, 1.6, 3.2, 183.0, 252.8, 525.2, 659.6, 3484.3, 3880.5
+  repaired, projected       : 183.0, 252.8, 525.2, 659.6, 3484.3, 3880.5
+  max |raw - repaired| over the 6 vibrations: 3.20 cm^-1
+====================================================================================================
+global_min BLYP aug-cc-pVDZ   sum rule per atom (Eh/Bohr^2): H0 9.5e-06, F1 1.2e-03, H2 2.6e-06, F3 1.1e-03
+  PySCF logged (3N-6)      : 170.4, 237.7, 498.2, 622.7, 3489.8, 3852.1
+  re-diagonalized, projected: 170.4, 237.7, 498.2, 622.7, 3489.8, 3852.1
+  full 3N, raw              : 42.6i, 38.3i, 33.2i, 27.7i, 27.7i, 5.8, 170.4, 237.7, 498.2, 622.7, 3489.8, 3852.1
+  full 3N, repaired         : 5.7i, 0.1i, 0.0i, 0.0, 0.5, 2.0, 172.9, 238.2, 498.3, 622.7, 3489.8, 3852.2
+  repaired, projected       : 172.9, 238.2, 498.3, 622.7, 3489.8, 3852.2
+  max |raw - repaired| over the 6 vibrations: 2.52 cm^-1
+====================================================================================================
+global_min B97 aug-cc-pVDZ   sum rule per atom (Eh/Bohr^2): H0 9.2e-04, F1 1.3e-03, H2 1.4e-04, F3 7.4e-04
+  PySCF logged (3N-6)      : 160.9, 228.9, 484.8, 601.5, 3700.5, 4050.0
+  re-diagonalized, projected: 160.9, 228.9, 484.8, 601.5, 3700.5, 4050.0
+  full 3N, raw              : 9.5, 15.5, 27.6, 30.5, 39.1, 45.7, 160.9, 228.9, 484.8, 601.5, 3700.5, 4050.0
+  full 3N, repaired         : 7.3i, 4.1i, 0.3i, 0.0i, 3.5, 7.4, 158.0, 228.4, 488.5, 598.9, 3697.4, 4050.0
+  repaired, projected       : 158.0, 228.4, 488.5, 598.9, 3697.4, 4050.0
+  max |raw - repaired| over the 6 vibrations: 3.77 cm^-1
+====================================================================================================
+global_min PBE aug-cc-pVTZ   sum rule per atom (Eh/Bohr^2): H0 1.6e-06, F1 1.5e-03, H2 9.2e-07, F3 1.4e-03
+  PySCF logged (3N-6)      : 182.6, 250.3, 511.5, 647.9, 3538.5, 3911.6
+  re-diagonalized, projected: 182.6, 250.3, 511.5, 647.9, 3538.5, 3911.6
+  full 3N, raw              : 3.6i, 35.8, 39.2, 43.9, 44.9, 45.3, 182.6, 250.3, 511.5, 647.9, 3538.5, 3911.6
+  full 3N, repaired         : 1.1i, 0.4i, 0.0i, 0.0, 0.6, 3.1, 179.0, 249.3, 511.4, 647.8, 3538.5, 3911.6
+  repaired, projected       : 179.0, 249.3, 511.4, 647.8, 3538.5, 3911.6
+  max |raw - repaired| over the 6 vibrations: 3.61 cm^-1
+====================================================================================================
+global_min PW91 aug-cc-pVTZ   sum rule per atom (Eh/Bohr^2): H0 1.7e-04, F1 8.2e-04, H2 1.2e-04, F3 3.2e-04
+  PySCF logged (3N-6)      : 182.4, 250.5, 523.6, 658.4, 3534.2, 3914.9
+  re-diagonalized, projected: 182.4, 250.5, 523.6, 658.4, 3534.2, 3914.9
+  full 3N, raw              : 32.6i, 18.8i, 12.5i, 10.1i, 20.3, 49.6, 182.4, 250.5, 523.6, 658.4, 3534.2, 3914.9
+  full 3N, repaired         : 25.9i, 2.9i, 0.9i, 0.1i, 0.0, 2.7, 184.1, 253.7, 519.5, 658.9, 3534.3, 3914.8
+  repaired, projected       : 184.1, 253.7, 519.5, 658.9, 3534.3, 3914.8
+  max |raw - repaired| over the 6 vibrations: 4.15 cm^-1
+====================================================================================================
+global_min BP86 aug-cc-pVTZ   sum rule per atom (Eh/Bohr^2): H0 1.2e-05, F1 1.4e-03, H2 8.0e-06, F3 1.4e-03
+  PySCF logged (3N-6)      : 182.7, 254.9, 518.6, 654.4, 3523.7, 3899.1
+  re-diagonalized, projected: 182.7, 254.9, 518.6, 654.4, 3523.7, 3899.1
+  full 3N, raw              : 9.4i, 34.6, 39.0, 43.7, 44.6, 45.2, 182.7, 254.9, 518.6, 654.4, 3523.7, 3899.1
+  full 3N, repaired         : 0.6i, 0.0i, 0.0, 1.7, 1.8, 11.3, 179.2, 254.3, 518.6, 654.6, 3523.7, 3899.1
+  repaired, projected       : 179.2, 254.3, 518.6, 654.6, 3523.7, 3899.1
+  max |raw - repaired| over the 6 vibrations: 3.50 cm^-1
+====================================================================================================
+global_min BLYP aug-cc-pVTZ   sum rule per atom (Eh/Bohr^2): H0 8.5e-06, F1 1.6e-03, H2 2.1e-06, F3 1.4e-03
+  PySCF logged (3N-6)      : 174.2, 242.8, 492.9, 617.9, 3528.5, 3867.2
+  re-diagonalized, projected: 174.2, 242.8, 492.9, 617.9, 3528.5, 3867.2
+  full 3N, raw              : 4.8i, 38.7, 39.3, 39.7, 40.7, 45.7, 174.3, 242.8, 492.9, 617.9, 3528.5, 3867.2
+  full 3N, repaired         : 1.6i, 0.8i, 0.0i, 0.0i, 0.8, 1.1, 170.3, 242.0, 492.8, 617.8, 3528.6, 3867.2
+  repaired, projected       : 170.3, 242.0, 492.8, 617.8, 3528.6, 3867.2
+  max |raw - repaired| over the 6 vibrations: 3.98 cm^-1
+====================================================================================================
+global_min B97 aug-cc-pVTZ   sum rule per atom (Eh/Bohr^2): H0 2.5e-04, F1 9.2e-04, H2 7.0e-05, F3 3.4e-04
+  PySCF logged (3N-6)      : 157.8, 231.4, 482.9, 596.2, 3738.0, 4066.6
+  re-diagonalized, projected: 157.8, 231.4, 482.9, 596.2, 3738.0, 4066.6
+  full 3N, raw              : 30.5i, 22.4i, 22.2i, 18.6i, 13.1, 34.9, 157.8, 231.4, 482.9, 596.2, 3738.0, 4066.6
+  full 3N, repaired         : 4.4i, 3.8i, 0.2i, 0.0, 4.4, 12.0, 161.1, 235.4, 484.0, 596.9, 3738.8, 4066.6
+  repaired, projected       : 161.1, 235.4, 484.0, 596.9, 3738.8, 4066.6
+  max |raw - repaired| over the 6 vibrations: 3.98 cm^-1
+====================================================================================================
+global_min PBE aug-cc-pVQZ   sum rule per atom (Eh/Bohr^2): H0 1.1e-06, F1 8.8e-03, H2 3.7e-06, F3 8.6e-03
+  PySCF logged (3N-6)      : 199.7, 256.0, 502.9, 641.3, 3538.9, 3916.0
+  re-diagonalized, projected: 199.7, 256.0, 502.9, 641.3, 3538.9, 3916.0
+  full 3N, raw              : 8.2, 101.8, 105.0, 106.1, 106.7, 110.1, 199.9, 256.2, 502.9, 641.3, 3538.9, 3916.0
+  full 3N, repaired         : 5.2i, 0.1i, 0.0i, 0.0, 1.4, 1.4, 179.2, 247.7, 502.5, 640.9, 3538.8, 3915.9
+  repaired, projected       : 179.2, 247.7, 502.5, 640.9, 3538.8, 3915.9
+  max |raw - repaired| over the 6 vibrations: 20.52 cm^-1
+====================================================================================================
+global_min PW91 aug-cc-pVQZ   sum rule per atom (Eh/Bohr^2): H0 1.4e-04, F1 4.2e-03, H2 2.6e-04, F3 4.0e-03
+  PySCF logged (3N-6)      : 195.5, 255.9, 512.6, 648.9, 3537.6, 3920.9
+  re-diagonalized, projected: 195.5, 255.9, 512.6, 648.9, 3537.6, 3920.9
+  full 3N, raw              : 67.0, 70.1, 72.4, 73.3, 74.8, 77.0, 195.5, 255.9, 512.6, 649.0, 3537.6, 3920.9
+  full 3N, repaired         : 33.6i, 2.9i, 1.9i, 0.1i, 0.0, 1.2, 183.4, 250.6, 509.6, 650.5, 3537.6, 3920.8
+  repaired, projected       : 183.4, 250.6, 509.6, 650.5, 3537.6, 3920.8
+  max |raw - repaired| over the 6 vibrations: 12.05 cm^-1
+====================================================================================================
+global_min BP86 aug-cc-pVQZ   sum rule per atom (Eh/Bohr^2): H0 1.3e-05, F1 9.2e-03, H2 5.5e-06, F3 9.0e-03
+  PySCF logged (3N-6)      : 202.2, 260.3, 511.0, 649.1, 3526.6, 3906.1
+  re-diagonalized, projected: 202.2, 260.3, 511.0, 649.1, 3526.6, 3906.1
+  full 3N, raw              : 8.6, 105.6, 107.3, 109.9, 109.9, 112.8, 202.4, 260.5, 511.0, 649.1, 3526.6, 3906.1
+  full 3N, repaired         : 0.2i, 0.0i, 0.0, 2.3, 2.5, 7.5, 180.0, 252.9, 510.7, 648.9, 3526.5, 3906.0
+  repaired, projected       : 180.0, 252.9, 510.7, 648.9, 3526.5, 3906.0
+  max |raw - repaired| over the 6 vibrations: 22.21 cm^-1
+====================================================================================================
+global_min BLYP aug-cc-pVQZ   sum rule per atom (Eh/Bohr^2): H0 7.6e-06, F1 8.6e-03, H2 3.2e-06, F3 8.4e-03
+  PySCF logged (3N-6)      : 193.7, 247.6, 484.5, 611.7, 3532.3, 3874.6
+  re-diagonalized, projected: 193.7, 247.7, 484.5, 611.7, 3532.3, 3874.6
+  full 3N, raw              : 7.9, 99.6, 104.0, 104.7, 106.4, 109.0, 193.9, 247.8, 484.5, 611.7, 3532.3, 3874.6
+  full 3N, repaired         : 4.5i, 0.4i, 0.0i, 0.0, 1.6, 2.2, 171.6, 240.2, 484.1, 611.3, 3532.2, 3874.5
+  repaired, projected       : 171.6, 240.2, 484.1, 611.3, 3532.2, 3874.5
+  max |raw - repaired| over the 6 vibrations: 22.09 cm^-1
+====================================================================================================
+global_min B97 aug-cc-pVQZ   sum rule per atom (Eh/Bohr^2): H0 7.1e-04, F1 5.6e-03, H2 1.2e-04, F3 5.2e-03
+  PySCF logged (3N-6)      : 174.6, 234.5, 478.7, 591.3, 3741.7, 4071.9
+  re-diagonalized, projected: 174.6, 234.5, 478.7, 591.3, 3741.7, 4071.9
+  full 3N, raw              : 49.7, 79.3, 79.8, 81.7, 83.4, 87.4, 174.8, 234.6, 478.7, 591.4, 3741.7, 4071.9
+  full 3N, repaired         : 7.8i, 5.9i, 3.7i, 0.2i, 0.0, 3.4, 159.2, 232.4, 476.1, 590.8, 3739.4, 4071.9
+  repaired, projected       : 159.2, 232.4, 476.1, 590.8, 3739.4, 4071.9
+  max |raw - repaired| over the 6 vibrations: 15.48 cm^-1
+
+SUMMARY
+  Hessians available: 15 (all global_min).  Minima: 15.  Saddle points: 0.
+  local_min: all 15 non-5Z logs (and the 5 aug-cc-pV5Z ones) stop after two lines, before the first SCF;
+  nothing to classify.  The traceback went to stderr (.err), which is not in the archive.

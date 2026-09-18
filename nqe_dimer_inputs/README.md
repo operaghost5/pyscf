@@ -29,6 +29,12 @@ protocol and its provenance.
   chlorine (`cl400` file-name token, own input/output directories and
   job names); otherwise identical to `hcn_hcl/`, which is unchanged.
   See `hcn_hcl_densegrid/README.md`.
+- `hf_hf/` — (HF)₂. The bent C_s minimum re-optimized from the 15 April
+  2026 geometries plus a constructed C₂h interchange-saddle start, both
+  protons quantum (April had only the donor), 400 radial shells on
+  fluorine, grid details in the printed summary. `hf_hf/april_analysis/`
+  holds the classification of the April runs (15 minima; the 20
+  local-minimum runs died on an undefined geometry). See `hf_hf/README.md`.
 
 ## Requirements
 
