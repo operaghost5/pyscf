@@ -19,6 +19,12 @@ protocol and its provenance.
   halogen-bonded N···Cl–H isomer, plus a translational sum-rule repair of
   the Hessian that removes a chlorine-localized defect responsible for
   spurious imaginary bends in the February runs. See `hcn_hcl/README.md`.
+- `hcn_hbr/` — HCN···HBr. The same three isomers with bromine
+  all-electron, plus a 400-shell radial grid on bromine: a stage-by-stage
+  probe (`hcn_hbr/probe/`) showed the bromine sum-rule defect of the
+  fixed-grid Hessian is radial quadrature error (0.73 → 6.7e-4 → 9e-7
+  Eh/Bohr² for 120 → 240 → 400 shells) and that the diagonal-block repair
+  reproduces the converged spectrum to 0.1 cm⁻¹. See `hcn_hbr/README.md`.
 
 ## Requirements
 
