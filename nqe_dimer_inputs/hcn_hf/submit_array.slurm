@@ -18,6 +18,7 @@
 #               (the directory that CONTAINS pyscf/; put on PYTHONPATH so the
 #               source-tree build of the theorychemyang fork is imported)
 #   PYTHON      the dimers conda environment's interpreter
+#   CONDA_ENV   dimers
 #
 # Every tier finishes before 48 hours: walltime 1-23:00:00 (47 h) at most,
 # and python runs under `timeout` two hours short of the walltime so a run
@@ -29,15 +30,14 @@
 #   tz    *.aug-cc-pvtz.*.py                64G    16   1-23:00:00   45h      48000
 #   qz    *.aug-cc-pvqz.*.py               128G    32   1-23:00:00   45h     100000
 #
-# February 2026 reference (single-threaded): at QZ one SCF took ~200 s and
-# one gradient ~340 s; the Hessians crashed in the coupled-perturbed solver
-# after 100 Krylov iterations, which the inputs now handle with 300
-# iterations and a level-shift retry.
+# The per-input .out log announces every stage ("stage: ...") and always
+# ends with "script exit status N", so a run that stops early shows where.
+# Fatal errors are written to both the .out and the .err file.
 #
 # The requeue partition can preempt jobs; --requeue puts a preempted task
-# back in the queue and it restarts from the input (node-local scratch is
-# lost). Restarted attempts log to <stem>.<date>.r<N>.out/.err so the
-# first attempt's log is kept.
+# back in the queue and it restarts from the input (scratch is lost).
+# Restarted attempts log to <stem>.<date>.r<N>.out/.err so the first
+# attempt's log is kept.
 
 #SBATCH --partition=requeue
 #SBATCH --account=brorsenk-lab
@@ -73,7 +73,7 @@ if [ $# -eq 0 ]; then
         echo "INPUT_DIR does not exist: $INPUT_DIR" >&2
         exit 1
     fi
-    mkdir -p "$OUTPUT_DIR"
+    mkdir -p "$OUTPUT_DIR" || { echo "cannot create OUTPUT_DIR: $OUTPUT_DIR" >&2; exit 1; }
     for tier in dz tz qz; do
         files=("$INPUT_DIR"/$GLOB_PREFIX."aug-cc-pv$tier".*.py)
         n=${#files[@]}
@@ -113,7 +113,7 @@ if [ -z "$SLURM_ARRAY_TASK_ID" ]; then
     exit 2
 fi
 if [ "$SLURM_ARRAY_TASK_ID" -ge "${#FILES[@]}" ]; then
-    echo "array index $SLURM_ARRAY_TASK_ID out of range (${#FILES[@]} $tier files)" >&2
+    echo "array index $SLURM_ARRAY_TASK_ID out of range (${#FILES[@]} $tier files in $INPUT_DIR)" >&2
     exit 2
 fi
 
@@ -131,6 +131,12 @@ fi
 mkdir -p "$OUTPUT_DIR"
 exec 1>"$OUTPUT_DIR/$logstem.out" 2>"$OUTPUT_DIR/$logstem.err"
 
+# Diagnostics: stage markers in .out, fatal errors in both files, and a
+# final line in .out whatever happens.
+stage() { echo "$(date -Iseconds) stage: $*"; }
+die()   { echo "$(date -Iseconds) FATAL: $*"; echo "FATAL: $*" >&2; exit 1; }
+trap 'rc=$?; echo "$(date -Iseconds) script exit status $rc"' EXIT
+
 echo "Host:     $(hostname)"
 echo "Job:      $SLURM_JOB_ID (array $SLURM_ARRAY_JOB_ID/$SLURM_ARRAY_TASK_ID, tier $tier, attempt $attempt)"
 echo "Input:    $input"
@@ -140,31 +146,36 @@ echo "Start:    $(date -Iseconds)"
 echo "------------------------------------------------------------"
 
 # --- Environment -------------------------------------------------------
-module load openblas
-module load gcc
-module load openmpi/4.1.1_gcc_9.5.0
+stage "loading modules"
+for m in openblas gcc openmpi/4.1.1_gcc_9.5.0 miniconda3; do
+    if ! module load "$m" 2>>"$OUTPUT_DIR/$logstem.err"; then
+        echo "warning: module load $m failed (continuing)"
+    fi
+done
 
 export PATH=$PATH:/home/gbtmdr/
 export LD_LIBRARY_PATH=/cluster/software/SPACK/SPACK_v0.20_dev_a2/spack/opt/spack/linux-almalinux8-x86_64/gcc-9.5.0/openmpi-4.1.1-lzg4xxgoifgdslspsyr5w5iaisyz2r5r/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/gbtmdr/openmpi/:$LD_LIBRARY_PATH
 
-module load miniconda3
-source activate "$CONDA_ENV"
+stage "activating conda environment $CONDA_ENV"
+if ! source activate "$CONDA_ENV" 2>>"$OUTPUT_DIR/$logstem.err"; then
+    echo "warning: 'source activate $CONDA_ENV' failed; relying on the absolute PYTHON path"
+fi
+[ -x "$PYTHON" ] || die "PYTHON is not an executable file: $PYTHON"
 
 # Scrub any login-shell PYTHONPATH (a stale one mixed a 3.12 numpy into a
 # 3.10 interpreter before), then point at the pyscf source tree.
 unset PYTHONPATH
 if [ -n "$PYSCF_DIR" ]; then
-    if [ ! -f "$PYSCF_DIR/pyscf/__init__.py" ]; then
-        echo "PYSCF_DIR does not contain pyscf/__init__.py -- point it at the PARENT of pyscf/: $PYSCF_DIR" >&2
-        exit 1
-    fi
+    [ -f "$PYSCF_DIR/pyscf/__init__.py" ] \
+        || die "PYSCF_DIR does not contain pyscf/__init__.py; point it at the PARENT of pyscf/: $PYSCF_DIR"
     export PYTHONPATH="$PYSCF_DIR"
 fi
 
-echo "Python:   $PYTHON"
+stage "environment sanity check"
+echo "Python:    $PYTHON"
 echo "PYSCF_DIR: ${PYSCF_DIR:-<unset: using the pyscf installed in the environment>}"
-"$PYTHON" - <<'EOF' || { echo "environment sanity check failed" >&2; exit 1; }
+"$PYTHON" - <<'EOF' || die "environment sanity check failed (see the .err file for the traceback)"
 import inspect, sys, numpy, scipy, pyscf, pyscf.neo, geometric
 from pyscf.hessian import thermo
 print("  ", sys.executable)
@@ -181,26 +192,39 @@ export MKL_NUM_THREADS="${SLURM_CPUS_PER_TASK:-1}"
 export OPENBLAS_NUM_THREADS="${SLURM_CPUS_PER_TASK:-1}"
 export NUMEXPR_NUM_THREADS="${SLURM_CPUS_PER_TASK:-1}"
 
-# --- Node-local scratch (one dir per array task) ------------------------
-SCRATCH="/local/scratch/gbtmdr/$SLURM_JOB_ID"
-mkdir -p "$SCRATCH"
+# --- Scratch: node-local if available, otherwise a fallback -------------
+stage "setting up scratch"
+SCRATCH=""
+for candidate in "/local/scratch/gbtmdr/$SLURM_JOB_ID" \
+                 "${TMPDIR:-/tmp}/gbtmdr.$SLURM_JOB_ID" \
+                 "$OUTPUT_DIR/scratch.$SLURM_JOB_ID"; do
+    if mkdir -p "$candidate" 2>/dev/null && [ -w "$candidate" ]; then
+        SCRATCH="$candidate"
+        break
+    fi
+    echo "warning: cannot use scratch directory $candidate"
+done
+[ -n "$SCRATCH" ] || die "no writable scratch directory found"
+echo "Scratch:   $SCRATCH"
 export PYSCF_TMPDIR="$SCRATCH"
-cp "$input" "$SCRATCH/"
-cd "$SCRATCH" || exit 1
+cp "$input" "$SCRATCH/" || die "cannot copy $input to $SCRATCH"
+cd "$SCRATCH" || die "cannot cd to $SCRATCH"
 
 # --- Run (kill python 2 h before the walltime so results copy back) -----
+stage "running: timeout $RUN_TIMEOUT $PYTHON -u $filename"
 timeout "$RUN_TIMEOUT" "$PYTHON" -u "$filename"
 status=$?
 if [ "$status" -eq 124 ]; then
+    echo "python stopped by timeout ($RUN_TIMEOUT) before the walltime"
     echo "python stopped by timeout ($RUN_TIMEOUT) before the walltime" >&2
 fi
 
 echo "------------------------------------------------------------"
 echo "End:        $(date -Iseconds)"
 echo "Exit code:  $status"
+stage "copying results to $OUTPUT_DIR"
 ls -l
-
 cp "$SCRATCH"/*.xyz "$SCRATCH"/*.npz "$OUTPUT_DIR/" 2>/dev/null
-rm -rf "$SCRATCH"
+cd / && rm -rf "$SCRATCH"
 
 exit $status
