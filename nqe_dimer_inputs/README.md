@@ -25,6 +25,10 @@ protocol and its provenance.
   fixed-grid Hessian is radial quadrature error (0.73 → 6.7e-4 → 9e-7
   Eh/Bohr² for 120 → 240 → 400 shells) and that the diagonal-block repair
   reproduces the converged spectrum to 0.1 cm⁻¹. See `hcn_hbr/README.md`.
+- `hcn_hcl_densegrid/` — HCN···HCl again with 400 radial shells on
+  chlorine (`cl400` file-name token, own input/output directories and
+  job names); otherwise identical to `hcn_hcl/`, which is unchanged.
+  See `hcn_hcl_densegrid/README.md`.
 
 ## Requirements
 
