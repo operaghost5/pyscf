@@ -163,7 +163,7 @@ if [ -n "$PYSCF_DIR" ]; then
 fi
 
 echo "Python:   $PYTHON"
-echo "PYSCF_DIR: ${PYSCF_DIR:-<unset, using the environment's pyscf>}"
+echo "PYSCF_DIR: ${PYSCF_DIR:-<unset: using the pyscf installed in the environment>}"
 "$PYTHON" - <<'EOF' || { echo "environment sanity check failed" >&2; exit 1; }
 import inspect, sys, numpy, scipy, pyscf, pyscf.neo, geometric
 from pyscf.hessian import thermo
