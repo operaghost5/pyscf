@@ -35,6 +35,13 @@ protocol and its provenance.
   fluorine, grid details in the printed summary. `hf_hf/april_analysis/`
   holds the classification of the April runs (15 minima; the 20
   local-minimum runs died on an undefined geometry). See `hf_hf/README.md`.
+- `hf_hbr/` — HF/HBr. The two isomers F–H···Br–H (`hf-donor`) and
+  Br–H···F–H (`hbr-donor`) re-optimized from the 30 April 2026 geometries
+  with both protons quantum (April had only each isomer's donor proton, so
+  its energies cannot rank them), 400 radial shells on Br and F, grid
+  details in the summary. `hf_hbr/april_analysis/`: all 30 April runs are
+  minima once the bromine defect is repaired; the raw aug-cc-pVQZ Hessians
+  showed a spurious ~400i mode. See `hf_hbr/README.md`.
 
 ## Requirements
 
