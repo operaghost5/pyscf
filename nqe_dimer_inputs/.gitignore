@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.out
+*.err
+*.npz
+*.traj.xyz
+*.opt.xyz
