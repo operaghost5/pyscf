@@ -53,7 +53,7 @@ MAX_MEMORY = int(os.environ.get('PYSCF_MAX_MEMORY', 16000))   # MB
 SCF_CONV_TOL = 1e-11           # Eh
 SCF_CONV_TOL_GRAD = 1e-6       # orbital gradient; the default sqrt(conv_tol) would be 3e-6
 SCF_MAX_CYCLE = 200
-CPSCF_CONV_TOL = 1e-10         # coupled-perturbed SCF for the Hessian (default 1e-8)
+CPSCF_CONV_TOL = 1e-9          # coupled-perturbed SCF for the Hessian (default 1e-8)
 GRID_LEVEL = 5                 # electronic DFT grid (PySCF default 3); set on components['e']
 GRID_RESPONSE = True           # grid-weight derivatives in the gradient (only allowed with EPC off)
 
@@ -66,7 +66,15 @@ OPT_PARAMS = {
 }
 STOP_IF_OPT_FAILS = True       # do not spend a Hessian on an unconverged geometry
 
-HESS_MAX_CYCLE = 200           # CNEO-CPHF iterations (fork default 100)
+# The CNEO coupled-perturbed equations are solved with PySCF's Krylov solver,
+# which raises RuntimeError when it reaches max_cycle. Every February 2026
+# Hessian that failed did so exactly there (100 iterations): all aug-cc-pVQZ
+# runs and every bent isomer. Allow far more iterations and, if the solver
+# still fails, retry once with a level shift on the preconditioner
+# (a convergence aid that does not change the converged solution).
+HESS_MAX_CYCLE = 300           # CNEO-CPHF Krylov iterations (fork default 100)
+HESS_LEVEL_SHIFT = 0.0         # Eh, added to the orbital-energy denominators
+HESS_RETRY_LEVEL_SHIFT = 0.2   # Eh, used for the one automatic retry
 
 STEM = os.path.splitext(os.path.basename(__file__))[0]
 
@@ -204,7 +212,18 @@ banner('4. ANALYTIC CNEO-DFT HESSIAN')
 t0 = time.time()
 run_hessian = new_mf.Hessian()
 run_hessian.max_cycle = HESS_MAX_CYCLE
-hess = run_hessian.kernel()                              # (natm, natm, 3, 3), Eh/Bohr^2
+run_hessian.level_shift = HESS_LEVEL_SHIFT
+run_hessian.verbose = 4                                  # logs 'krylov cycle N  r = ...'
+try:
+    hess = run_hessian.kernel()                          # (natm, natm, 3, 3), Eh/Bohr^2
+except RuntimeError as err:
+    if 'Krylov' not in str(err):
+        raise
+    print(f'CPHF did not converge in {HESS_MAX_CYCLE} Krylov iterations with level shift '
+          f'{HESS_LEVEL_SHIFT}; retrying once with level shift {HESS_RETRY_LEVEL_SHIFT}',
+          flush=True)
+    run_hessian.level_shift = HESS_RETRY_LEVEL_SHIFT
+    hess = run_hessian.kernel()
 print(f'Hessian wall {time.time() - t0:.0f} s')
 sum_rule = float(numpy.abs(hess.sum(axis=1)).max())
 print(f'translational sum rule  max |sum_q H(p,q)| = {sum_rule:.2e} Eh/Bohr^2')
@@ -244,6 +263,8 @@ print(f'SCF                           : conv_tol {SCF_CONV_TOL:g}, conv_tol_grad
       f'grid level {GRID_LEVEL}, grid response {GRID_RESPONSE}')
 print(f'optimizer                     : geomeTRIC {OPT_PARAMS}; '
       f'converged={opt.converged} after {n_steps} gradient evaluations')
+print(f'Hessian CPHF                  : conv_tol_cpscf {CPSCF_CONV_TOL:g}, max_cycle {HESS_MAX_CYCLE}, '
+      f'level shift used {run_hessian.level_shift}')
 print('final optimized geometry (Angstrom):')
 print('\n'.join('  ' + line for line in geometry_lines(symbols, coords_eq)))
 print(f'final single point energy     : {e_sp:.10f} Eh')

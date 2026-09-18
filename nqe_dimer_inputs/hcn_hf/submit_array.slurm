@@ -10,15 +10,18 @@
 #   * Under SLURM (sbatch ... submit_array.slurm <dz|tz|qz>) it is the
 #     array job script.
 #
-# Tier resources. A 5-atom CNEO-DFT job is cheap at DZ/TZ; the QZ analytic
-# Hessian is the part that ran out of walltime in the February 2026 runs,
-# so it gets the long tier. PYSCF_MAX_MEMORY (MB) is exported per tier and
-# read by the inputs.
+# Tier resources, sized for a 2-day queue limit. A 5-atom CNEO-DFT job is
+# cheap at DZ/TZ. At QZ the February 2026 runs (single-threaded) needed
+# ~200 s per SCF and ~340 s per gradient, and their Hessians crashed in the
+# coupled-perturbed solver after 100 Krylov iterations rather than timing
+# out; the inputs now allow 300 iterations with a level-shift retry, and
+# the QZ tier gets a full node's threads. PYSCF_MAX_MEMORY (MB) is exported
+# per tier and read by the inputs.
 #
 #   tier  files                            mem    cpus  walltime  PYSCF_MAX_MEMORY
 #   dz    *.aug-cc-pvdz.*.py                16G     8   1 day      12000
-#   tz    *.aug-cc-pvtz.*.py                64G    16   3 days     48000
-#   qz    *.aug-cc-pvqz.*.py               128G    16   7 days    100000
+#   tz    *.aug-cc-pvtz.*.py                64G    16   2 days     48000
+#   qz    *.aug-cc-pvqz.*.py               128G    32   2 days    100000
 #
 # Python runs under `timeout` ~2 h short of the walltime so partial results
 # (trajectory, optimized geometry, log) still copy back to OUTPUT_DIR.
@@ -69,8 +72,8 @@ if [ $# -eq 0 ]; then
         fi
         case "$tier" in
             dz) opts=(--mem=16G  --cpus-per-task=8  -t 1-00:00:00) ;;
-            tz) opts=(--mem=64G  --cpus-per-task=16 -t 3-00:00:00) ;;
-            qz) opts=(--mem=128G --cpus-per-task=16 -t 7-00:00:00) ;;
+            tz) opts=(--mem=64G  --cpus-per-task=16 -t 2-00:00:00) ;;
+            qz) opts=(--mem=128G --cpus-per-task=32 -t 2-00:00:00) ;;
         esac
         echo "tier $tier: $n files"
         # Pass the locations explicitly so task mode does not depend on the
@@ -88,9 +91,9 @@ fi
 tier="${1:?usage: sbatch ... submit_array.slurm <dz|tz|qz>}"
 INPUT_DIR="${INPUT_DIR:?INPUT_DIR must be exported by the driver}"
 case "$tier" in
-    dz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvdz.*.py); RUN_TIMEOUT=22h;  export PYSCF_MAX_MEMORY=12000 ;;
-    tz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvtz.*.py); RUN_TIMEOUT=70h;  export PYSCF_MAX_MEMORY=48000 ;;
-    qz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvqz.*.py); RUN_TIMEOUT=166h; export PYSCF_MAX_MEMORY=100000 ;;
+    dz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvdz.*.py); RUN_TIMEOUT=22h; export PYSCF_MAX_MEMORY=12000 ;;
+    tz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvtz.*.py); RUN_TIMEOUT=46h; export PYSCF_MAX_MEMORY=48000 ;;
+    qz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvqz.*.py); RUN_TIMEOUT=46h; export PYSCF_MAX_MEMORY=100000 ;;
     *)  echo "unknown tier '$tier' (expected dz|tz|qz)" >&2; exit 2 ;;
 esac
 

@@ -73,7 +73,23 @@ both the noise and the test:
 | SCF `max_cycle` | 50 | 200 | headroom for the tighter SCF (an unconverged SCF aborts the optimizer) |
 | electronic grid level | 3 | 5 (`mf.components['e'].grids.level`) | smaller grid error in energy, gradient and Hessian |
 | `grid_response` | off | on | removes the grid's net-force error; allowed because EPC is off |
-| `conv_tol_cpscf` | 1e-8 | 1e-10 | tighter CPHF for the Hessian's low-frequency modes |
+| `conv_tol_cpscf` | 1e-8 | 1e-9 | tighter CPHF for the Hessian's low-frequency modes |
+| Hessian CPHF `max_cycle` | 100 | 300, then one retry with `level_shift` 0.2 Eh | see below |
+
+**Why the February Hessians failed.** Seventeen of the February runs
+stopped inside the Hessian. Every one of them stopped after exactly 300
+inter-component potential builds, three per iteration of the
+coupled-perturbed solver, i.e. at the solver's 100-iteration cap, while
+the ten Hessians that finished needed 59 to 69 iterations. PySCF's
+Krylov solver raises `RuntimeError("Krylov solver failed to converge.")`
+at the cap, so those runs crashed, with the traceback in the `.err`
+file, rather than running out of walltime. The failures were every
+aug-cc-pVQZ Hessian and every bent-isomer Hessian, so CNEO-CPHF
+convergence degrades with basis size and for the bent structure. The
+inputs therefore allow 300 iterations, log the Krylov residual each
+iteration (`run_hessian.verbose = 4`), and on failure retry once with a
+0.2 Eh level shift on the preconditioner, which does not change the
+converged result.
 
 Every setting is a named constant at the top of each input, and
 `STOP_IF_OPT_FAILS = True` stops a run before the Hessian if geomeTRIC
@@ -118,7 +134,16 @@ tighter SCF/grid here should shrink both.
 ```
 
 on the login node submits three arrays (dz/tz/qz tiers, resources in the
-script header) over the files in `inputs/`; `INPUT_DIR`, `OUTPUT_DIR` and
-`PYTHON` are overridable in the environment. Each task checks that
-`pyscf.neo` and `geometric` import and warns if the PySCF build lacks the
-linear-rotor fix.
+script header, all within a 2-day queue limit) over the files in
+`inputs/`; `INPUT_DIR`, `OUTPUT_DIR` and `PYTHON` are overridable in the
+environment. Each task checks that `pyscf.neo` and `geometric` import and
+warns if the PySCF build lacks the linear-rotor fix.
+
+Cost guide from the February logs, which ran single-threaded: at
+aug-cc-pVQZ one SCF took about 200 s and one gradient about 340 s, so
+the re-optimization plus single point is 1 to 3 hours there even with
+the finer grid, and the Hessian is dominated by the coupled-perturbed
+solve at roughly 15 Fock-like builds per Krylov iteration. On the
+32-thread QZ tier the whole input should fit comfortably inside 47
+hours provided the CPHF converges; the DZ inputs take minutes and the TZ
+inputs about an hour.
