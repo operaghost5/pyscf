@@ -133,11 +133,18 @@ tighter SCF/grid here should shrink both.
 ./submit_array.slurm
 ```
 
-on the login node submits three arrays (dz/tz/qz tiers, resources in the
-script header, all within a 2-day queue limit) over the files in
-`inputs/`; `INPUT_DIR`, `OUTPUT_DIR` and `PYTHON` are overridable in the
-environment. Each task checks that `pyscf.neo` and `geometric` import and
-warns if the PySCF build lacks the linear-rotor fix.
+on the login node submits three arrays (dz/tz/qz tiers on the `requeue`
+partition, `brorsenk-lab` account, every walltime at most 47 h with an
+internal 2-hour-earlier timeout) over the inputs in
+`.../dimers/pyscf-master/dimer-alpha-inputs/cneodft/hcnhf`, writing all
+SLURM and per-input logs plus results to
+`.../dimers/pyscf-master/dimer-alpha-outputs/cneodft/hcnhf`. `INPUT_DIR`,
+`OUTPUT_DIR`, `PYSCF_DIR` (the parent of the `pyscf/` source tree, put on
+`PYTHONPATH`), `PYTHON` and `CONDA_ENV` are overridable in the
+environment. Each task checks that `pyscf.neo` and `geometric` import,
+prints where `pyscf` was imported from, and warns if the build lacks the
+linear-rotor fix. Preempted tasks are requeued and their later attempts
+log to `<stem>.<date>.r<N>.out`.
 
 Cost guide from the February logs, which ran single-threaded: at
 aug-cc-pVQZ one SCF took about 200 s and one gradient about 340 s, so
