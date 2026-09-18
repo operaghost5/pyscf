@@ -26,9 +26,9 @@
 # (trajectory, optimized geometry, log) still copy back to OUTPUT_DIR.
 #
 #   tier  files                            mem    cpus  walltime   timeout  PYSCF_MAX_MEMORY
-#   dz    *.aug-cc-pvdz.*.py                16G     8   1-00:00:00   22h      12000
-#   tz    *.aug-cc-pvtz.*.py                64G    16   1-23:00:00   45h      48000
-#   qz    *.aug-cc-pvqz.*.py               128G    32   1-23:00:00   45h     100000
+#   dz    *.aug-cc-pvdz.*.py                16G     8   1-00:00:00   22h       8000
+#   tz    *.aug-cc-pvtz.*.py                64G    16   1-23:00:00   45h      32000
+#   qz    *.aug-cc-pvqz.*.py               128G    32   1-23:00:00   45h      64000
 #
 # The per-input .out log announces every stage ("stage: ...") and always
 # ends with "script exit status N", so a run that stops early shows where.
@@ -101,9 +101,9 @@ fi
 # --- Task mode: pick this array task's input file ----------------------
 tier="${1:?usage: sbatch ... submit_array.slurm <dz|tz|qz>}"
 case "$tier" in
-    dz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvdz.*.py); RUN_TIMEOUT=22h; export PYSCF_MAX_MEMORY=12000 ;;
-    tz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvtz.*.py); RUN_TIMEOUT=45h; export PYSCF_MAX_MEMORY=48000 ;;
-    qz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvqz.*.py); RUN_TIMEOUT=45h; export PYSCF_MAX_MEMORY=100000 ;;
+    dz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvdz.*.py); RUN_TIMEOUT=22h; export PYSCF_MAX_MEMORY=8000 ;;
+    tz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvtz.*.py); RUN_TIMEOUT=45h; export PYSCF_MAX_MEMORY=32000 ;;
+    qz) FILES=("$INPUT_DIR"/$GLOB_PREFIX.aug-cc-pvqz.*.py); RUN_TIMEOUT=45h; export PYSCF_MAX_MEMORY=64000 ;;
     *)  echo "unknown tier '$tier' (expected dz|tz|qz)" >&2; exit 2 ;;
 esac
 
