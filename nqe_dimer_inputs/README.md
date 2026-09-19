@@ -73,6 +73,13 @@ protocol and its provenance.
   1045i at QZ); the 20 local-minimum runs died on an undefined geometry.
   See `hbr_hbr/README.md`.
 
+- `METHODS.md` — computational details for every system and both
+  generations of runs (software, model, quantum nuclei, grids, optimizer
+  and SCF/CPHF criteria, analysis protocol, sum-rule violations found),
+  a graduate-level explanation of the translational sum-rule defect of
+  the fixed-grid Hessian and its diagonal-block repair, suggested methods
+  wording and references.
+
 ## Requirements
 
 - `theorychemyang/pyscf` at version 2.14 or later, built from source.
