@@ -64,6 +64,14 @@ protocol and its provenance.
   15 April runs are minima once the chlorine defect is repaired (raw, the
   DZ and QZ runs showed a spurious 206i to 555i mode); the 20 local-minimum
   runs died on an undefined geometry. See `hcl_hcl/README.md`.
+- `hbr_hbr/` — (HBr)₂. The bent C_s minimum re-optimized from the 15 April
+  2026 geometries plus a constructed C₂h interchange-saddle start, both
+  protons quantum (April had only the acceptor proton), 400 radial shells
+  on bromine, grid details in the summary. `hbr_hbr/april_analysis/`: all
+  15 April runs are minima once the bromine defect is repaired; raw, every
+  spectrum was wrong (spurious 690 to 2327 cm⁻¹ modes at DZ/TZ, 934i to
+  1045i at QZ); the 20 local-minimum runs died on an undefined geometry.
+  See `hbr_hbr/README.md`.
 
 ## Requirements
 

@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ global_min E=-5148.651586747 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.59810421      0.11344203      0.00000000
+Br      -1.96781927      0.04890904      0.00000000
+H       -1.92120107     -1.41443828     -0.00000000
+Br       2.04781895      0.02727791     -0.00000000
+4
+PW91/aug-cc-pVDZ global_min E=-5149.716382585 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.58629544      0.11223069      0.00000000
+Br      -1.95649129      0.05174755      0.00000000
+H       -1.90728736     -1.41068154     -0.00000000
+Br       2.03558865      0.02190065      0.00000000
+4
+BP86/aug-cc-pVDZ global_min E=-5149.980732657 Eh optimizer converged in 18 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.61042675      0.10906177     -0.00000000
+Br      -1.97161814      0.04567306      0.00000000
+H       -1.94480046     -1.41969978      0.00000000
+Br       2.06265513      0.03881201     -0.00000000
+4
+BLYP/aug-cc-pVDZ global_min E=-5149.475608291 Eh optimizer converged in 15 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.70607724      0.11219217     -0.00000000
+Br      -2.04730484      0.02570973     -0.00000000
+H       -2.06051439     -1.44312952     -0.00000000
+Br       2.15830739      0.07970591     -0.00000000
+4
+B97/aug-cc-pVDZ global_min E=-5149.179261277 Eh optimizer converged in 26 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.74480360      0.13351965      0.00000000
+Br      -2.02010185      0.02675345      0.00000000
+H       -2.00252037     -1.42786196     -0.00000000
+Br       2.17890740      0.04671364     -0.00000000
+4
+PBE/aug-cc-pVTZ global_min E=-5148.795849955 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.60719352      0.11450082     -0.00000000
+Br      -1.97671874      0.04633354     -0.00000000
+H       -1.92381402     -1.41331737     -0.00000000
+Br       2.04972711      0.02740774     -0.00000000
+4
+PW91/aug-cc-pVTZ global_min E=-5149.862147725 Eh optimizer converged in 11 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.59797665      0.11206901      0.00000000
+Br      -1.96635829      0.04805160      0.00000000
+H       -1.91458383     -1.41039417     -0.00000000
+Br       2.03984137      0.02510366     -0.00000000
+4
+BP86/aug-cc-pVTZ global_min E=-5150.126525560 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.62255539      0.11052884      0.00000000
+Br      -1.98235079      0.04202116     -0.00000000
+H       -1.95095720     -1.41883802     -0.00000000
+Br       2.06656177      0.03980206      0.00000000
+4
+BLYP/aug-cc-pVTZ global_min E=-5149.622155014 Eh optimizer converged in 17 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.72415393      0.11711651      0.00000000
+Br      -2.06203081      0.02040669      0.00000000
+H       -2.07176483     -1.44340057     -0.00000000
+Br       2.16742027      0.08058980      0.00000000
+4
+B97/aug-cc-pVTZ global_min E=-5149.324809667 Eh optimizer converged in 90 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.81155488      0.13145050      0.00000000
+Br      -1.98019685      0.04445882     -0.00000000
+H       -1.97515958     -1.40680348      0.00000000
+Br       2.23753759      0.02573631     -0.00000000
+4
+PBE/aug-cc-pVQZ global_min E=-5148.801760310 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.60685812      0.11705064     -0.00000000
+Br      -1.97791473      0.04619972     -0.00000000
+H       -1.92113230     -1.41303653      0.00000000
+Br       2.04847186      0.02488297     -0.00000000
+4
+PW91/aug-cc-pVQZ global_min E=-5149.867999997 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.59608543      0.11508483     -0.00000000
+Br      -1.96727422      0.04909515     -0.00000000
+H       -1.90769175     -1.40884077      0.00000000
+Br       2.03686578      0.01986794      0.00000000
+4
+BP86/aug-cc-pVQZ global_min E=-5150.132521014 Eh optimizer converged in 16 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.62385856      0.11163251      0.00000000
+Br      -1.98399918      0.04153401     -0.00000000
+H       -1.95127038     -1.41903886      0.00000000
+Br       2.06711265      0.03935203      0.00000000
+4
+BLYP/aug-cc-pVQZ global_min E=-5149.627971417 Eh optimizer converged in 17 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.72557302      0.11982695     -0.00000000
+Br      -2.06540628      0.01983656     -0.00000000
+H       -2.07074618     -1.44369632      0.00000000
+Br       2.16789797      0.07863460     -0.00000000
+4
+B97/aug-cc-pVQZ global_min E=-5149.331078083 Eh optimizer converged in 50 steps (April 2026 run, acceptor proton quantum only; hydrogens swapped so that the donor is H0)
+H        0.77861332      0.14635319      0.00000000
+Br      -2.01692996      0.02387857     -0.00000000
+H       -1.98763405     -1.42658146     -0.00000000
+Br       2.20406174      0.04627866      0.00000000
+4
+PBE/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4641 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13390129      1.12155777      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13390129     -1.12155777     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4633 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13443679      1.12091959      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13443679     -1.12091959     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4656 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13291877      1.12272869      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13291877     -1.12272869     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4689 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13081015      1.12524165      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13081015     -1.12524165     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4547 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13992294      1.11438144      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13992294     -1.11438144     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4606 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13613840      1.11889168      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13613840     -1.11889168     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4594 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13693860      1.11793804      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13693860     -1.11793804     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4612 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13576102      1.11934143      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13576102     -1.11934143     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4638 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13406203      1.12136621      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13406203     -1.12136621     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4513 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.14214096      1.11173812      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.14214096     -1.11173812     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4603 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13631116      1.11868580      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13631116     -1.11868580     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4592 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13707459      1.11777598      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13707459     -1.11777598     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4609 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13592618      1.11914460      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13592618     -1.11914460     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4635 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.13425294      1.12113869      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.13425294     -1.12113869     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4508 A from the April acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.14247211      1.11134346      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.14247211     -1.11134346     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
