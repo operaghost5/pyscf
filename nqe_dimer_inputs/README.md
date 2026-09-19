@@ -57,6 +57,13 @@ protocol and its provenance.
   details in the summary. `hcl_hbr/april_analysis/`: all 29 finished April
   runs are minima once the bromine defect is repaired; raw, the nine
   aug-cc-pVQZ Hessians showed a spurious ~700i mode. See `hcl_hbr/README.md`.
+- `hcl_hcl/` — (HCl)₂. The bent C_s minimum re-optimized from the 15 April
+  2026 geometries plus a constructed C₂h interchange-saddle start, both
+  protons quantum (April had only the acceptor proton), 400 radial shells
+  on chlorine, grid details in the summary. `hcl_hcl/april_analysis/`: all
+  15 April runs are minima once the chlorine defect is repaired (raw, the
+  DZ and QZ runs showed a spurious 206i to 555i mode); the 20 local-minimum
+  runs died on an undefined geometry. See `hcl_hcl/README.md`.
 
 ## Requirements
 
