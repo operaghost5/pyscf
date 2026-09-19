@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ hf_donor E=-560.950252341 Eh optimizer converged in 11 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.12759464      0.09187107      0.00000000
+F        2.06575149     -0.01715942      0.00000000
+H       -1.14028322     -1.25890601     -0.00000000
+Cl      -1.09810854      0.06767372      0.00000000
+4
+PW91/aug-cc-pVDZ hf_donor E=-561.195569629 Eh optimizer converged in 33 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.11345148      0.08395770     -0.00000000
+F        2.05111102     -0.02900144      0.00000000
+H       -1.14169116     -1.25437662     -0.00000000
+Cl      -1.09344864      0.07139039     -0.00000000
+4
+BP86/aug-cc-pVDZ hf_donor E=-561.281977343 Eh optimizer converged in 11 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.13466437      0.08942119     -0.00000000
+F        2.07512918     -0.00958421     -0.00000000
+H       -1.15469489     -1.26182080     -0.00000000
+Cl      -1.10050448      0.06601761      0.00000000
+4
+BLYP/aug-cc-pVDZ hf_donor E=-561.220842261 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.16559275      0.09306940     -0.00000000
+F        2.10688656      0.00314433     -0.00000000
+H       -1.19352661     -1.27080312     -0.00000000
+Cl      -1.12375596      0.05824215      0.00000000
+4
+B97/aug-cc-pVDZ hf_donor E=-561.145319598 Eh optimizer converged in 295 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.08590374      0.22193209      0.00000000
+F        2.01588732      0.22584846     -0.00000000
+H       -1.10643022     -1.44277205     -0.00000000
+Cl      -1.22391219     -0.12636137      0.00000000
+4
+PBE/aug-cc-pVTZ hf_donor E=-560.993721789 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.12485064      0.09609920     -0.00000000
+F        2.05959921     -0.02584101     -0.00000000
+H       -1.12679009     -1.25374811      0.00000000
+Cl      -1.10365491      0.06649847     -0.00000000
+4
+PW91/aug-cc-pVTZ hf_donor E=-561.240313992 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.11713905      0.09636035      0.00000000
+F        2.05114564     -0.02845429     -0.00000000
+H       -1.11686768     -1.25116781     -0.00000000
+Cl      -1.09649081      0.06814973     -0.00000000
+4
+BP86/aug-cc-pVTZ hf_donor E=-561.326051694 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.13135587      0.09293136      0.00000000
+F        2.06861188     -0.01784434     -0.00000000
+H       -1.14101400     -1.25614540     -0.00000000
+Cl      -1.10522968      0.06481323      0.00000000
+4
+BLYP/aug-cc-pVTZ hf_donor E=-561.266864527 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.16923250      0.09692975      0.00000000
+F        2.10766604     -0.00230371     -0.00000000
+H       -1.18853333     -1.26670706     -0.00000000
+Cl      -1.13372271      0.05463301      0.00000000
+4
+B97/aug-cc-pVTZ hf_donor E=-561.187683524 Eh optimizer converged in 33 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.17425096      0.10222497     -0.00000000
+F        2.09560751     -0.01158193      0.00000000
+H       -1.19580888     -1.27858265      0.00000000
+Cl      -1.15817782      0.03506766      0.00000000
+4
+PBE/aug-cc-pVQZ hf_donor E=-561.005892906 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.12637774      0.09766209      0.00000000
+F        2.05895625     -0.02573142      0.00000000
+H       -1.12628546     -1.25324104      0.00000000
+Cl      -1.10465368      0.06552318      0.00000000
+4
+PW91/aug-cc-pVQZ hf_donor E=-561.252776803 Eh optimizer converged in 11 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.12044865      0.09766164      0.00000000
+F        2.05247818     -0.02663804     -0.00000000
+H       -1.11925020     -1.25116901     -0.00000000
+Cl      -1.09798224      0.06666511      0.00000000
+4
+BP86/aug-cc-pVQZ hf_donor E=-561.338288066 Eh optimizer converged in 12 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.13289508      0.09492749     -0.00000000
+F        2.06780667     -0.01824490     -0.00000000
+H       -1.14006308     -1.25567269      0.00000000
+Cl      -1.10671099      0.06382485     -0.00000000
+4
+BLYP/aug-cc-pVQZ hf_donor E=-561.279279867 Eh optimizer converged in 11 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.17075645      0.09894543     -0.00000000
+F        2.10683932     -0.00187977      0.00000000
+H       -1.18836964     -1.26630823      0.00000000
+Cl      -1.13474753      0.05355854     -0.00000000
+4
+B97/aug-cc-pVQZ hf_donor E=-561.199529739 Eh optimizer converged in 21 steps (April 2026 'global_min' run, quantum nucleus n0 only = the HCl proton; hydrogens swapped into the H0-F1 / H2-Cl3 order)
+H        1.17911215      0.11023109     -0.00000000
+F        2.09800935     -0.00788347      0.00000000
+H       -1.19398558     -1.26847822      0.00000000
+Cl      -1.15721768      0.04313855     -0.00000000
+4
+PBE/aug-cc-pVDZ hcl_donor E=-560.949833262 Eh optimizer converged in 12 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.34664009     -0.80267560      0.00000000
+F       -2.07326054      0.09352880      0.00000000
+H       -0.16583694      0.16161145      0.00000000
+Cl       1.15468249     -0.04533464      0.00000000
+4
+PW91/aug-cc-pVDZ hcl_donor E=-561.195044609 Eh optimizer converged in 12 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.34234512     -0.80034227      0.00000000
+F       -2.06605601      0.09460760     -0.00000000
+H       -0.17209204      0.16087979      0.00000000
+Cl       1.14802592     -0.04604409      0.00000000
+4
+BP86/aug-cc-pVDZ hcl_donor E=-561.281588733 Eh optimizer converged in 11 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.35349889     -0.80209211      0.00000000
+F       -2.07476275      0.09338078     -0.00000000
+H       -0.16337592      0.15681775     -0.00000000
+Cl       1.16088758     -0.04038376      0.00000000
+4
+BLYP/aug-cc-pVDZ hcl_donor E=-561.220373531 Eh optimizer converged in 18 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.43359215     -0.79900292     -0.00000000
+F       -2.10122276      0.07928027     -0.00000000
+H       -0.10829751      0.15318944      0.00000000
+Cl       1.21827778     -0.01769863      0.00000000
+4
+B97/aug-cc-pVDZ hcl_donor E=-561.145204878 Eh optimizer converged in 21 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.46153249     -0.78587940     -0.00000000
+F       -2.11517117      0.07234419      0.00000000
+H       -0.10088843      0.16561121      0.00000000
+Cl       1.21337256     -0.01697090      0.00000000
+4
+PBE/aug-cc-pVTZ hcl_donor E=-560.993164795 Eh optimizer converged in 33 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.37835227     -0.80543431     -0.00000000
+F       -2.08637587      0.08273442     -0.00000000
+H       -0.14985164      0.15756117      0.00000000
+Cl       1.16476175     -0.03617013      0.00000000
+4
+PW91/aug-cc-pVTZ hcl_donor E=-561.239719867 Eh optimizer converged in 24 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.36617889     -0.80770015     -0.00000000
+F       -2.07975153      0.08155650      0.00000000
+H       -0.15881011      0.15882790     -0.00000000
+Cl       1.15520320     -0.03468795     -0.00000000
+4
+BP86/aug-cc-pVTZ hcl_donor E=-561.325452897 Eh optimizer converged in 20 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.38129836     -0.80754708      0.00000000
+F       -2.09127384      0.08211538     -0.00000000
+H       -0.14819572      0.15483098      0.00000000
+Cl       1.16871829     -0.03266406      0.00000000
+4
+BLYP/aug-cc-pVTZ hcl_donor E=-561.266380036 Eh optimizer converged in 19 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.46109039     -0.79551849      0.00000000
+F       -2.11399000      0.07511359      0.00000000
+H       -0.09600780      0.15181891     -0.00000000
+Cl       1.22246361     -0.01043032      0.00000000
+4
+B97/aug-cc-pVTZ hcl_donor E=-561.187459463 Eh optimizer converged in 71 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.43544871     -0.76903904     -0.00000000
+F       -2.06544470      0.07727516      0.00000000
+H       -0.02235986      0.16452880      0.00000000
+Cl       1.28399340     -0.01614055      0.00000000
+4
+PBE/aug-cc-pVQZ hcl_donor E=-561.005310247 Eh optimizer converged in 12 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.37838931     -0.79969628     -0.00000000
+F       -2.07959640      0.08434006     -0.00000000
+H       -0.14423559      0.15722127      0.00000000
+Cl       1.16929695     -0.03385464      0.00000000
+4
+PW91/aug-cc-pVQZ hcl_donor E=-561.252169398 Eh optimizer converged in 12 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.37015446     -0.79723436      0.00000000
+F       -2.07179729      0.08620192     -0.00000000
+H       -0.15176780      0.15628110     -0.00000000
+Cl       1.16111704     -0.03542703     -0.00000000
+4
+BP86/aug-cc-pVQZ hcl_donor E=-561.337679558 Eh optimizer converged in 21 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.38139640     -0.80240224     -0.00000000
+F       -2.08786580      0.08415048      0.00000000
+H       -0.14665437      0.15531382      0.00000000
+Cl       1.16889703     -0.03185650      0.00000000
+4
+BLYP/aug-cc-pVQZ hcl_donor E=-561.278798307 Eh optimizer converged in 26 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.45923368     -0.79636998     -0.00000000
+F       -2.10653694      0.06992778      0.00000000
+H       -0.09224819      0.14895897      0.00000000
+Cl       1.22571788     -0.00567403     -0.00000000
+4
+B97/aug-cc-pVQZ hcl_donor E=-561.199287461 Eh optimizer converged in 66 steps (April 2026 'local_min' run, quantum nucleus n2 only = the HCl proton)
+H       -2.45450152     -0.77615318     -0.00000000
+F       -2.08300470      0.06764745      0.00000000
+H       -0.04335447      0.16207137     -0.00000000
+Cl       1.26225465     -0.00921290     -0.00000000

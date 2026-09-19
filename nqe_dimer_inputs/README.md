@@ -42,6 +42,14 @@ protocol and its provenance.
   details in the summary. `hf_hbr/april_analysis/`: all 30 April runs are
   minima once the bromine defect is repaired; the raw aug-cc-pVQZ Hessians
   showed a spurious ~400i mode. See `hf_hbr/README.md`.
+- `hf_hcl/` — HF/HCl. The two isomers F–H···Cl–H (`hf-donor`) and
+  Cl–H···F–H (`hcl-donor`) re-optimized from the 30 April 2026 geometries
+  with both protons quantum (April had only the HCl proton quantum in
+  both isomers), one atom order for both isomers, 400 radial shells on Cl
+  and F, grid details in the summary. `hf_hcl/april_analysis/`: all 30
+  April runs are minima once the chlorine defect is repaired; raw, the 20
+  aug-cc-pVDZ and aug-cc-pVQZ runs showed a spurious 54i to 307i mode.
+  See `hf_hcl/README.md`.
 
 ## Requirements
 
