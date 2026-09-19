@@ -50,6 +50,13 @@ protocol and its provenance.
   April runs are minima once the chlorine defect is repaired; raw, the 20
   aug-cc-pVDZ and aug-cc-pVQZ runs showed a spurious 54i to 307i mode.
   See `hf_hcl/README.md`.
+- `hcl_hbr/` — HCl/HBr. The two isomers Cl–H···Br–H (`hcl-donor`) and
+  Br–H···Cl–H (`hbr-donor`) re-optimized from the April 2026 geometries
+  with both protons quantum (April had only each isomer's donor proton, so
+  its energies cannot rank them), 400 radial shells on Cl and Br, grid
+  details in the summary. `hcl_hbr/april_analysis/`: all 29 finished April
+  runs are minima once the bromine defect is repaired; raw, the nine
+  aug-cc-pVQZ Hessians showed a spurious ~700i mode. See `hcl_hbr/README.md`.
 
 ## Requirements
 
