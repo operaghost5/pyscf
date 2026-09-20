@@ -352,6 +352,27 @@ Results of the original DFT HF/HCl runs (`hf_hcl_dft/april_analysis/`, April
   by 0.053–0.066 Å. A quantum acceptor proton hardly affects the hydrogen
   bond; a quantum donor proton strengthens it.
 
+Results of the original DFT HCl/HBr runs (`hcl_hbr_dft/april_analysis/`,
+April 2026, 30 runs):
+
+- All 30 optimizations converged (9–21 steps) and all 30 Hessians finished
+  (12–14 CPHF iterations). All 30 are minima on the repaired Hessian; raw,
+  the BLYP/aVQZ HBr-donor run showed a 7i mode. The isomer energies are
+  directly comparable: Cl–H···Br–H lies below Br–H···Cl–H by 0.33–0.37
+  (PBE, PW91), 0.30–0.31 (BP86), 0.26–0.29 (BLYP) and 0.24–0.28 (B97)
+  kcal/mol. Geometries: HCl-donor H···Br 2.51–2.74 Å, tilt 90–93°;
+  HBr-donor H···Cl 2.44–2.69 Å, tilt 91–96°.
+- The bromine violation was 4×10⁻⁶ to 10⁻⁴ Eh/Bohr² at aVDZ but 5×10⁻³ to
+  2.7×10⁻² at aVTZ and aVQZ with 200 radial shells; the repair moved the
+  24–83 cm⁻¹ intermolecular modes by up to 52 cm⁻¹ (median 13). The
+  chlorine violation stayed below 7×10⁻⁵.
+- CNEO-DFT minus DFT (each isomer's donor proton quantum in the April CNEO
+  runs): HCl-donor isomer, H–Cl stretch −121 to −150 cm⁻¹, H–Br stretch
+  within 4 cm⁻¹, intermolecular modes +5 to +31, H–Cl longer by
+  0.025–0.030 Å, H···Br shorter by 0.052–0.077 Å; HBr-donor isomer, H–Br
+  stretch −100 to −124, H–Cl stretch −2 to −3, intermolecular modes up to
+  +34, H–Br longer by 0.025–0.030 Å, H···Cl shorter by 0.056–0.079 Å.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works

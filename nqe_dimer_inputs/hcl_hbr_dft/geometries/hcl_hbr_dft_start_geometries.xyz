@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ hcl_donor E=-3034.965139476 Eh optimizer converged in 21 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.39588015      0.09138911      0.00000000
+Cl       2.70799397      0.02363673     -0.00000000
+H       -1.12132210     -1.40669418     -0.00000000
+Br      -1.13738443      0.03438428      0.00000000
+4
+PW91/aug-cc-pVDZ hcl_donor E=-3035.674799994 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.38549647      0.08999411     -0.00000000
+Cl       2.69739854      0.02031906      0.00000000
+H       -1.11036217     -1.40389825      0.00000000
+Br      -1.12747294      0.03630213     -0.00000000
+4
+BP86/aug-cc-pVDZ hcl_donor E=-3035.865466323 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.40768066      0.08926301      0.00000000
+Cl       2.72213109      0.03287268     -0.00000000
+H       -1.14174188     -1.41109625      0.00000000
+Br      -1.14289467      0.03151189      0.00000000
+4
+BLYP/aug-cc-pVDZ hcl_donor E=-3035.561931020 Eh optimizer converged in 18 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.48694917      0.09269995     -0.00000000
+Cl       2.80033111      0.06698707      0.00000000
+H       -1.23643985     -1.43116193     -0.00000000
+Br      -1.20566825      0.01420825     -0.00000000
+4
+B97/aug-cc-pVDZ hcl_donor E=-3035.360685265 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.48601936      0.11213092      0.00000000
+Cl       2.78749288      0.04518332     -0.00000000
+H       -1.21260260     -1.42321024     -0.00000000
+Br      -1.21558214      0.00866334      0.00000000
+4
+PBE/aug-cc-pVTZ hcl_donor E=-3035.053819026 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.40632142      0.09309932      0.00000000
+Cl       2.70713298      0.02290846     -0.00000000
+H       -1.12126367     -1.40372943      0.00000000
+Br      -1.14702617      0.03043989      0.00000000
+4
+PW91/aug-cc-pVTZ hcl_donor E=-3035.764882657 Eh optimizer converged in 9 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.39805740      0.09128631     -0.00000000
+Cl       2.69824267      0.02080655     -0.00000000
+H       -1.11291845     -1.40113480      0.00000000
+Br      -1.13819140      0.03176789     -0.00000000
+4
+BP86/aug-cc-pVTZ hcl_donor E=-3035.955396535 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.42010387      0.09041223      0.00000000
+Cl       2.72250610      0.03338488     -0.00000000
+H       -1.14408334     -1.40780700     -0.00000000
+Br      -1.15333565      0.02702538      0.00000000
+4
+BLYP/aug-cc-pVTZ hcl_donor E=-3035.653185816 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.50248242      0.09638288      0.00000000
+Cl       2.80291684      0.06586209     -0.00000000
+H       -1.23957750     -1.42839443     -0.00000000
+Br      -1.22065077      0.00888025      0.00000000
+4
+B97/aug-cc-pVTZ hcl_donor E=-3035.449496466 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.49839601      0.11551808     -0.00000000
+Cl       2.78821712      0.04415167     -0.00000000
+H       -1.21552873     -1.42109344     -0.00000000
+Br      -1.22719221      0.00410682      0.00000000
+4
+PBE/aug-cc-pVQZ hcl_donor E=-3035.060540376 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.40839137      0.09384110     -0.00000000
+Cl       2.70754994      0.02254532      0.00000000
+H       -1.12146453     -1.40364685      0.00000000
+Br      -1.14931172      0.02997834     -0.00000000
+4
+PW91/aug-cc-pVQZ hcl_donor E=-3035.771657794 Eh optimizer converged in 9 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.39967579      0.09181261      0.00000000
+Cl       2.69824787      0.02033455     -0.00000000
+H       -1.11238196     -1.40088284     -0.00000000
+Br      -1.14035628      0.03145960      0.00000000
+4
+BP86/aug-cc-pVQZ hcl_donor E=-3035.962268926 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.42394741      0.09068277      0.00000000
+Cl       2.72474126      0.03427825      0.00000000
+H       -1.14669683     -1.40819690     -0.00000000
+Br      -1.15684617      0.02614149      0.00000000
+4
+BLYP/aug-cc-pVQZ hcl_donor E=-3035.660043953 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.50534723      0.09763113     -0.00000000
+Cl       2.80403904      0.06526938     -0.00000000
+H       -1.24005154     -1.42843322      0.00000000
+Br      -1.22416350      0.00826313     -0.00000000
+4
+B97/aug-cc-pVQZ hcl_donor E=-3035.456474908 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'global_min' run)
+H        1.50224908      0.11679166     -0.00000000
+Cl       2.78974409      0.04408552     -0.00000000
+H       -1.21744654     -1.42130579      0.00000000
+Br      -1.23093626      0.00308882     -0.00000000
+4
+PBE/aug-cc-pVDZ hbr_donor E=-3034.964577673 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.68557624     -1.24556646     -0.00000000
+Cl      -2.67006326      0.05753807      0.00000000
+H       -0.20938214      0.13937375      0.00000000
+Br       1.23688358      0.03883363     -0.00000000
+4
+PW91/aug-cc-pVDZ hbr_donor E=-3035.674210914 Eh optimizer converged in 10 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.67143431     -1.24254694      0.00000000
+Cl      -2.65926447      0.05990407     -0.00000000
+H       -0.22157003      0.13847096      0.00000000
+Br       1.22414844      0.03435681      0.00000000
+4
+BP86/aug-cc-pVDZ hbr_donor E=-3035.864967992 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.70578446     -1.24891995     -0.00000000
+Cl      -2.67423349      0.05554398      0.00000000
+H       -0.19858655      0.13521237     -0.00000000
+Br       1.25031798      0.04839026     -0.00000000
+4
+BLYP/aug-cc-pVDZ hbr_donor E=-3035.561475929 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.82169921     -1.26861653      0.00000000
+Cl      -2.73999820      0.03510340     -0.00000000
+H       -0.10831765      0.13566422      0.00000000
+Br       1.34188581      0.08804016      0.00000000
+4
+B97/aug-cc-pVDZ hbr_donor E=-3035.360244296 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.79246606     -1.26576734     -0.00000000
+Cl      -2.75387286      0.03131276      0.00000000
+H       -0.10717019      0.16436815     -0.00000000
+Br       1.32466586      0.06023222     -0.00000000
+4
+PBE/aug-cc-pVTZ hbr_donor E=-3035.053294419 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.67936244     -1.24100101      0.00000000
+Cl      -2.68776150      0.05185914     -0.00000000
+H       -0.19945939      0.14674683      0.00000000
+Br       1.23846293      0.03257572      0.00000000
+4
+PW91/aug-cc-pVTZ hbr_donor E=-3035.764344685 Eh optimizer converged in 9 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.66686381     -1.23784373     -0.00000000
+Cl      -2.67729802      0.05394236     -0.00000000
+H       -0.21055381      0.14448792      0.00000000
+Br       1.22657433      0.02959453     -0.00000000
+4
+BP86/aug-cc-pVTZ hbr_donor E=-3035.954915427 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.70325424     -1.24447828      0.00000000
+Cl      -2.69268397      0.04922342     -0.00000000
+H       -0.18585898      0.14091569     -0.00000000
+Br       1.25409661      0.04447809     -0.00000000
+4
+BLYP/aug-cc-pVTZ hbr_donor E=-3035.652768948 Eh optimizer converged in 17 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.81596297     -1.26495730     -0.00000000
+Cl      -2.76653688      0.02853273     -0.00000000
+H       -0.09307740      0.14722012     -0.00000000
+Br       1.34744694      0.07939509     -0.00000000
+4
+B97/aug-cc-pVTZ hbr_donor E=-3035.449116931 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.78826434     -1.26227803     -0.00000000
+Cl      -2.77351130      0.02444342      0.00000000
+H       -0.09357928      0.17704642     -0.00000000
+Br       1.32958124      0.05108248     -0.00000000
+4
+PBE/aug-cc-pVQZ hbr_donor E=-3035.060005545 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.67258675     -1.23999650      0.00000000
+Cl      -2.69070891      0.05129291     -0.00000000
+H       -0.20062606      0.15187511      0.00000000
+Br       1.23580528      0.02701335      0.00000000
+4
+PW91/aug-cc-pVQZ hbr_donor E=-3035.771108423 Eh optimizer converged in 14 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.65935321     -1.23674792     -0.00000000
+Cl      -2.68018142      0.05344614      0.00000000
+H       -0.21212706      0.14978134     -0.00000000
+Br       1.22345852      0.02368919     -0.00000000
+4
+BP86/aug-cc-pVQZ hbr_donor E=-3035.961779071 Eh optimizer converged in 18 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.69988598     -1.24381622     -0.00000000
+Cl      -2.69650124      0.04841602      0.00000000
+H       -0.18504233      0.14423276     -0.00000000
+Br       1.25378534      0.04130256     -0.00000000
+4
+BLYP/aug-cc-pVQZ hbr_donor E=-3035.659613919 Eh optimizer converged in 17 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.81384854     -1.26507632     -0.00000000
+Cl      -2.77280745      0.02713046     -0.00000000
+H       -0.09031913      0.15307241      0.00000000
+Br       1.34884603      0.07506543      0.00000000
+4
+B97/aug-cc-pVQZ hbr_donor E=-3035.456087401 Eh optimizer converged in 16 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.78080517     -1.26161456     -0.00000000
+Cl      -2.77954956      0.02309681      0.00000000
+H       -0.09322831      0.18579329     -0.00000000
+Br       1.32740989      0.04299076     -0.00000000

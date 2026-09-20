@@ -132,6 +132,15 @@ protocol and its provenance.
   classical, against 0.1 to 0.4 in the April CNEO runs with the HCl proton
   quantum; CNEO-DFT minus DFT shifts show a quantum acceptor proton barely
   touching the hydrogen bond. See `hf_hcl_dft/README.md`.
+- `hcl_hbr_dft/` — HCl/HBr with conventional DFT. The two isomers
+  (`hcl-donor`, `hbr-donor`) re-optimized from the 30 April 2026 DFT
+  geometries with every setting of `hcl_hbr/` applied to `dft.RKS` (400
+  radial shells on Cl and Br included), isotope-averaged atomic masses, the
+  sum-rule check and repair, and the grid in the summary.
+  `hcl_hbr_dft/april_analysis/`: all 30 April DFT runs are minima once the
+  bromine defect is repaired; Cl–H···Br–H lower by 0.24 to 0.37 kcal/mol
+  with all nuclei classical; CNEO-DFT minus DFT shifts with the quantum
+  proton of each CNEO run noted. See `hcl_hbr_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),
