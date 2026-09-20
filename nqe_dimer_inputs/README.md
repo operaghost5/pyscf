@@ -104,6 +104,15 @@ protocol and its provenance.
   Hessians died at one point in the TZ tier, as the CNEO ones did; CNEO-DFT
   minus DFT shifts for the 11 runs with Hessians in both sets. See
   `hcn_hbr_dft/README.md`.
+- `hf_hf_dft/` — (HF)₂ with conventional DFT. The bent C_s minimum
+  re-optimized from the 15 April 2026 DFT geometries plus the constructed
+  C₂h interchange-saddle start, with every setting of `hf_hf/` applied to
+  `dft.RKS` (400 radial shells on fluorine included), isotope-averaged
+  atomic masses, the sum-rule check and repair, and the grid in the
+  summary. `hf_hf_dft/april_analysis/`: all 15 April DFT minima confirmed
+  (the 15 local-minimum runs died on the undefined geometry); CNEO-DFT
+  minus DFT shifts with the quantum proton of each CNEO run noted. See
+  `hf_hf_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),

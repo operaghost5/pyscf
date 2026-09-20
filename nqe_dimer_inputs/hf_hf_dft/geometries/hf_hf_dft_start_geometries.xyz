@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ global_min E=-200.733306514 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.25033725      0.60129143     -0.00000000
+F        0.10708891     -1.17962909      0.00000000
+H       -0.79946650     -1.41801626      0.00000000
+F        0.15215962      1.54018616     -0.00000000
+4
+PW91/aug-cc-pVDZ global_min E=-200.869503270 Eh optimizer converged in 42 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.26343932      0.59407512      0.00000000
+F        0.09513713     -1.16944533     -0.00000000
+H       -0.81395704     -1.39664953     -0.00000000
+F        0.18089976      1.53430356      0.00000000
+4
+BP86/aug-cc-pVDZ global_min E=-200.925294121 Eh optimizer converged in 30 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24633630      0.60193519      0.00000000
+F        0.10588531     -1.17780618     -0.00000000
+H       -0.80027982     -1.42109401     -0.00000000
+F        0.15737468      1.54311299      0.00000000
+4
+BLYP/aug-cc-pVDZ global_min E=-200.905784533 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24747802      0.62461012      0.00000000
+F        0.09688519     -1.18869971     -0.00000000
+H       -0.80317686     -1.45900973     -0.00000000
+F        0.16888962      1.56686733      0.00000000
+4
+B97/aug-cc-pVDZ global_min E=-200.861021197 Eh optimizer converged in 37 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24526912      0.64233457      0.00000000
+F        0.07961456     -1.20278167     -0.00000000
+H       -0.80114184     -1.48887212     -0.00000000
+F        0.16279395      1.56891214      0.00000000
+4
+PBE/aug-cc-pVTZ global_min E=-200.790645356 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.25099568      0.60636287      0.00000000
+F        0.10341508     -1.17904645      0.00000000
+H       -0.79873723     -1.42664845     -0.00000000
+F        0.15441180      1.54320335      0.00000000
+4
+PW91/aug-cc-pVTZ global_min E=-200.928213939 Eh optimizer converged in 36 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.26384196      0.59901548     -0.00000000
+F        0.09530757     -1.16959674     -0.00000000
+H       -0.81016564     -1.40212276      0.00000000
+F        0.17715907      1.53645135     -0.00000000
+4
+BP86/aug-cc-pVTZ global_min E=-200.982902680 Eh optimizer converged in 32 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.25131090      0.60350572     -0.00000000
+F        0.10468401     -1.18053211      0.00000000
+H       -0.79937879     -1.42434839      0.00000000
+F        0.15819370      1.54199938     -0.00000000
+4
+BLYP/aug-cc-pVTZ global_min E=-200.966289227 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24975944      0.62935008      0.00000000
+F        0.09377286     -1.18992944      0.00000000
+H       -0.80308662     -1.46505407     -0.00000000
+F        0.16958192      1.56942085      0.00000000
+4
+B97/aug-cc-pVTZ global_min E=-200.917272158 Eh optimizer converged in 38 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.25041426      0.64736136     -0.00000000
+F        0.07396385     -1.20012063      0.00000000
+H       -0.80295661     -1.49246255      0.00000000
+F        0.17049118      1.57220865     -0.00000000
+4
+PBE/aug-cc-pVQZ global_min E=-200.807098825 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24974976      0.60726930      0.00000000
+F        0.10133723     -1.17695170     -0.00000000
+H       -0.79773558     -1.42901694     -0.00000000
+F        0.15672397      1.54258531      0.00000000
+4
+PW91/aug-cc-pVQZ global_min E=-200.945186186 Eh optimizer converged in 38 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.26551560      0.60154973      0.00000000
+F        0.08943480     -1.16626900     -0.00000000
+H       -0.81312269     -1.40280945     -0.00000000
+F        0.18802961      1.53788402      0.00000000
+4
+BP86/aug-cc-pVQZ global_min E=-200.999413231 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24832722      0.60552302      0.00000000
+F        0.10470547     -1.17749342     -0.00000000
+H       -0.79616105     -1.42591527     -0.00000000
+F        0.15537564      1.54209738      0.00000000
+4
+BLYP/aug-cc-pVQZ global_min E=-200.983100879 Eh optimizer converged in 31 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.24857450      0.63007732     -0.00000000
+F        0.09187607     -1.18761490      0.00000000
+H       -0.80162927     -1.46698422      0.00000000
+F        0.17117361      1.56830343     -0.00000000
+4
+B97/aug-cc-pVQZ global_min E=-200.933034231 Eh optimizer converged in 39 steps (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.23763250      0.64363157     -0.00000000
+F        0.07192738     -1.20157186      0.00000000
+H       -0.79986033     -1.50372817      0.00000000
+F        0.15656095      1.56660380     -0.00000000
+4
+PBE/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9374 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85234401      0.76785233      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85234401     -0.76785233     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9371 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85252676      0.76759134      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85252676     -0.76759134     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9383 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85183850      0.76857427      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85183850     -0.76857427     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9398 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85096655      0.76981955      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85096655     -0.76981955     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+B97/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9261 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85883614      0.75858061      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85883614     -0.75858061     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9355 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85341149      0.76632781      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85341149     -0.76632781     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9349 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85379036      0.76578673      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85379036     -0.76578673     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9364 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85292417      0.76702377      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85292417     -0.76702377     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9381 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85192218      0.76845477      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85192218     -0.76845477     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+B97/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9244 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85980520      0.75719665      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85980520     -0.75719665     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9337 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85442922      0.76487434      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85442922     -0.76487434     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9330 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85483093      0.76430065      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85483093     -0.76430065     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9345 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85399784      0.76549042      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85399784     -0.76549042     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9362 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.85303962      0.76685889      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.85303962     -0.76685889     -0.00000000
+F       -1.39000000      0.00000000      0.00000000
+4
+B97/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: F..F 2.78 A, r(H-F) 0.9227 A from the April DFT acceptor bond, tilt 55 deg, exact inversion symmetry
+H       -0.86078062      0.75580361      0.00000000
+F        1.39000000     -0.00000000     -0.00000000
+H        0.86078062     -0.75580361     -0.00000000
+F       -1.39000000      0.00000000      0.00000000

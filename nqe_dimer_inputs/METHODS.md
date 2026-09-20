@@ -286,6 +286,24 @@ Results of the original DFT HCN···HBr runs (`hcn_hbr_dft/february_analysis/`,
   intermolecular mode lower by 3–18 cm⁻¹ and N···Br longer by 0.028–0.045
   Å. The same pattern as HCN···HCl.
 
+Results of the original DFT (HF)₂ runs (`hf_hf_dft/april_analysis/`, April
+2026, 30 runs):
+
+- The 15 global-minimum runs converged (30–42 steps, from the same
+  Å-read-as-Bohr compressed start as the CNEO runs) and all 15 Hessians
+  finished in 11 CPHF iterations; all 15 are minima raw and repaired. The
+  15 local-minimum runs died on the undefined `DNE` geometry, as in the
+  CNEO set. Bent C_s structure: F···F 2.71–2.77 Å, H···F 1.77–1.86 Å,
+  F–H···F 169–171°, acceptor tilt 109–114°.
+- With 200 radial shells the fluorine violation was 1×10⁻⁶ to 2×10⁻⁴
+  Eh/Bohr² and the hydrogen violation up to 2.4×10⁻⁴; the repair moved no
+  vibration by more than 6 cm⁻¹ (median 0.7).
+- CNEO-DFT minus DFT (the April CNEO runs had only the donor proton
+  quantum): donor H–F stretch −206 to −240 cm⁻¹, acceptor H–F stretch (a
+  classical proton in both) −6 to −7, the four intermolecular modes +6 to
+  +38; donor H–F longer by 0.023–0.025 Å, H···F shorter by 0.034–0.046 Å,
+  F···F shorter by 0.010–0.022 Å.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works
