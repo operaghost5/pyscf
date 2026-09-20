@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ global_min E=-5148.688506976 Eh optimizer converged in 16 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.60639324      0.10553049      0.00000000
+Br      -1.97021389      0.03610491      0.00000000
+H       -1.93597516     -1.40449854     -0.00000000
+Br       2.05651739      0.03735850      0.00000000
+4
+PW91/aug-cc-pVDZ global_min E=-5149.753365017 Eh optimizer converged in 15 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.59406608      0.10438888     -0.00000000
+Br      -1.95899854      0.03849354     -0.00000000
+H       -1.92214672     -1.40117613      0.00000000
+Br       2.04383536      0.03278914     -0.00000000
+4
+BP86/aug-cc-pVDZ global_min E=-5150.017658495 Eh optimizer converged in 17 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.61874941      0.10190701      0.00000000
+Br      -1.97467822      0.03336115     -0.00000000
+H       -1.95866389     -1.40899853      0.00000000
+Br       2.07112814      0.04802496      0.00000000
+4
+BLYP/aug-cc-pVDZ global_min E=-5149.512848999 Eh optimizer converged in 17 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.71543313      0.10517960      0.00000000
+Br      -2.05075832      0.01259931     -0.00000000
+H       -2.07548737     -1.43268992      0.00000000
+Br       2.16753511      0.08941203      0.00000000
+4
+B97/aug-cc-pVDZ global_min E=-5149.216435122 Eh optimizer converged in 20 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.71444445      0.12899405     -0.00000000
+Br      -2.06249691      0.00678548      0.00000000
+H       -2.04580087     -1.42479144     -0.00000000
+Br       2.14938467      0.06346528     -0.00000000
+4
+PBE/aug-cc-pVTZ global_min E=-5148.833718675 Eh optimizer converged in 16 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.61395168      0.10649298     -0.00000000
+Br      -1.97951435      0.03247723      0.00000000
+H       -1.93465867     -1.40107457     -0.00000000
+Br       2.05694194      0.03660129     -0.00000000
+4
+PW91/aug-cc-pVTZ global_min E=-5149.900116863 Eh optimizer converged in 15 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.60363153      0.10499234     -0.00000000
+Br      -1.96962640      0.03430062      0.00000000
+H       -1.92311602     -1.39793037     -0.00000000
+Br       2.04584994      0.03313165     -0.00000000
+4
+BP86/aug-cc-pVTZ global_min E=-5150.164441201 Eh optimizer converged in 17 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.62985895      0.10293361      0.00000000
+Br      -1.98586062      0.02891932     -0.00000000
+H       -1.96092781     -1.40558409      0.00000000
+Br       2.07407506      0.04853104      0.00000000
+4
+BLYP/aug-cc-pVTZ global_min E=-5149.660627995 Eh optimizer converged in 17 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.73031649      0.10971442      0.00000000
+Br      -2.06863565      0.00712790     -0.00000000
+H       -2.07847509     -1.43006141     -0.00000000
+Br       2.17351735      0.08771764      0.00000000
+4
+B97/aug-cc-pVTZ global_min E=-5149.362936465 Eh optimizer converged in 16 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.72683086      0.13273235     -0.00000000
+Br      -2.07397018      0.00220483      0.00000000
+H       -2.04887596     -1.42265217     -0.00000000
+Br       2.15474256      0.06229660     -0.00000000
+4
+PBE/aug-cc-pVQZ global_min E=-5148.839525062 Eh optimizer converged in 16 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.61298846      0.10925576     -0.00000000
+Br      -1.98125264      0.03246194      0.00000000
+H       -1.93007221     -1.40038225     -0.00000000
+Br       2.05505684      0.03316176     -0.00000000
+4
+PW91/aug-cc-pVQZ global_min E=-5149.905874263 Eh optimizer converged in 14 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.60145689      0.10769072     -0.00000000
+Br      -1.97094106      0.03464546      0.00000000
+H       -1.91651140     -1.39679942     -0.00000000
+Br       2.04272500      0.02895734     -0.00000000
+4
+BP86/aug-cc-pVQZ global_min E=-5150.170379173 Eh optimizer converged in 16 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.63048864      0.10438097      0.00000000
+Br      -1.98801918      0.02862704     -0.00000000
+H       -1.95916122     -1.40532077      0.00000000
+Br       2.07391401      0.04695545     -0.00000000
+4
+BLYP/aug-cc-pVQZ global_min E=-5149.666405786 Eh optimizer converged in 17 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.73148616      0.11262944     -0.00000000
+Br      -2.07231824      0.00668634     -0.00000000
+H       -2.07621926     -1.42992058     -0.00000000
+Br       2.17377511      0.08510347      0.00000000
+4
+B97/aug-cc-pVQZ global_min E=-5149.369136162 Eh optimizer converged in 16 steps; hydrogens/bromines reordered so that H0-Br3 donates to Br1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.72800544      0.13748592      0.00000000
+Br      -2.07806755      0.00150355      0.00000000
+H       -2.04548252     -1.42241677     -0.00000000
+Br       2.15449512      0.05801823     -0.00000000
+4
+PBE/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4410 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.14873645      1.10387791      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.14873645     -1.10387791     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4401 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.14929505      1.10321220      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.14929505     -1.10321220     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4424 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.14781192      1.10497972      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.14781192     -1.10497972     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4455 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.14585001      1.10731783      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.14585001     -1.10731783     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4317 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15473752      1.09672612      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15473752     -1.09672612     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4343 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15307969      1.09870184      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15307969     -1.09870184     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4330 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15389436      1.09773095      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15389436     -1.09773095     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4347 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15277971      1.09905934      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15277971     -1.09905934     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4372 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15117087      1.10097668      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15117087     -1.10097668     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4251 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15897754      1.09167305      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15897754     -1.09167305     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4338 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15339815      1.09832232      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15339815     -1.09832232     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4325 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15422003      1.09734283      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15422003     -1.09734283     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4342 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15308948      1.09869017      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15308948     -1.09869017     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4366 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15156347      1.10050880      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15156347     -1.10050880     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Br..Br 4.15 A, r(H-Br) 1.4243 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.15948203      1.09107182      0.00000000
+Br       2.07500000     -0.00000000     -0.00000000
+H        1.15948203     -1.09107182     -0.00000000
+Br      -2.07500000      0.00000000      0.00000000

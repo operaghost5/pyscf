@@ -395,6 +395,39 @@ April 2026, 30 runs):
   0.010–0.015 Å. A quantum acceptor proton hardly touches the hydrogen
   bond, as in HF/HCl.
 
+Results of the original DFT (HBr)₂ runs (`hbr_hbr_dft/april_analysis/`,
+April 2026, 30 runs):
+
+- The 15 global-minimum runs converged (14–20 steps) and all 15 Hessians
+  finished (12–15 CPHF iterations). All 15 are minima on the repaired
+  Hessian, but only 10 raw: every aug-cc-pVQZ run showed a spurious 47i to
+  77i mode and the aVTZ lowest modes were displaced upward by up to 57 cm⁻¹,
+  because even with 200 radial shells the bromine violation was 5×10⁻³ to
+  2.7×10⁻² Eh/Bohr² at aVTZ and aVQZ (4×10⁻⁶ to 10⁻⁴ at aVDZ) and this
+  dimer's lowest mode is only 36–53 cm⁻¹. The repair changed vibrations by
+  up to 123 cm⁻¹ (median 49); after it the lowest mode agrees across the
+  three bases to within 2 cm⁻¹ for every functional. This is the strongest
+  case in the set for the dense bromine grid. The 15 local-minimum runs
+  died on the undefined `DNE` geometry. Bent C_s structure: Br···Br
+  4.00–4.25 Å, H···Br 2.55–2.81 Å, Br–H···Br 174–178°, tilt 90–93°; the
+  donor was H2 in the April logs and the extractor moves it to H0.
+- CNEO-DFT minus DFT (the April CNEO runs had only the acceptor proton
+  quantum): acceptor H–Br stretch −81 to −98 cm⁻¹ where the two stretches
+  stay separated; for B97 and for BLYP at aVTZ/aVQZ the lowered acceptor
+  stretch crosses the donor stretch and rank matching splits a total shift
+  of 87–104 cm⁻¹ over both. The donor stretch (classical in both) moves by
+  −6, the intermolecular modes by −2 to +5; H···Br shortens by only
+  0.009–0.013 Å. The same acceptor-proton picture as (HCl)₂ and HF/HCl.
+
+Across the conventional-DFT reference sets the pattern is uniform: the
+lighter hydrogen halide is the preferred donor in every heterodimer (HF/HBr
+by 0.6–1.1, HF/HCl by 0.3–0.7, HCl/HBr by 0.2–0.4 kcal/mol); the CNEO
+quantum proton lowers its own X–H stretch by 80–270 cm⁻¹ depending on X;
+a quantum donor proton shortens the hydrogen bond by 0.03–0.09 Å and raises
+the intermolecular modes, a quantum acceptor proton changes them by less
+than 0.015 Å and 10 cm⁻¹, and quantum protons lengthen halogen bonds
+(N···Cl, N···Br) by 0.03–0.07 Å.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works

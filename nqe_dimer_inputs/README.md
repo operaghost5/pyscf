@@ -150,6 +150,17 @@ protocol and its provenance.
   minima confirmed (the 15 local-minimum runs died on the undefined
   geometry); CNEO-DFT minus DFT shifts show the quantum acceptor proton
   barely touching the hydrogen bond. See `hcl_hcl_dft/README.md`.
+- `hbr_hbr_dft/` — (HBr)₂ with conventional DFT, bromine all-electron with
+  400 radial shells as in `hbr_hbr/`. The bent C_s minimum re-optimized
+  from the 15 April 2026 DFT geometries (donor moved to H0) plus the
+  constructed C₂h interchange-saddle start, with every setting of
+  `hbr_hbr/` applied to `dft.RKS`, isotope-averaged atomic masses, the
+  sum-rule check and repair, and the grid in the summary.
+  `hbr_hbr_dft/april_analysis/`: all 15 April DFT runs are minima once the
+  bromine defect is repaired (raw, all five aVQZ runs showed a spurious
+  47i to 77i mode even on the level-9 grid); the 15 local-minimum runs died
+  on the undefined geometry; CNEO-DFT minus DFT shifts with the quantum
+  acceptor proton noted. See `hbr_hbr_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),
