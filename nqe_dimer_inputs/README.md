@@ -76,8 +76,8 @@ protocol and its provenance.
 - `hcn_hf_dft/` — HCN···HF with conventional DFT (all nuclei classical),
   the reference for the nuclear quantum effect. The same 30 linear and
   bent starts re-optimized from the February 2026 DFT geometries with
-  every setting of `hcn_hf/` applied to `dft.RKS`, the CNEO mass
-  convention in the harmonic analysis, the sum-rule check and repair,
+  every setting of `hcn_hf/` applied to `dft.RKS`, isotope-averaged
+  atomic masses in the harmonic analysis, the sum-rule check and repair,
   and the grid printed in the summary. `hcn_hf_dft/february_analysis/`:
   all 30 February DFT runs are minima (level-9 grid, fluorine defect
   below 3e-4 Eh/Bohr², yet the softest bent-complex mode moved by up to

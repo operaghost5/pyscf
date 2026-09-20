@@ -102,14 +102,14 @@ alongside. `ATOM_GRIDS = {}` keeps the level-5 table on every atom to match
 `../hcn_hf/`; `ATOM_GRIDS = {'F': (400, 770)}` removes the fluorine defect at
 source, as in the halogen sets.
 
-**Masses.** `MASS_CONVENTION = 'cneo'` gives hydrogen the nuclear (proton)
-mass, 1.007276 u, and every other atom PySCF's isotope-averaged atomic mass,
-which is exactly what `neo.Mole.mass` gives the CNEO-DFT inputs, so that
-CNEO-DFT minus DFT frequency differences are due to the method alone. The
-vibrational frequencies with PySCF's default atomic masses (H 1.008 u) are
-printed on one extra line and saved in the `.npz`; the two differ by at
-most 0.04 %, about 1 cm⁻¹ at 3000 cm⁻¹. Set `MASS_CONVENTION = 'atomic'` to
-swap the roles.
+**Masses.** The harmonic analysis uses PySCF's isotope-averaged atomic
+masses (H 1.008, C 12.011, N 14.007, F 18.998 u), the standard convention
+for conventional DFT and the one the February logs used; the summary prints
+them. The CNEO mass convention of the CNEO-DFT inputs (nuclear mass
+1.007276 u for the quantum protons) is not used in these files. The 0.07 %
+difference in the hydrogen mass changes a frequency by at most 0.04 %,
+about 1 cm⁻¹ at 3000 cm⁻¹, which is worth stating when CNEO-DFT and DFT
+frequencies are compared.
 
 **Why the sum-rule repair is kept for conventional DFT.** PySCF's RKS
 Hessian holds the grid fixed for GGA and hybrid-GGA functionals exactly as

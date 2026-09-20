@@ -16,10 +16,10 @@ TEMPLATE below and regenerate rather than editing the 30 inputs.
 This is the all-classical-nuclei counterpart of ../hcn_hf/ (CNEO-DFT). Every
 setting that has a counterpart there is the same: functionals, bases, SCF
 and CPHF tolerances, grid level, grid response, optimizer criteria, step
-cap, Hessian iteration cap and retry, sum-rule check. The nuclear masses
-used in the harmonic analysis follow the CNEO convention as well (see
-MASS_CONVENTION) so that CNEO-DFT minus DFT frequency shifts isolate the
-method.
+cap, Hessian iteration cap and retry, sum-rule check. The harmonic analysis
+uses PySCF's isotope-averaged atomic masses (H 1.008 u), the standard
+convention for conventional DFT; the CNEO mass convention (nuclear mass for
+the quantum protons) is not used in these inputs.
 '''
 import os
 import sys
@@ -65,9 +65,11 @@ This is the classical-nuclei counterpart of the CNEO-DFT input of the same
 name in ../hcn_hf/: same functional, basis, SCF/CPHF tolerances, grid
 level, grid response, optimizer criteria and step cap, Hessian settings and
 sum-rule check, so that CNEO-DFT minus DFT differences isolate the nuclear
-quantum effect. The harmonic analysis uses the CNEO mass convention
-(nuclear mass for hydrogen, isotope-averaged atomic mass otherwise); see
-MASS_CONVENTION.
+quantum effect. The harmonic analysis uses PySCF's isotope-averaged atomic
+masses (H 1.008, C 12.011, N 14.007, F 18.998 u), the standard convention
+for conventional DFT. The CNEO-DFT inputs use the nuclear mass 1.007276 u
+for their quantum protons; the 0.07 % mass difference changes a frequency
+by at most 0.04 %, about 1 cm^-1 at 3000 cm^-1.
 
 Why the sum-rule check and repair: PySCF's RKS Hessian, like the NEO one,
 holds the DFT grid fixed (no grid response for GGA functionals), so the
@@ -96,7 +98,6 @@ import time
 import numpy
 import pyscf
 from pyscf import gto, dft
-from pyscf.data import elements, nist
 from pyscf.geomopt.geometric_solver import GeometryOptimizer
 from pyscf.hessian import thermo
 from pyscf.hessian.thermo import rotation_const, _get_rotor_type
@@ -146,16 +147,10 @@ HESS_RETRY_LEVEL_SHIFT = 0.2   # Eh, used for the one automatic retry
 # Hessian; the raw spectrum is printed alongside for comparison.
 SUM_RULE_REPAIR = True
 
-# Nuclear masses for the harmonic analysis.
-#   'cneo'   : the convention of the CNEO-DFT inputs (neo.Mole.mass): hydrogen
-#              carries the most-common-isotope mass minus the electron mass, i.e.
-#              the proton mass 1.007276 u; every other atom the isotope-averaged
-#              atomic mass. Use this to compare with the CNEO-DFT frequencies.
-#   'atomic' : PySCF's default isotope-averaged atomic masses for every atom
-#              (H 1.008 u), the usual convention for conventional DFT.
-# The difference is 0.07 % in the hydrogen mass, at most 0.04 % (about 1 cm^-1
-# at 3000 cm^-1) in any frequency; both sets are printed.
-MASS_CONVENTION = 'cneo'
+# Nuclear masses for the harmonic analysis: PySCF's isotope-averaged atomic
+# masses (mol.atom_mass_list(isotope_avg=True); H 1.008 u), the standard
+# convention for conventional DFT and the one PySCF's thermo module uses by
+# default. The CNEO mass convention of the CNEO-DFT inputs is not used here.
 
 STEM = os.path.splitext(os.path.basename(__file__))[0]
 
@@ -191,17 +186,9 @@ def build_mf(mol):
     return mf
 
 
-def nuclear_masses(mol, convention):
-    """Masses (amu) for the harmonic analysis; see MASS_CONVENTION."""
-    atomic = numpy.asarray(mol.atom_mass_list(isotope_avg=True), dtype=float)
-    if convention == 'atomic':
-        return atomic
-    common = numpy.asarray(mol.atom_mass_list(mass_table=elements.COMMON_ISOTOPE_MASSES), dtype=float)
-    mass = atomic.copy()
-    for i in range(mol.natm):
-        if mol.atom_pure_symbol(i) == 'H':
-            mass[i] = common[i] - mol.atom_charge(i) * nist.E_MASS / nist.ATOMIC_MASS
-    return mass
+def nuclear_masses(mol):
+    """Isotope-averaged atomic masses (amu) for the harmonic analysis."""
+    return numpy.asarray(mol.atom_mass_list(isotope_avg=True), dtype=float)
 
 
 def geometry_lines(symbols, coords_ang):
@@ -406,8 +393,7 @@ if SUM_RULE_REPAIR:
     print(f'repaired Hessian: max violation {viol_fix.max():.1e} Eh/Bohr^2')
 else:
     hess = hess_raw
-mass = nuclear_masses(new_mol, MASS_CONVENTION)
-mass_atomic = nuclear_masses(new_mol, 'atomic')
+mass = nuclear_masses(new_mol)
 rotor = _get_rotor_type(rotation_const(mass, new_mol.atom_coords()))
 ntr = 5 if rotor == 'LINEAR' else 6
 print(f'rotor type {rotor}: {ntr} translational/rotational modes, '
@@ -416,24 +402,21 @@ freqs_raw = harmonic_frequencies(new_mol, hess_raw, mass)
 _, vib_raw = split_tr(freqs_raw, ntr)
 freqs = harmonic_frequencies(new_mol, hess, mass)
 tr, vib = split_tr(freqs, ntr)
-_, vib_atomic = split_tr(harmonic_frequencies(new_mol, hess, mass_atomic), ntr)
-print(f'raw Hessian, all 3N modes     : ' + fmt_modes(freqs_raw))
-print(f'raw Hessian, vibrations       : ' + fmt_modes(vib_raw))
+print('raw Hessian, all 3N modes     : ' + fmt_modes(freqs_raw))
+print('raw Hessian, vibrations       : ' + fmt_modes(vib_raw))
 if SUM_RULE_REPAIR:
     print('repaired Hessian, all 3N modes: ' + fmt_modes(freqs))
     print('repaired Hessian, vibrations  : ' + fmt_modes(vib))
-print(f'same Hessian, atomic masses (H {mass_atomic[symbols.index("H")]:.4f} u), vibrations: ' + fmt_modes(vib_atomic))
-proj = thermo.harmonic_analysis(new_mol, hess, imaginary_freq=False, mass=mass)['freq_wavenumber']
+proj =thermo.harmonic_analysis(new_mol, hess, imaginary_freq=False, mass=mass)['freq_wavenumber']
 proj = numpy.sort(numpy.asarray(proj, dtype=float))
 print('cross-check, PySCF projection on the ' + ('repaired' if SUM_RULE_REPAIR else 'raw')
       + ' Hessian (cm^-1): ' + fmt_modes(proj))
 numpy.savez(f'{STEM}.hessian.npz', hessian_raw=hess_raw, hessian=hess,
             sum_rule_raw=viol_raw, sum_rule_repair=SUM_RULE_REPAIR,
             freq_raw_all=freqs_raw, freq_raw_vib=vib_raw, freq_all=freqs, freq_vib=vib,
-            freq_vib_atomic_masses=vib_atomic,
             freq_pyscf_projected=proj, coords_angstrom=coords_eq,
-            symbols=numpy.array(symbols), mass_amu=mass, mass_atomic_amu=mass_atomic,
-            mass_convention=MASS_CONVENTION, e_sp=e_sp, e_start=e_start,
+            symbols=numpy.array(symbols), mass_amu=mass,
+            mass_convention='isotope-averaged atomic masses', e_sp=e_sp, e_start=e_start,
             xc=XC, basis=BASIS, ntr=ntr, rotor=rotor)
 
 banner('6. SUMMARY')
@@ -442,7 +425,7 @@ print(f'method                        : conventional DFT (pyscf.dft.{type(new_mf
 print(f'xc functional                 : {XC}')
 print('quantum nuclei                : none')
 print(f'electronic basis              : {BASIS}')
-print(f'nuclear masses (amu)          : convention {MASS_CONVENTION}; '
+print('nuclear masses (amu)          : isotope-averaged atomic masses (PySCF default); '
       + ', '.join(f'{s}{i} {m:.6f}' for i, (s, m) in enumerate(zip(symbols, mass))))
 print(f'SCF                           : conv_tol {SCF_CONV_TOL:g}, conv_tol_grad {SCF_CONV_TOL_GRAD:g}, '
       f'grid response {GRID_RESPONSE}')
@@ -470,7 +453,7 @@ print(f'imaginary vibrational modes   : raw Hessian {n_imag_raw}, '
       + '   -> ' + ('minimum' if n_imag == 0 else f'saddle point of order {n_imag}'))
 print('.....................')
 print('Ascending, negative = imaginary' + ('  (repaired Hessian)' if SUM_RULE_REPAIR else '')
-      + f'  (masses: {MASS_CONVENTION})')
+      + '  (isotope-averaged atomic masses)')
 print(f'{"mode":>4} {"freq (cm^-1)":>13}')
 for i, f in enumerate(freqs):
     print(f'{i:>4d} {f:>13.2f}' + ('   TR' if i in tr else ''))

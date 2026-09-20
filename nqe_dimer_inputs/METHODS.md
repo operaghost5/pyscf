@@ -193,7 +193,7 @@ been analysed so far (30 non-5Z runs with Hessians; the halogen-bonded
 | DFT grid | **level 9**: 200 radial shells × 1454 Lebedev points on every atom (the CNEO runs used level 3) | level 5 (H 70×590, C/N/F 105×770), matching the CNEO re-optimization inputs; `ATOM_GRIDS = {'F': (400, 770)}` available |
 | SCF, optimizer, CPHF | as the original CNEO runs (A.5): `conv_tol` 1e-9, custom geomeTRIC criteria, 1500-step cap, RKS Hessian with the default 50-iteration CPHF | as the CNEO re-optimization inputs (A.6) |
 | Grid response in the gradient | off | on |
-| Masses in the harmonic analysis | PySCF isotope-averaged atomic masses (H 1.008 u) | CNEO convention: H 1.007276 u (nuclear mass), other atoms isotope-averaged; the atomic-mass frequencies are printed as well |
+| Masses in the harmonic analysis | PySCF isotope-averaged atomic masses (H 1.008 u) | the same isotope-averaged atomic masses; the CNEO mass convention (nuclear mass 1.007276 u for quantum protons) is used only in the CNEO-DFT inputs. The 0.07 % difference in the hydrogen mass changes a frequency by at most 0.04 %, about 1 cm⁻¹ at 3000 cm⁻¹ |
 
 Results of the original DFT HCN···HF runs (`hcn_hf_dft/february_analysis/`):
 
