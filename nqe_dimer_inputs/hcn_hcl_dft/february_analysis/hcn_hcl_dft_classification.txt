@@ -1,0 +1,718 @@
+HCN...HCl, conventional DFT (all nuclei classical), February 2026 runs: classification (aug-cc-pV5Z excluded)
+Masses: PySCF isotope-averaged (H 1.008, C 12.011, N 14.007, Cl 35.45).  Atom order in every log: H0 C1 N2 H3 Cl4.
+Original settings (from the .py inputs): dft.KS, grids.level = 9 (200 radial shells x 1454 angular points on every atom),
+SCF conv_tol 1e-9 (default), geomeTRIC with the custom criteria (dE 1e-9, grms 3e-6, gmax 4.5e-4, drms 1.2e-3, dmax 1.8e-3;
+maxiter 1500), analytic RKS Hessian with the default CPHF (50 Krylov iterations), thermo.harmonic_analysis with default projection.
+Duplicate logs for one case (the later date wins when both have a Hessian):
+  ('xlocal_min', 'aug-cc-pVDZ', 'BP86'): using hydrogen_cyanide_hydrogen_chloride_dimer.bas_two.dft.func_three.xlocal_min.07-07-2026.log (160 steps) over hydrogen_cyanide_hydrogen_chloride_dimer.bas_two.dft.func_three.xlocal_min.06-02-2026.log (314 steps)
+
+PART 0: run status
+start      xc    basis        opt steps  CPHF it  status
+global_min PBE   aug-cc-pVDZ          7       14  optimizer converged; Hessian done
+global_min PW91  aug-cc-pVDZ          8       14  optimizer converged; Hessian done
+global_min BP86  aug-cc-pVDZ          7       14  optimizer converged; Hessian done
+global_min BLYP  aug-cc-pVDZ          8       14  optimizer converged; Hessian done
+global_min B97   aug-cc-pVDZ          7       13  optimizer converged; Hessian done
+global_min PBE   aug-cc-pVTZ          7       14  optimizer converged; Hessian done
+global_min PW91  aug-cc-pVTZ          7       14  optimizer converged; Hessian done
+global_min BP86  aug-cc-pVTZ          7       15  optimizer converged; Hessian done
+global_min BLYP  aug-cc-pVTZ         13       14  optimizer converged; Hessian done
+global_min B97   aug-cc-pVTZ          7       13  optimizer converged; Hessian done
+global_min PBE   aug-cc-pVQZ          7       14  optimizer converged; Hessian done
+global_min PW91  aug-cc-pVQZ          7       14  optimizer converged; Hessian done
+global_min BP86  aug-cc-pVQZ          7       14  optimizer converged; Hessian done
+global_min BLYP  aug-cc-pVQZ          7       14  optimizer converged; Hessian done
+global_min B97   aug-cc-pVQZ          6       13  optimizer converged; Hessian done
+local_min  PBE   aug-cc-pVDZ         20       14  optimizer converged; Hessian done
+local_min  PW91  aug-cc-pVDZ         20       14  optimizer converged; Hessian done
+local_min  BP86  aug-cc-pVDZ         21       14  optimizer converged; Hessian done
+local_min  BLYP  aug-cc-pVDZ         25       14  optimizer converged; Hessian done
+local_min  B97   aug-cc-pVDZ         21       13  optimizer converged; Hessian done
+local_min  PBE   aug-cc-pVTZ         20       14  optimizer converged; Hessian done
+local_min  PW91  aug-cc-pVTZ         17       14  optimizer converged; Hessian done
+local_min  BP86  aug-cc-pVTZ         17       14  optimizer converged; Hessian done
+local_min  BLYP  aug-cc-pVTZ         19       14  optimizer converged; Hessian done
+local_min  B97   aug-cc-pVTZ         19       14  optimizer converged; Hessian done
+local_min  PBE   aug-cc-pVQZ         17       14  optimizer converged; Hessian done
+local_min  PW91  aug-cc-pVQZ         18       14  optimizer converged; Hessian done
+local_min  BP86  aug-cc-pVQZ         22       14  optimizer converged; Hessian done
+local_min  BLYP  aug-cc-pVQZ         19       14  optimizer converged; Hessian done
+local_min  B97   aug-cc-pVQZ         20       14  optimizer converged; Hessian done
+xlocal_min PBE   aug-cc-pVDZ          9       14  optimizer converged; Hessian done
+xlocal_min PW91  aug-cc-pVDZ          9       14  optimizer converged; Hessian done
+xlocal_min BP86  aug-cc-pVDZ        160       14  optimizer converged; Hessian done
+xlocal_min BLYP  aug-cc-pVDZ         12       14  optimizer converged; Hessian done
+xlocal_min B97   aug-cc-pVDZ          7       13  optimizer converged; Hessian done
+xlocal_min PBE   aug-cc-pVTZ          8       14  optimizer converged; Hessian done
+xlocal_min PW91  aug-cc-pVTZ         10       14  optimizer converged; Hessian done
+xlocal_min BP86  aug-cc-pVTZ        133       14  optimizer converged; Hessian done
+xlocal_min BLYP  aug-cc-pVTZ         12       14  optimizer converged; Hessian done
+xlocal_min B97   aug-cc-pVTZ         11       13  optimizer converged; Hessian done
+xlocal_min PBE   aug-cc-pVQZ          8       14  optimizer converged; Hessian done
+xlocal_min PW91  aug-cc-pVQZ          9       14  optimizer converged; Hessian done
+xlocal_min BP86  aug-cc-pVQZ        158       14  optimizer converged; Hessian done
+xlocal_min BLYP  aug-cc-pVQZ         13       13  optimizer converged; Hessian done
+xlocal_min B97   aug-cc-pVQZ         10       13  optimizer converged; Hessian done
+
+PART 1: geometry, energy and classification of the runs that produced a Hessian (raw Hessian, correct 3N-5/3N-6 projection)
+  type = the shortest intermolecular contact: N...H-Cl (HCl the donor, linear), C-H...Cl (the C-H the donor, bent) or
+  N...Cl-H (halogen bond, linear); a1/a2 = the X-H...Y and the acceptor angle of that contact (F-H...N & H...N-C, C-H...X & H...X-H,
+  or N...X-H & X...N-C); off-axis = largest distance of any atom from the H0-Cl4 line; 'Cl viol' = Cl sum-rule violation (Eh/Bohr^2).
+start      xc    basis                  E (Eh)    C-H    C-N   H-Cl   N..H  N..Cl H0..Cl      type     a1     a2  offaxis  Cl viol  vibrations (cm^-1)                                                           imag  class
+global_min PBE   aug-cc-pVDZ    -553.949622753  1.082  1.165  1.321  1.940  3.261  5.509  N...H-Cl  180.0  180.0  0.0e+00  1.1e-06  56.0, 56.0, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9         0  MINIMUM
+global_min PW91  aug-cc-pVDZ    -554.203600546  1.081  1.164  1.321  1.922  3.243  5.488  N...H-Cl  180.0  180.0  0.0e+00  1.3e-06  56.3, 56.3, 128.3, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1         0  MINIMUM
+global_min BP86  aug-cc-pVDZ    -554.297496756  1.083  1.166  1.323  1.943  3.266  5.515  N...H-Cl  180.0  180.0  0.0e+00  5.5e-05  54.2, 54.2, 123.2, 467.3, 467.3, 705.5, 705.5, 2124.3, 2604.1, 3365.0         0  MINIMUM
+global_min BLYP  aug-cc-pVDZ    -554.226095534  1.081  1.166  1.320  2.024  3.344  5.590  N...H-Cl  180.0  180.0  0.0e+00  3.9e-07  57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7         0  MINIMUM
+global_min B97   aug-cc-pVDZ    -554.162117733  1.076  1.157  1.310  2.051  3.360  5.594  N...H-Cl  180.0  180.0  0.0e+00  2.4e-06  60.8, 60.8, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5         0  MINIMUM
+global_min PBE   aug-cc-pVTZ    -553.988453304  1.076  1.156  1.309  1.971  3.280  5.511  N...H-Cl  180.0  180.0  0.0e+00  1.9e-06  52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3         0  MINIMUM
+global_min PW91  aug-cc-pVTZ    -554.244188242  1.074  1.154  1.309  1.957  3.266  5.493  N...H-Cl  180.0  180.0  0.0e+00  1.1e-05  52.9, 52.9, 125.6, 460.5, 460.5, 734.9, 734.9, 2145.8, 2647.4, 3366.4         0  MINIMUM
+global_min BP86  aug-cc-pVTZ    -554.337781632  1.075  1.156  1.311  1.976  3.287  5.518  N...H-Cl  180.0  180.0  0.0e+00  5.9e-05  52.0, 52.0, 120.9, 454.0, 454.0, 730.5, 730.5, 2135.6, 2640.7, 3352.5         0  MINIMUM
+global_min BLYP  aug-cc-pVTZ    -554.269886161  1.072  1.155  1.307  2.064  3.371  5.598  N...H-Cl  180.0  180.0  0.0e+00  2.6e-06  53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9         0  MINIMUM
+global_min B97   aug-cc-pVTZ    -554.200008936  1.069  1.147  1.298  2.079  3.377  5.593  N...H-Cl  180.0  180.0  0.0e+00  5.0e-06  54.7, 54.7, 106.1, 404.6, 404.6, 762.5, 762.5, 2202.8, 2780.0, 3426.6         0  MINIMUM
+global_min PBE   aug-cc-pVQZ    -553.998643172  1.075  1.155  1.308  1.977  3.285  5.515  N...H-Cl  180.0  180.0  0.0e+00  4.7e-06  50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5         0  MINIMUM
+global_min PW91  aug-cc-pVQZ    -554.254511134  1.073  1.153  1.307  1.964  3.271  5.498  N...H-Cl  180.0  180.0  0.0e+00  5.3e-05  50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.3, 3367.0         0  MINIMUM
+global_min BP86  aug-cc-pVQZ    -554.348065571  1.075  1.155  1.309  1.985  3.294  5.524  N...H-Cl  180.0  180.0  0.0e+00  6.0e-05  49.1, 49.1, 119.5, 449.3, 449.3, 728.1, 728.1, 2135.2, 2641.3, 3353.4         0  MINIMUM
+global_min BLYP  aug-cc-pVQZ    -554.280362404  1.072  1.154  1.305  2.072  3.377  5.603  N...H-Cl  180.0  180.0  0.0e+00  3.0e-06  51.6, 51.6, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7         0  MINIMUM
+global_min B97   aug-cc-pVQZ    -554.210046154  1.069  1.146  1.296  2.087  3.382  5.597  N...H-Cl  180.0  180.0  0.0e+00  1.2e-05  52.7, 52.7, 105.5, 401.2, 401.2, 760.1, 760.1, 2203.2, 2783.3, 3427.0         0  MINIMUM
+local_min  PBE   aug-cc-pVDZ    -553.944134497  1.087  1.169  1.303  5.247  4.908  2.654  C-H...Cl  176.7   99.4  1.3e+00  8.7e-07  69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1                 0  MINIMUM
+local_min  PW91  aug-cc-pVDZ    -554.197887633  1.085  1.167  1.302  5.229  4.888  2.638  C-H...Cl  176.9   99.4  1.3e+00  2.6e-06  70.6, 76.3, 89.3, 207.6, 739.3, 749.4, 2105.1, 2860.7, 3314.4                 0  MINIMUM
+local_min  BP86  aug-cc-pVDZ    -554.292158769  1.087  1.169  1.304  5.305  4.952  2.698  C-H...Cl  176.9  100.0  1.3e+00  5.6e-05  62.6, 69.6, 84.5, 203.3, 731.6, 740.9, 2094.3, 2846.8, 3301.2                 0  MINIMUM
+local_min  BLYP  aug-cc-pVDZ    -554.221330923  1.084  1.168  1.306  5.415  5.022  2.771  C-H...Cl  177.9  101.5  1.3e+00  2.3e-07  60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6                 0  MINIMUM
+local_min  B97   aug-cc-pVDZ    -554.157502562  1.079  1.160  1.298  5.337  4.981  2.746  C-H...Cl  176.1  100.6  1.3e+00  7.1e-05  63.1, 68.6, 80.6, 201.9, 756.3, 764.1, 2169.5, 2909.9, 3400.1                 0  MINIMUM
+local_min  PBE   aug-cc-pVTZ    -553.983320784  1.079  1.159  1.293  5.225  4.910  2.677  C-H...Cl  175.6   98.9  1.3e+00  1.9e-06  62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3                 0  MINIMUM
+local_min  PW91  aug-cc-pVTZ    -554.238911234  1.077  1.157  1.292  5.207  4.892  2.662  C-H...Cl  175.8   98.9  1.3e+00  1.1e-05  64.0, 72.6, 80.4, 200.4, 761.4, 772.0, 2118.4, 2882.0, 3312.1                 0  MINIMUM
+local_min  BP86  aug-cc-pVTZ    -554.332804112  1.078  1.159  1.294  5.287  4.957  2.723  C-H...Cl  176.1   99.4  1.3e+00  5.7e-05  59.2, 65.7, 78.4, 197.3, 755.7, 765.2, 2108.7, 2867.9, 3303.3                 0  MINIMUM
+local_min  BLYP  aug-cc-pVTZ    -554.265425413  1.074  1.158  1.294  5.394  5.037  2.809  C-H...Cl  176.3  100.7  1.3e+00  2.5e-06  56.2, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8                 0  MINIMUM
+local_min  B97   aug-cc-pVTZ    -554.195690395  1.071  1.150  1.287  5.317  4.985  2.770  C-H...Cl  174.6  100.3  1.3e+00  6.8e-05  56.2, 65.0, 72.0, 192.4, 780.3, 788.1, 2181.7, 2930.7, 3395.9                 0  MINIMUM
+local_min  PBE   aug-cc-pVQZ    -553.993574810  1.079  1.158  1.291  5.210  4.919  2.689  C-H...Cl  174.0   98.6  1.3e+00  5.0e-06  54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2                 0  MINIMUM
+local_min  PW91  aug-cc-pVQZ    -554.249312498  1.077  1.156  1.290  5.190  4.901  2.675  C-H...Cl  174.0   98.5  1.3e+00  5.3e-05  54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8                 0  MINIMUM
+local_min  BP86  aug-cc-pVQZ    -554.343175985  1.078  1.158  1.292  5.283  4.975  2.744  C-H...Cl  174.6   99.1  1.3e+00  6.0e-05  53.1, 58.7, 68.7, 193.8, 748.5, 757.3, 2108.7, 2864.0, 3297.6                 0  MINIMUM
+local_min  BLYP  aug-cc-pVQZ    -554.275984071  1.074  1.157  1.293  5.389  5.054  2.829  C-H...Cl  174.8  100.4  1.3e+00  3.2e-06  50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2                 0  MINIMUM
+local_min  B97   aug-cc-pVQZ    -554.205795036  1.071  1.149  1.285  5.294  4.995  2.787  C-H...Cl  172.3   99.8  1.3e+00  9.1e-05  47.4, 63.2, 63.5, 190.3, 774.5, 782.0, 2182.3, 2931.0, 3389.8                 0  MINIMUM
+xlocal_min PBE   aug-cc-pVDZ    -553.942031349  1.082  1.168  1.302  4.641  3.339  5.590  N...Cl-H  180.0  180.0  0.0e+00  1.0e-06  41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6          0  MINIMUM
+xlocal_min PW91  aug-cc-pVDZ    -554.195803244  1.080  1.167  1.301  4.615  3.314  5.561  N...Cl-H  180.0  180.0  0.0e+00  5.9e-07  43.5, 43.5, 54.1, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0          0  MINIMUM
+xlocal_min BP86  aug-cc-pVDZ    -554.292158738  1.087  1.169  1.304  5.305  4.952  2.698  C-H...Cl  176.9  100.0  1.3e+00  5.6e-05  62.6, 69.7, 84.5, 203.3, 731.7, 740.9, 2094.3, 2846.8, 3301.2                 0  MINIMUM
+xlocal_min BLYP  aug-cc-pVDZ    -554.219414590  1.081  1.168  1.305  4.895  3.589  5.838  N...Cl-H  180.0  180.0  0.0e+00  3.4e-07  25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3          0  MINIMUM
+xlocal_min B97   aug-cc-pVDZ    -554.155502206  1.076  1.159  1.297  4.736  3.439  5.674  N...Cl-H  180.0  180.0  0.0e+00  1.2e-04  38.4, 38.4, 45.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3          0  MINIMUM
+xlocal_min PBE   aug-cc-pVTZ    -553.981223440  1.075  1.158  1.292  4.725  3.433  5.667  N...Cl-H  180.0  180.0  0.0e+00  1.8e-06  22.8, 22.8, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7          0  MINIMUM
+xlocal_min PW91  aug-cc-pVTZ    -554.236803835  1.073  1.156  1.290  4.719  3.428  5.657  N...Cl-H  180.0  180.0  0.0e+00  2.0e-05  23.2, 23.2, 44.0, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2          0  MINIMUM
+xlocal_min BP86  aug-cc-pVTZ    -554.331207075  1.075  1.158  1.292 13.124 11.832 14.064  N...Cl-H  178.9  178.1  6.2e-02  5.8e-05  13.3i, 12.1i, 11.8i, 6.3i, 720.3, 720.3, 2113.8, 2878.8, 3355.7               4  SADDLE (order 4)  UNBOUND (closest contact > 4 A)
+xlocal_min BLYP  aug-cc-pVTZ    -554.263610706  1.072  1.157  1.293  5.106  3.813  6.042  N...Cl-H  180.0  180.0  0.0e+00  2.6e-06  14.2, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3          0  MINIMUM
+xlocal_min B97   aug-cc-pVTZ    -554.193720471  1.068  1.149  1.286  4.823  3.537  5.755  N...Cl-H  180.0  180.0  0.0e+00  4.2e-04  21.4, 21.4, 39.5, 148.1, 148.1, 752.4, 752.4, 2186.8, 2940.2, 3427.9          0  MINIMUM
+xlocal_min PBE   aug-cc-pVQZ    -553.991543650  1.075  1.157  1.290  4.731  3.441  5.673  N...Cl-H  180.0  180.0  0.0e+00  4.6e-06  15.0, 15.0, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4          0  MINIMUM
+xlocal_min PW91  aug-cc-pVQZ    -554.247288353  1.073  1.156  1.289  4.724  3.435  5.663  N...Cl-H  180.0  180.0  0.0e+00  5.6e-05  15.0, 15.0, 43.3, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3          0  MINIMUM
+xlocal_min BP86  aug-cc-pVQZ    -554.341696643  1.075  1.158  1.291 11.908 10.618 12.850  N...Cl-H  180.0  180.0  3.3e-04  6.0e-05  13.8i, 13.7i, 9.6i, 9.6i, 6.3i, 719.3, 719.3, 2114.2, 2874.7, 3352.9          5  SADDLE (order 5)  UNBOUND (closest contact > 4 A)
+xlocal_min BLYP  aug-cc-pVQZ    -554.274240419  1.071  1.156  1.292  5.139  3.847  6.075  N...Cl-H  180.0  180.0  0.0e+00  5.1e-06  12.2, 12.6, 12.6, 119.0, 119.0, 718.4, 718.4, 2112.1, 2844.9, 3358.1          0  MINIMUM
+xlocal_min B97   aug-cc-pVQZ    -554.203884910  1.068  1.148  1.284  4.833  3.550  5.766  N...Cl-H  180.0  180.0  0.0e+00  5.0e-04  11.1, 11.1, 38.3, 146.6, 146.6, 750.9, 750.9, 2187.7, 2940.5, 3428.8          0  MINIMUM
+
+PART 2: external modes, the sum rule and the repaired spectrum; PySCF's own harmonic analysis as logged
+  'full 3N' is the unprojected spectrum (5 external modes for a linear complex, 6 for the bent one, all should be ~0);
+  'repaired' resets each diagonal block to minus the sum of its off-diagonal blocks.  The logged PySCF list is what the
+  pre-2.14 fork printed; for a linear complex it has 9 entries where 10 (3N-5) are expected when the rotor test misfired.
+==============================================================================================================
+global_min PBE aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.6e-08, C1 2.2e-06, N2 2.0e-06, H3 8.6e-09, Cl4 1.1e-06
+  PySCF logged (10 values)   : 56.0, 56.0, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+  re-diagonalized, projected: 56.0, 56.0, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+  full 3N, raw              : 0.9i, 0.9i, 0.4, 1.2, 1.2, 56.0, 56.0, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+  full 3N, repaired         : 0.4i, 0.4i, 0.0i, 0.0, 0.0, 56.1, 56.1, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+  repaired, projected       : 56.1, 56.1, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+global_min PW91 aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.7e-07, C1 1.2e-05, N2 3.4e-06, H3 1.3e-06, Cl4 1.3e-06
+  PySCF logged (10 values)   : 56.3, 56.3, 128.3, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+  re-diagonalized, projected: 56.3, 56.3, 128.3, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+  full 3N, raw              : 2.8i, 1.0i, 1.0i, 0.7i, 0.7i, 56.3, 56.3, 128.3, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+  full 3N, repaired         : 0.4i, 0.4i, 0.0i, 0.0i, 0.0, 56.3, 56.3, 128.4, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+  repaired, projected       : 56.3, 56.3, 128.4, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+  max |raw - repaired| over the vibrations: 0.04 cm^-1
+==============================================================================================================
+global_min BP86 aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 9.8e-06, C1 4.1e-05, N2 7.5e-05, H3 3.2e-06, Cl4 5.5e-05
+  PySCF logged (9 values)   : 54.2, 123.2, 466.5, 467.3, 704.7, 705.5, 2124.3, 2604.1, 3365.0
+  re-diagonalized, projected: 54.2, 54.2, 123.2, 467.3, 467.3, 705.5, 705.5, 2124.3, 2604.1, 3365.0
+  full 3N, raw              : 11.0i, 11.0i, 6.4i, 6.4i, 6.3i, 54.2, 54.2, 123.2, 467.3, 467.3, 705.5, 705.5, 2124.3, 2604.1, 3365.0
+  full 3N, repaired         : 0.0i, 0.0i, 0.0, 1.2, 1.2, 55.6, 55.6, 123.4, 467.4, 467.4, 705.6, 705.6, 2124.3, 2604.1, 3365.0
+  repaired, projected       : 55.6, 55.6, 123.4, 467.4, 467.4, 705.6, 705.6, 2124.3, 2604.1, 3365.0
+  max |raw - repaired| over the vibrations: 1.36 cm^-1
+==============================================================================================================
+global_min BLYP aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 5.0e-09, C1 2.9e-07, N2 2.2e-06, H3 2.2e-08, Cl4 3.9e-07
+  PySCF logged (9 values)   : 57.6, 111.0, 426.3, 432.0, 700.0, 700.8, 2115.7, 2631.8, 3366.7
+  re-diagonalized, projected: 57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7
+  full 3N, raw              : 1.2i, 1.2i, 0.4, 0.4, 0.4, 57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7
+  full 3N, repaired         : 0.4i, 0.4i, 0.0i, 0.0i, 0.0, 57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7
+  repaired, projected       : 57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7
+  max |raw - repaired| over the vibrations: 0.02 cm^-1
+==============================================================================================================
+global_min B97 aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.4e-06, C1 8.1e-06, N2 1.4e-05, H3 1.3e-05, Cl4 2.4e-06
+  PySCF logged (9 values)   : 60.8, 108.6, 415.6, 418.0, 736.1, 736.5, 2193.1, 2752.6, 3443.5
+  re-diagonalized, projected: 60.8, 60.8, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5
+  full 3N, raw              : 0.7, 0.7, 1.6, 1.6, 3.0, 60.8, 60.8, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5
+  full 3N, repaired         : 0.2i, 0.2i, 0.0i, 0.0i, 0.0, 60.9, 60.9, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5
+  repaired, projected       : 60.9, 60.9, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5
+  max |raw - repaired| over the vibrations: 0.08 cm^-1
+==============================================================================================================
+global_min PBE aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.3e-08, C1 1.3e-06, N2 7.0e-07, H3 9.3e-09, Cl4 1.9e-06
+  PySCF logged (10 values)   : 52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+  re-diagonalized, projected: 52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+  full 3N, raw              : 1.1i, 1.1i, 0.7i, 1.1, 1.1, 52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+  full 3N, repaired         : 0.4i, 0.4i, 0.0i, 0.0i, 0.0, 52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+  repaired, projected       : 52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+  max |raw - repaired| over the vibrations: 0.00 cm^-1
+==============================================================================================================
+global_min PW91 aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.2e-06, C1 5.5e-06, N2 1.8e-06, H3 3.9e-06, Cl4 1.1e-05
+  PySCF logged (9 values)   : 52.9, 125.6, 377.2, 460.5, 733.0, 734.9, 2145.8, 2647.4, 3366.4
+  re-diagonalized, projected: 52.9, 52.9, 125.6, 460.5, 460.5, 734.9, 734.9, 2145.8, 2647.4, 3366.4
+  full 3N, raw              : 1.8, 1.8, 2.2, 2.8, 2.8, 52.9, 52.9, 125.6, 460.5, 460.5, 734.9, 734.9, 2145.8, 2647.4, 3366.4
+  full 3N, repaired         : 0.4i, 0.4i, 0.0i, 0.0, 0.0, 52.8, 52.8, 125.6, 460.5, 460.5, 734.8, 734.8, 2145.8, 2647.3, 3366.4
+  repaired, projected       : 52.8, 52.8, 125.6, 460.5, 460.5, 734.8, 734.8, 2145.8, 2647.3, 3366.4
+  max |raw - repaired| over the vibrations: 0.06 cm^-1
+==============================================================================================================
+global_min BP86 aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.1e-05, C1 4.7e-05, N2 7.6e-05, H3 5.2e-06, Cl4 5.9e-05
+  PySCF logged (9 values)   : 52.0, 120.9, 447.8, 454.0, 724.8, 730.5, 2135.6, 2640.7, 3352.5
+  re-diagonalized, projected: 52.0, 52.0, 120.9, 454.0, 454.0, 730.5, 730.5, 2135.6, 2640.7, 3352.5
+  full 3N, raw              : 11.4i, 11.4i, 6.7i, 6.7i, 6.3i, 52.0, 52.0, 120.9, 454.0, 454.0, 730.5, 730.5, 2135.6, 2640.7, 3352.5
+  full 3N, repaired         : 0.0i, 0.0, 0.0, 1.3, 1.3, 53.6, 53.6, 121.0, 454.2, 454.2, 730.6, 730.6, 2135.6, 2640.7, 3352.5
+  repaired, projected       : 53.6, 53.6, 121.0, 454.2, 454.2, 730.6, 730.6, 2135.6, 2640.7, 3352.5
+  max |raw - repaired| over the vibrations: 1.53 cm^-1
+==============================================================================================================
+global_min BLYP aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 9.6e-09, C1 3.4e-07, N2 7.2e-07, H3 4.5e-08, Cl4 2.6e-06
+  PySCF logged (10 values)   : 53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+  re-diagonalized, projected: 53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+  full 3N, raw              : 0.3i, 0.3i, 1.0, 1.4, 1.4, 53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+  full 3N, repaired         : 0.0i, 0.0i, 0.0, 0.1, 0.1, 53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+  repaired, projected       : 53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+global_min B97 aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 3.7e-06, C1 9.2e-06, N2 1.9e-05, H3 2.7e-05, Cl4 5.0e-06
+  PySCF logged (9 values)   : 54.7, 106.1, 404.3, 404.6, 762.0, 762.5, 2202.8, 2780.0, 3426.6
+  re-diagonalized, projected: 54.7, 54.7, 106.1, 404.6, 404.6, 762.5, 762.5, 2202.8, 2780.0, 3426.6
+  full 3N, raw              : 4.6i, 1.2i, 1.2i, 1.6, 1.6, 54.7, 54.7, 106.1, 404.6, 404.6, 762.5, 762.5, 2202.8, 2780.0, 3426.6
+  full 3N, repaired         : 0.3i, 0.3i, 0.0i, 0.0i, 0.0, 54.9, 54.9, 106.2, 404.7, 404.7, 762.5, 762.5, 2202.8, 2780.2, 3426.6
+  repaired, projected       : 54.9, 54.9, 106.2, 404.7, 404.7, 762.5, 762.5, 2202.8, 2780.2, 3426.6
+  max |raw - repaired| over the vibrations: 0.19 cm^-1
+==============================================================================================================
+global_min PBE aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.6e-08, C1 1.2e-06, N2 2.0e-06, H3 5.4e-09, Cl4 4.7e-06
+  PySCF logged (10 values)   : 50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+  re-diagonalized, projected: 50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+  full 3N, raw              : 1.8i, 1.8i, 1.3i, 0.2i, 0.2i, 50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+  full 3N, repaired         : 0.5i, 0.5i, 0.0i, 0.0, 0.0, 50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+  repaired, projected       : 50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+  max |raw - repaired| over the vibrations: 0.02 cm^-1
+==============================================================================================================
+global_min PW91 aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 3.7e-07, C1 2.0e-05, N2 3.7e-06, H3 2.9e-06, Cl4 5.3e-05
+  PySCF logged (10 values)   : 50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.3, 3367.0
+  re-diagonalized, projected: 50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.3, 3367.0
+  full 3N, raw              : 0.6, 0.6, 3.7, 6.2, 6.2, 50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.3, 3367.0
+  full 3N, repaired         : 0.5i, 0.5i, 0.0i, 0.0i, 0.0, 50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.2, 3367.0
+  repaired, projected       : 50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.2, 3367.0
+  max |raw - repaired| over the vibrations: 0.02 cm^-1
+==============================================================================================================
+global_min BP86 aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.2e-05, C1 4.6e-05, N2 7.8e-05, H3 5.4e-06, Cl4 6.0e-05
+  PySCF logged (10 values)   : 49.1, 49.1, 119.5, 449.3, 449.3, 728.1, 728.1, 2135.2, 2641.3, 3353.4
+  re-diagonalized, projected: 49.1, 49.1, 119.5, 449.3, 449.3, 728.1, 728.1, 2135.2, 2641.3, 3353.4
+  full 3N, raw              : 11.5i, 11.5i, 6.9i, 6.9i, 6.4i, 49.1, 49.1, 119.5, 449.3, 449.3, 728.1, 728.1, 2135.2, 2641.3, 3353.4
+  full 3N, repaired         : 0.0i, 0.0i, 0.0, 1.3, 1.3, 50.7, 50.7, 119.7, 449.4, 449.4, 728.2, 728.2, 2135.2, 2641.3, 3353.3
+  repaired, projected       : 50.7, 50.7, 119.7, 449.4, 449.4, 728.2, 728.2, 2135.2, 2641.3, 3353.3
+  max |raw - repaired| over the vibrations: 1.66 cm^-1
+==============================================================================================================
+global_min BLYP aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.6e-08, C1 3.3e-07, N2 1.2e-06, H3 1.0e-08, Cl4 3.0e-06
+  PySCF logged (9 values)   : 51.6, 107.8, 410.1, 411.1, 726.4, 726.6, 2129.3, 2671.0, 3357.7
+  re-diagonalized, projected: 51.6, 51.6, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7
+  full 3N, raw              : 0.7i, 0.7i, 1.1, 1.5, 1.5, 51.6, 51.6, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7
+  full 3N, repaired         : 0.0i, 0.0i, 0.0, 0.0, 0.0, 51.7, 51.7, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7
+  repaired, projected       : 51.7, 51.7, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+global_min B97 aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 4.3e-06, C1 1.4e-05, N2 6.3e-06, H3 2.4e-06, Cl4 1.2e-05
+  PySCF logged (10 values)   : 52.7, 52.7, 105.5, 401.2, 401.2, 760.1, 760.1, 2203.2, 2783.3, 3427.0
+  re-diagonalized, projected: 52.7, 52.7, 105.5, 401.2, 401.2, 760.1, 760.1, 2203.2, 2783.3, 3427.0
+  full 3N, raw              : 1.6i, 1.6i, 0.8, 2.7, 2.7, 52.7, 52.7, 105.5, 401.2, 401.2, 760.1, 760.1, 2203.2, 2783.3, 3427.0
+  full 3N, repaired         : 0.0i, 0.0, 0.0, 0.1, 0.1, 53.0, 53.0, 105.5, 401.3, 401.3, 760.2, 760.2, 2203.2, 2783.3, 3427.0
+  repaired, projected       : 53.0, 53.0, 105.5, 401.3, 401.3, 760.2, 760.2, 2203.2, 2783.3, 3427.0
+  max |raw - repaired| over the vibrations: 0.24 cm^-1
+==============================================================================================================
+local_min PBE aug-cc-pVDZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 2.0e-08, C1 2.3e-06, N2 3.8e-06, H3 6.2e-09, Cl4 8.7e-07
+  PySCF logged (9 values)   : 69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1
+  re-diagonalized, projected: 69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1
+  full 3N, raw              : 1.8i, 0.9i, 0.6i, 0.5i, 1.2, 2.0, 69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1
+  full 3N, repaired         : 0.0i, 0.0i, 0.0, 0.5, 0.5, 1.9, 69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1
+  repaired, projected       : 69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+local_min PW91 aug-cc-pVDZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 2.0e-06, C1 1.0e-05, N2 2.8e-06, H3 2.9e-06, Cl4 2.6e-06
+  PySCF logged (9 values)   : 70.6, 76.3, 89.3, 207.6, 739.3, 749.4, 2105.1, 2860.7, 3314.4
+  re-diagonalized, projected: 70.6, 76.3, 89.3, 207.6, 739.3, 749.4, 2105.1, 2860.7, 3314.4
+  full 3N, raw              : 8.1i, 2.6i, 1.7i, 0.7i, 0.6i, 1.5, 70.6, 76.3, 89.3, 207.6, 739.3, 749.4, 2105.1, 2860.7, 3314.4
+  full 3N, repaired         : 0.2i, 0.0i, 0.0i, 0.5, 0.6, 3.2, 70.6, 76.3, 89.3, 207.5, 739.3, 749.4, 2105.1, 2860.7, 3314.4
+  repaired, projected       : 70.6, 76.3, 89.3, 207.5, 739.3, 749.4, 2105.1, 2860.7, 3314.4
+  max |raw - repaired| over the vibrations: 0.07 cm^-1
+==============================================================================================================
+local_min BP86 aug-cc-pVDZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 9.1e-06, C1 4.2e-05, N2 7.6e-05, H3 4.4e-06, Cl4 5.6e-05
+  PySCF logged (9 values)   : 62.6, 69.6, 84.5, 203.3, 731.6, 740.9, 2094.3, 2846.8, 3301.2
+  re-diagonalized, projected: 62.6, 69.6, 84.5, 203.3, 731.6, 740.9, 2094.3, 2846.8, 3301.2
+  full 3N, raw              : 11.2i, 11.2i, 10.5i, 6.4i, 6.3i, 6.1i, 62.6, 69.6, 84.5, 203.3, 731.6, 740.9, 2094.3, 2846.8, 3301.2
+  full 3N, repaired         : 0.0i, 0.0i, 0.0i, 1.0, 1.0, 2.3, 63.0, 70.5, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.8, 3301.2
+  repaired, projected       : 63.0, 70.5, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.8, 3301.2
+  max |raw - repaired| over the vibrations: 0.91 cm^-1
+==============================================================================================================
+local_min BLYP aug-cc-pVDZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 7.3e-08, C1 2.5e-07, N2 2.4e-06, H3 8.9e-09, Cl4 2.3e-07
+  PySCF logged (9 values)   : 60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6
+  re-diagonalized, projected: 60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6
+  full 3N, raw              : 1.7i, 0.5i, 0.3i, 0.4, 0.9, 1.1, 60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6
+  full 3N, repaired         : 0.0i, 0.0i, 0.0i, 0.4, 0.4, 1.0, 60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6
+  repaired, projected       : 60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+local_min B97 aug-cc-pVDZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 8.3e-05, C1 1.1e-05, N2 8.5e-06, H3 1.8e-06, Cl4 7.1e-05
+  PySCF logged (9 values)   : 63.1, 68.6, 80.6, 201.9, 756.3, 764.1, 2169.5, 2909.9, 3400.1
+  re-diagonalized, projected: 63.1, 68.6, 80.6, 201.9, 756.3, 764.1, 2169.5, 2909.9, 3400.1
+  full 3N, raw              : 8.3i, 2.6i, 0.8i, 0.6, 2.7, 3.9, 63.1, 68.6, 80.6, 201.9, 756.3, 764.1, 2169.5, 2909.9, 3400.1
+  full 3N, repaired         : 3.0i, 0.3i, 0.0i, 0.0i, 0.0, 0.7, 63.2, 69.1, 80.7, 202.0, 756.4, 764.1, 2169.6, 2909.9, 3400.4
+  repaired, projected       : 63.2, 69.1, 80.7, 202.0, 756.4, 764.1, 2169.6, 2909.9, 3400.4
+  max |raw - repaired| over the vibrations: 0.49 cm^-1
+==============================================================================================================
+local_min PBE aug-cc-pVTZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 2.1e-08, C1 1.4e-06, N2 2.3e-06, H3 5.4e-09, Cl4 1.9e-06
+  PySCF logged (9 values)   : 62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3
+  re-diagonalized, projected: 62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3
+  full 3N, raw              : 2.4i, 1.4i, 1.1i, 1.0i, 0.8i, 0.7, 62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3
+  full 3N, repaired         : 2.3i, 0.3i, 0.2i, 0.0i, 0.0i, 0.0, 62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3
+  repaired, projected       : 62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+local_min PW91 aug-cc-pVTZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 3.1e-06, C1 2.7e-06, N2 1.3e-06, H3 1.1e-06, Cl4 1.1e-05
+  PySCF logged (9 values)   : 64.0, 72.6, 80.4, 200.4, 761.4, 772.0, 2118.4, 2882.0, 3312.1
+  re-diagonalized, projected: 64.0, 72.6, 80.4, 200.4, 761.4, 772.0, 2118.4, 2882.0, 3312.1
+  full 3N, raw              : 5.3i, 0.6i, 0.1, 1.0, 2.8, 2.8, 64.0, 72.6, 80.4, 200.4, 761.4, 772.0, 2118.4, 2882.0, 3312.1
+  full 3N, repaired         : 0.4i, 0.0i, 0.0, 0.1, 0.4, 1.3, 64.0, 72.6, 80.4, 200.3, 761.3, 772.0, 2118.4, 2882.0, 3312.1
+  repaired, projected       : 64.0, 72.6, 80.4, 200.3, 761.3, 772.0, 2118.4, 2882.0, 3312.1
+  max |raw - repaired| over the vibrations: 0.03 cm^-1
+==============================================================================================================
+local_min BP86 aug-cc-pVTZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 1.1e-05, C1 4.6e-05, N2 8.3e-05, H3 6.2e-06, Cl4 5.7e-05
+  PySCF logged (9 values)   : 59.2, 65.7, 78.4, 197.3, 755.7, 765.2, 2108.7, 2867.9, 3303.3
+  re-diagonalized, projected: 59.2, 65.7, 78.4, 197.3, 755.7, 765.2, 2108.7, 2867.9, 3303.3
+  full 3N, raw              : 11.8i, 11.6i, 11.5i, 6.6i, 6.4i, 6.4i, 59.2, 65.7, 78.4, 197.3, 755.7, 765.2, 2108.7, 2867.9, 3303.3
+  full 3N, repaired         : 0.0i, 0.0i, 0.0i, 1.1, 1.2, 5.5, 59.6, 66.8, 79.4, 197.7, 755.9, 765.4, 2108.7, 2867.9, 3303.3
+  repaired, projected       : 59.6, 66.8, 79.4, 197.7, 755.9, 765.4, 2108.7, 2867.9, 3303.3
+  max |raw - repaired| over the vibrations: 1.11 cm^-1
+==============================================================================================================
+local_min BLYP aug-cc-pVTZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 3.5e-07, C1 3.2e-07, N2 7.8e-07, H3 1.9e-08, Cl4 2.5e-06
+  PySCF logged (9 values)   : 56.2, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8
+  re-diagonalized, projected: 56.2, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8
+  full 3N, raw              : 0.9i, 0.8, 0.9, 1.2, 1.3, 1.8, 56.2, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8
+  full 3N, repaired         : 0.1i, 0.0i, 0.0i, 0.0, 0.1, 1.9, 56.1, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8
+  repaired, projected       : 56.1, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8
+  max |raw - repaired| over the vibrations: 0.00 cm^-1
+==============================================================================================================
+local_min B97 aug-cc-pVTZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 7.4e-05, C1 1.0e-05, N2 5.7e-06, H3 1.4e-06, Cl4 6.8e-05
+  PySCF logged (9 values)   : 56.2, 65.0, 72.0, 192.4, 780.3, 788.1, 2181.7, 2930.7, 3395.9
+  re-diagonalized, projected: 56.2, 65.0, 72.0, 192.4, 780.3, 788.1, 2181.7, 2930.7, 3395.9
+  full 3N, raw              : 1.6i, 1.3i, 0.8, 1.6, 1.7, 7.8, 56.2, 65.0, 72.0, 192.4, 780.3, 788.1, 2181.7, 2930.7, 3395.9
+  full 3N, repaired         : 0.7i, 0.5i, 0.0i, 0.0, 0.4, 1.4, 56.2, 64.5, 72.1, 192.3, 780.3, 788.1, 2181.6, 2930.7, 3395.6
+  repaired, projected       : 56.2, 64.5, 72.1, 192.3, 780.3, 788.1, 2181.6, 2930.7, 3395.6
+  max |raw - repaired| over the vibrations: 0.47 cm^-1
+==============================================================================================================
+local_min PBE aug-cc-pVQZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 2.0e-08, C1 1.2e-06, N2 3.3e-06, H3 5.9e-09, Cl4 5.0e-06
+  PySCF logged (9 values)   : 54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2
+  re-diagonalized, projected: 54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2
+  full 3N, raw              : 2.1i, 1.8i, 1.8i, 1.6i, 1.5i, 1.1i, 54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2
+  full 3N, repaired         : 2.1i, 0.0i, 0.0i, 0.0i, 0.5, 0.6, 54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2
+  repaired, projected       : 54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+local_min PW91 aug-cc-pVQZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 3.8e-06, C1 1.1e-05, N2 4.5e-06, H3 8.0e-07, Cl4 5.3e-05
+  PySCF logged (9 values)   : 54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8
+  re-diagonalized, projected: 54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8
+  full 3N, raw              : 4.5i, 1.2i, 1.1i, 3.5, 6.2, 6.2, 54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8
+  full 3N, repaired         : 0.3i, 0.1i, 0.0i, 0.0i, 0.4, 0.5, 54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8
+  repaired, projected       : 54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8
+  max |raw - repaired| over the vibrations: 0.04 cm^-1
+==============================================================================================================
+local_min BP86 aug-cc-pVQZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 1.1e-05, C1 4.6e-05, N2 8.1e-05, H3 6.5e-06, Cl4 6.0e-05
+  PySCF logged (9 values)   : 53.1, 58.7, 68.7, 193.8, 748.5, 757.3, 2108.7, 2864.0, 3297.6
+  re-diagonalized, projected: 53.1, 58.7, 68.7, 193.8, 748.5, 757.3, 2108.7, 2864.0, 3297.6
+  full 3N, raw              : 12.3i, 11.7i, 11.6i, 6.7i, 6.7i, 6.5i, 53.1, 58.7, 68.7, 193.8, 748.5, 757.3, 2108.7, 2864.0, 3297.6
+  full 3N, repaired         : 0.1i, 0.0i, 0.0i, 0.9, 1.0, 4.3, 54.3, 59.4, 69.8, 194.3, 748.6, 757.5, 2108.7, 2864.0, 3297.6
+  repaired, projected       : 54.3, 59.4, 69.8, 194.3, 748.6, 757.5, 2108.7, 2864.0, 3297.6
+  max |raw - repaired| over the vibrations: 1.15 cm^-1
+==============================================================================================================
+local_min BLYP aug-cc-pVQZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 3.1e-07, C1 2.4e-07, N2 7.7e-07, H3 1.9e-08, Cl4 3.2e-06
+  PySCF logged (9 values)   : 50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2
+  re-diagonalized, projected: 50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2
+  full 3N, raw              : 1.9i, 0.9i, 0.6i, 1.2, 1.4, 1.4, 50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2
+  full 3N, repaired         : 2.1i, 0.0i, 0.0i, 0.0, 0.2, 0.2, 50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2
+  repaired, projected       : 50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+local_min B97 aug-cc-pVQZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 1.2e-04, C1 1.8e-05, N2 1.1e-05, H3 1.3e-06, Cl4 9.1e-05
+  PySCF logged (9 values)   : 47.4, 63.2, 63.5, 190.3, 774.5, 782.0, 2182.3, 2931.0, 3389.8
+  re-diagonalized, projected: 47.4, 63.2, 63.5, 190.3, 774.5, 782.0, 2182.3, 2931.0, 3389.8
+  full 3N, raw              : 9.9i, 5.3i, 1.6i, 1.7, 2.7, 2.8, 47.4, 63.2, 63.5, 190.3, 774.5, 782.0, 2182.3, 2931.0, 3389.8
+  full 3N, repaired         : 0.5i, 0.0i, 0.0, 0.2, 0.8, 2.2, 47.5, 63.7, 64.1, 190.4, 774.6, 782.0, 2182.4, 2931.0, 3390.2
+  repaired, projected       : 47.5, 63.7, 64.1, 190.4, 774.6, 782.0, 2182.4, 2931.0, 3390.2
+  max |raw - repaired| over the vibrations: 0.59 cm^-1
+==============================================================================================================
+xlocal_min PBE aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.5e-08, C1 2.1e-06, N2 2.1e-06, H3 7.2e-09, Cl4 1.0e-06
+  PySCF logged (10 values)   : 41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+  re-diagonalized, projected: 41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+  full 3N, raw              : 0.7i, 0.7i, 0.4, 1.1, 1.1, 41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+  full 3N, repaired         : 0.3i, 0.3i, 0.0i, 0.0i, 0.0i, 41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+  repaired, projected       : 41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+  max |raw - repaired| over the vibrations: 0.01 cm^-1
+==============================================================================================================
+xlocal_min PW91 aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 2.4e-07, C1 1.4e-05, N2 2.2e-06, H3 4.0e-07, Cl4 5.9e-07
+  PySCF logged (10 values)   : 43.5, 43.5, 54.1, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+  re-diagonalized, projected: 43.5, 43.5, 54.1, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+  full 3N, raw              : 2.6i, 1.0i, 1.0i, 0.9i, 0.9i, 43.5, 43.5, 54.1, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+  full 3N, repaired         : 0.0i, 0.0, 0.0, 0.2, 0.2, 43.6, 43.6, 54.2, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+  repaired, projected       : 43.6, 43.6, 54.2, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+  max |raw - repaired| over the vibrations: 0.09 cm^-1
+==============================================================================================================
+xlocal_min BP86 aug-cc-pVDZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 9.2e-06, C1 4.1e-05, N2 7.6e-05, H3 3.7e-06, Cl4 5.6e-05
+  PySCF logged (9 values)   : 62.6, 69.7, 84.5, 203.3, 731.7, 740.9, 2094.3, 2846.8, 3301.2
+  re-diagonalized, projected: 62.6, 69.7, 84.5, 203.3, 731.7, 740.9, 2094.3, 2846.8, 3301.2
+  full 3N, raw              : 11.3i, 11.1i, 9.8i, 6.4i, 6.3i, 6.2i, 62.6, 69.7, 84.5, 203.3, 731.7, 740.9, 2094.3, 2846.8, 3301.2
+  full 3N, repaired         : 0.0i, 0.0i, 0.0i, 1.1, 1.1, 2.6, 63.0, 70.6, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.7, 3301.1
+  repaired, projected       : 63.0, 70.6, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.7, 3301.1
+  max |raw - repaired| over the vibrations: 0.92 cm^-1
+==============================================================================================================
+xlocal_min BLYP aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 6.3e-09, C1 2.9e-07, N2 2.3e-06, H3 1.1e-09, Cl4 3.4e-07
+  PySCF logged (10 values)   : 25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+  re-diagonalized, projected: 25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+  full 3N, raw              : 1.2i, 1.2i, 0.4, 0.4, 0.5, 25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+  full 3N, repaired         : 0.4i, 0.4i, 0.0i, 0.0i, 0.0, 25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+  repaired, projected       : 25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+  max |raw - repaired| over the vibrations: 0.03 cm^-1
+==============================================================================================================
+xlocal_min B97 aug-cc-pVDZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 2.0e-06, C1 1.0e-05, N2 8.8e-05, H3 2.9e-06, Cl4 1.2e-04
+  PySCF logged (9 values)   : 38.4, 45.9, 172.1, 175.2, 726.0, 726.1, 2175.9, 2921.6, 3444.3
+  re-diagonalized, projected: 38.4, 38.4, 45.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3
+  full 3N, raw              : 1.1, 1.1, 1.5, 1.5, 9.6, 38.4, 38.4, 45.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3
+  full 3N, repaired         : 0.8i, 0.8i, 0.0i, 0.0, 0.0, 38.5, 38.5, 44.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3
+  repaired, projected       : 38.5, 38.5, 44.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3
+  max |raw - repaired| over the vibrations: 1.04 cm^-1
+==============================================================================================================
+xlocal_min PBE aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.3e-08, C1 1.2e-06, N2 8.2e-07, H3 7.8e-09, Cl4 1.8e-06
+  PySCF logged (10 values)   : 22.8, 22.8, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+  re-diagonalized, projected: 22.8, 22.8, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+  full 3N, raw              : 1.0i, 1.0i, 0.7i, 1.0, 1.0, 22.8, 22.8, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+  full 3N, repaired         : 0.2i, 0.2i, 0.0, 0.0, 0.0, 22.9, 22.9, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+  repaired, projected       : 22.9, 22.9, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+  max |raw - repaired| over the vibrations: 0.00 cm^-1
+==============================================================================================================
+xlocal_min PW91 aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.0e-06, C1 4.1e-06, N2 5.2e-06, H3 3.3e-07, Cl4 2.0e-05
+  PySCF logged (10 values)   : 23.2, 23.2, 44.0, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+  re-diagonalized, projected: 23.2, 23.2, 44.0, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+  full 3N, raw              : 1.7, 1.7, 2.8, 2.8, 3.0, 23.2, 23.2, 44.0, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+  full 3N, repaired         : 0.3i, 0.3i, 0.0i, 0.0i, 0.0, 23.1, 23.1, 43.9, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+  repaired, projected       : 23.1, 23.1, 43.9, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+  max |raw - repaired| over the vibrations: 0.11 cm^-1
+==============================================================================================================
+xlocal_min BP86 aug-cc-pVTZ   non-linear (6 external modes); sum rule per atom (Eh/Bohr^2): H0 1.2e-05, C1 4.6e-05, N2 8.2e-05, H3 6.3e-06, Cl4 5.8e-05
+  PySCF logged (9 values)   : 13.3, 12.1, 11.8, 6.3, 720.3, 720.3, 2113.8, 2878.8, 3355.7
+  re-diagonalized, projected: 13.3i, 12.1i, 11.8i, 6.3i, 720.3, 720.3, 2113.8, 2878.8, 3355.7
+  full 3N, raw              : 13.4i, 13.3i, 12.0i, 12.0i, 11.5i, 11.5i, 6.4i, 6.3i, 6.3i, 6.3i, 720.3, 720.3, 2113.8, 2878.8, 3355.7
+  full 3N, repaired         : 3.3i, 3.2i, 0.2i, 0.1i, 0.0i, 0.0, 0.2, 1.0, 4.9, 5.0, 720.4, 720.4, 2113.8, 2878.7, 3355.7
+  repaired, projected       : 3.2i, 1.0, 4.0, 4.9, 720.4, 720.4, 2113.8, 2878.7, 3355.7
+  max |raw - repaired| over the vibrations: 15.80 cm^-1
+==============================================================================================================
+xlocal_min BLYP aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 8.7e-09, C1 3.6e-07, N2 7.7e-07, H3 1.2e-09, Cl4 2.6e-06
+  PySCF logged (9 values)   : 14.2, 18.1, 121.3, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+  re-diagonalized, projected: 14.2, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+  full 3N, raw              : 0.4i, 0.4i, 1.0, 1.3, 1.3, 14.2, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+  full 3N, repaired         : 0.0, 0.0, 0.0, 0.1, 0.1, 14.1, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+  repaired, projected       : 14.1, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+  max |raw - repaired| over the vibrations: 0.02 cm^-1
+==============================================================================================================
+xlocal_min B97 aug-cc-pVTZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 3.5e-06, C1 6.2e-05, N2 3.3e-04, H3 1.9e-06, Cl4 4.2e-04
+  PySCF logged (9 values)   : 21.4, 39.5, 122.6, 148.1, 752.4, 752.4, 2186.8, 2940.2, 3427.9
+  re-diagonalized, projected: 21.4, 21.4, 39.5, 148.1, 148.1, 752.4, 752.4, 2186.8, 2940.2, 3427.9
+  full 3N, raw              : 18.4i, 1.3i, 1.3i, 1.4, 1.4, 21.4, 21.4, 39.5, 148.1, 148.1, 752.4, 752.4, 2186.8, 2940.2, 3427.9
+  full 3N, repaired         : 0.8i, 0.8i, 0.0i, 0.0i, 0.0, 21.8, 21.8, 43.7, 148.2, 148.2, 752.5, 752.5, 2186.9, 2940.2, 3427.9
+  repaired, projected       : 21.8, 21.8, 43.7, 148.2, 148.2, 752.5, 752.5, 2186.9, 2940.2, 3427.9
+  max |raw - repaired| over the vibrations: 4.17 cm^-1
+==============================================================================================================
+xlocal_min PBE aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.6e-08, C1 1.2e-06, N2 2.2e-06, H3 7.1e-09, Cl4 4.6e-06
+  PySCF logged (10 values)   : 15.0, 15.0, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+  re-diagonalized, projected: 15.0, 15.0, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+  full 3N, raw              : 1.7i, 1.7i, 1.3i, 0.2i, 0.2i, 15.0, 15.0, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+  full 3N, repaired         : 0.0i, 0.0i, 0.0, 0.1, 0.1, 15.1, 15.1, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+  repaired, projected       : 15.1, 15.1, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+  max |raw - repaired| over the vibrations: 0.06 cm^-1
+==============================================================================================================
+xlocal_min PW91 aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 3.3e-07, C1 1.9e-05, N2 4.0e-06, H3 3.6e-07, Cl4 5.6e-05
+  PySCF logged (10 values)   : 15.0, 15.0, 43.3, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+  re-diagonalized, projected: 15.0, 15.0, 43.3, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+  full 3N, raw              : 0.4, 0.4, 3.7, 6.1, 6.1, 15.0, 15.0, 43.3, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+  full 3N, repaired         : 0.2i, 0.2i, 0.0i, 0.0, 0.0, 15.0, 15.0, 43.2, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+  repaired, projected       : 15.0, 15.0, 43.2, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+  max |raw - repaired| over the vibrations: 0.05 cm^-1
+==============================================================================================================
+xlocal_min BP86 aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.2e-05, C1 4.6e-05, N2 8.2e-05, H3 6.3e-06, Cl4 6.0e-05
+  PySCF logged (10 values)   : 13.8, 13.7, 9.6, 9.6, 6.3, 719.3, 719.3, 2114.2, 2874.7, 3352.9
+  re-diagonalized, projected: 13.8i, 13.7i, 9.6i, 9.6i, 6.3i, 719.3, 719.3, 2114.2, 2874.7, 3352.9
+  full 3N, raw              : 13.8i, 13.8i, 11.7i, 11.7i, 10.0i, 10.0i, 6.4i, 6.3i, 6.2i, 6.2i, 719.3, 719.3, 2114.2, 2874.7, 3352.9
+  full 3N, repaired         : 4.1i, 4.1i, 0.4i, 0.4i, 0.0i, 0.0, 0.0, 1.2, 8.4, 8.4, 719.5, 719.5, 2114.2, 2874.7, 3352.9
+  repaired, projected       : 4.1i, 4.1i, 1.2, 8.4, 8.4, 719.5, 719.5, 2114.2, 2874.7, 3352.9
+  max |raw - repaired| over the vibrations: 17.98 cm^-1
+==============================================================================================================
+xlocal_min BLYP aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 1.8e-08, C1 4.7e-07, N2 1.8e-06, H3 2.8e-08, Cl4 5.1e-06
+  PySCF logged (9 values)   : 12.2, 12.6, 118.1, 119.0, 718.3, 718.4, 2112.1, 2844.9, 3358.1
+  re-diagonalized, projected: 12.2, 12.6, 12.6, 119.0, 119.0, 718.4, 718.4, 2112.1, 2844.9, 3358.1
+  full 3N, raw              : 0.7i, 0.7i, 1.4, 1.4, 1.8, 12.2, 12.6, 12.6, 119.0, 119.0, 718.4, 718.4, 2112.1, 2844.9, 3358.1
+  full 3N, repaired         : 0.0i, 0.0, 0.0, 0.1, 0.1, 12.0, 12.6, 12.6, 119.0, 119.0, 718.4, 718.4, 2112.1, 2844.9, 3358.1
+  repaired, projected       : 12.0, 12.6, 12.6, 119.0, 119.0, 718.4, 718.4, 2112.1, 2844.9, 3358.1
+  max |raw - repaired| over the vibrations: 0.12 cm^-1
+==============================================================================================================
+xlocal_min B97 aug-cc-pVQZ   linear (5 external modes); sum rule per atom (Eh/Bohr^2): H0 4.0e-06, C1 8.8e-05, N2 4.3e-04, H3 7.3e-06, Cl4 5.0e-04
+  PySCF logged (9 values)   : 11.1, 38.3, 126.9, 146.6, 750.8, 750.9, 2187.7, 2940.5, 3428.8
+  re-diagonalized, projected: 11.1, 11.1, 38.3, 146.6, 146.6, 750.9, 750.9, 2187.7, 2940.5, 3428.8
+  full 3N, raw              : 20.8i, 1.7i, 1.7i, 2.3, 2.3, 11.1, 11.1, 38.3, 146.6, 146.6, 750.9, 750.9, 2187.7, 2940.5, 3428.8
+  full 3N, repaired         : 0.0i, 0.0, 0.0, 0.6, 0.6, 12.2, 12.2, 43.8, 146.8, 146.8, 750.9, 750.9, 2187.8, 2940.6, 3428.8
+  repaired, projected       : 12.2, 12.2, 43.8, 146.8, 146.8, 750.9, 750.9, 2187.8, 2940.6, 3428.8
+  max |raw - repaired| over the vibrations: 5.49 cm^-1
+
+PART 3: classification on the RAW and on the REPAIRED Hessian
+start      xc    basis         raw class         repaired class    repaired vibrations (cm^-1)
+global_min PBE   aug-cc-pVDZ   MINIMUM           MINIMUM           56.1, 56.1, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+global_min PW91  aug-cc-pVDZ   MINIMUM           MINIMUM           56.3, 56.3, 128.4, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+global_min BP86  aug-cc-pVDZ   MINIMUM           MINIMUM           55.6, 55.6, 123.4, 467.4, 467.4, 705.6, 705.6, 2124.3, 2604.1, 3365.0
+global_min BLYP  aug-cc-pVDZ   MINIMUM           MINIMUM           57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7
+global_min B97   aug-cc-pVDZ   MINIMUM           MINIMUM           60.9, 60.9, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5
+global_min PBE   aug-cc-pVTZ   MINIMUM           MINIMUM           52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+global_min PW91  aug-cc-pVTZ   MINIMUM           MINIMUM           52.8, 52.8, 125.6, 460.5, 460.5, 734.8, 734.8, 2145.8, 2647.3, 3366.4
+global_min BP86  aug-cc-pVTZ   MINIMUM           MINIMUM           53.6, 53.6, 121.0, 454.2, 454.2, 730.6, 730.6, 2135.6, 2640.7, 3352.5
+global_min BLYP  aug-cc-pVTZ   MINIMUM           MINIMUM           53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+global_min B97   aug-cc-pVTZ   MINIMUM           MINIMUM           54.9, 54.9, 106.2, 404.7, 404.7, 762.5, 762.5, 2202.8, 2780.2, 3426.6
+global_min PBE   aug-cc-pVQZ   MINIMUM           MINIMUM           50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+global_min PW91  aug-cc-pVQZ   MINIMUM           MINIMUM           50.3, 50.3, 124.7, 456.2, 456.2, 732.0, 732.0, 2145.4, 2647.2, 3367.0
+global_min BP86  aug-cc-pVQZ   MINIMUM           MINIMUM           50.7, 50.7, 119.7, 449.4, 449.4, 728.2, 728.2, 2135.2, 2641.3, 3353.3
+global_min BLYP  aug-cc-pVQZ   MINIMUM           MINIMUM           51.7, 51.7, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7
+global_min B97   aug-cc-pVQZ   MINIMUM           MINIMUM           53.0, 53.0, 105.5, 401.3, 401.3, 760.2, 760.2, 2203.2, 2783.3, 3427.0
+local_min  PBE   aug-cc-pVDZ   MINIMUM           MINIMUM           69.0, 74.9, 87.3, 206.1, 736.6, 746.5, 2101.6, 2862.9, 3309.1
+local_min  PW91  aug-cc-pVDZ   MINIMUM           MINIMUM           70.6, 76.3, 89.3, 207.5, 739.3, 749.4, 2105.1, 2860.7, 3314.4
+local_min  BP86  aug-cc-pVDZ   MINIMUM           MINIMUM           63.0, 70.5, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.8, 3301.2
+local_min  BLYP  aug-cc-pVDZ   MINIMUM           MINIMUM           60.6, 69.7, 83.4, 194.4, 725.1, 733.0, 2090.9, 2815.8, 3318.6
+local_min  B97   aug-cc-pVDZ   MINIMUM           MINIMUM           63.2, 69.1, 80.7, 202.0, 756.4, 764.1, 2169.6, 2909.9, 3400.4
+local_min  PBE   aug-cc-pVTZ   MINIMUM           MINIMUM           62.8, 71.5, 78.8, 198.7, 758.8, 769.1, 2113.0, 2881.3, 3305.3
+local_min  PW91  aug-cc-pVTZ   MINIMUM           MINIMUM           64.0, 72.6, 80.4, 200.3, 761.3, 772.0, 2118.4, 2882.0, 3312.1
+local_min  BP86  aug-cc-pVTZ   MINIMUM           MINIMUM           59.6, 66.8, 79.4, 197.7, 755.9, 765.4, 2108.7, 2867.9, 3303.3
+local_min  BLYP  aug-cc-pVTZ   MINIMUM           MINIMUM           56.1, 60.9, 72.8, 186.0, 749.9, 757.8, 2107.4, 2840.9, 3323.8
+local_min  B97   aug-cc-pVTZ   MINIMUM           MINIMUM           56.2, 64.5, 72.1, 192.3, 780.3, 788.1, 2181.6, 2930.7, 3395.6
+local_min  PBE   aug-cc-pVQZ   MINIMUM           MINIMUM           54.5, 69.5, 70.3, 197.2, 752.7, 762.6, 2113.4, 2878.1, 3300.2
+local_min  PW91  aug-cc-pVQZ   MINIMUM           MINIMUM           54.7, 70.3, 70.8, 198.1, 754.7, 764.8, 2118.3, 2877.9, 3306.8
+local_min  BP86  aug-cc-pVQZ   MINIMUM           MINIMUM           54.3, 59.4, 69.8, 194.3, 748.6, 757.5, 2108.7, 2864.0, 3297.6
+local_min  BLYP  aug-cc-pVQZ   MINIMUM           MINIMUM           50.7, 55.9, 64.4, 183.1, 743.4, 750.9, 2107.5, 2836.0, 3318.2
+local_min  B97   aug-cc-pVQZ   MINIMUM           MINIMUM           47.5, 63.7, 64.1, 190.4, 774.6, 782.0, 2182.4, 2931.0, 3390.2
+xlocal_min PBE   aug-cc-pVDZ   MINIMUM           MINIMUM           41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+xlocal_min PW91  aug-cc-pVDZ   MINIMUM           MINIMUM           43.6, 43.6, 54.2, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+xlocal_min BP86  aug-cc-pVDZ   MINIMUM           MINIMUM           63.0, 70.6, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.7, 3301.1
+xlocal_min BLYP  aug-cc-pVDZ   MINIMUM           MINIMUM           25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+xlocal_min B97   aug-cc-pVDZ   MINIMUM           MINIMUM           38.5, 38.5, 44.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3
+xlocal_min PBE   aug-cc-pVTZ   MINIMUM           MINIMUM           22.9, 22.9, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+xlocal_min PW91  aug-cc-pVTZ   MINIMUM           MINIMUM           23.1, 23.1, 43.9, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+xlocal_min BP86  aug-cc-pVTZ   SADDLE (order 4)  SADDLE (order 1)  3.2i, 1.0, 4.0, 4.9, 720.4, 720.4, 2113.8, 2878.7, 3355.7
+xlocal_min BLYP  aug-cc-pVTZ   MINIMUM           MINIMUM           14.1, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+xlocal_min B97   aug-cc-pVTZ   MINIMUM           MINIMUM           21.8, 21.8, 43.7, 148.2, 148.2, 752.5, 752.5, 2186.9, 2940.2, 3427.9
+xlocal_min PBE   aug-cc-pVQZ   MINIMUM           MINIMUM           15.1, 15.1, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+xlocal_min PW91  aug-cc-pVQZ   MINIMUM           MINIMUM           15.0, 15.0, 43.2, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+xlocal_min BP86  aug-cc-pVQZ   SADDLE (order 5)  SADDLE (order 2)  4.1i, 4.1i, 1.2, 8.4, 8.4, 719.5, 719.5, 2114.2, 2874.7, 3352.9
+xlocal_min BLYP  aug-cc-pVQZ   MINIMUM           MINIMUM           12.0, 12.6, 12.6, 119.0, 119.0, 718.4, 718.4, 2112.1, 2844.9, 3358.1
+xlocal_min B97   aug-cc-pVQZ   MINIMUM           MINIMUM           12.2, 12.2, 43.8, 146.8, 146.8, 750.9, 750.9, 2187.8, 2940.6, 3428.8
+
+SUMMARY
+  Hessians available: 45.  Raw Hessian: 43 minima, 2 apparent saddle points.  Repaired Hessian: 43 minima, 2 saddle points.
+  energies relative to the global_min run of the same functional/basis (kcal/mol); all nuclei classical, so directly comparable:
+    xc    basis         local_min xlocal_min   structure types (global / local / xlocal)
+    PBE   aug-cc-pVDZ       +3.44      +4.76   N...H-Cl / C-H...Cl / N...Cl-H
+    PW91  aug-cc-pVDZ       +3.58      +4.89   N...H-Cl / C-H...Cl / N...Cl-H
+    BP86  aug-cc-pVDZ       +3.35      +3.35   N...H-Cl / C-H...Cl / C-H...Cl
+    BLYP  aug-cc-pVDZ       +2.99      +4.19   N...H-Cl / C-H...Cl / N...Cl-H
+    B97   aug-cc-pVDZ       +2.90      +4.15   N...H-Cl / C-H...Cl / N...Cl-H
+    PBE   aug-cc-pVTZ       +3.22      +4.54   N...H-Cl / C-H...Cl / N...Cl-H
+    PW91  aug-cc-pVTZ       +3.31      +4.63   N...H-Cl / C-H...Cl / N...Cl-H
+    BP86  aug-cc-pVTZ       +3.12      +4.13   N...H-Cl / C-H...Cl / N...Cl-H (unbound)
+    BLYP  aug-cc-pVTZ       +2.80      +3.94   N...H-Cl / C-H...Cl / N...Cl-H
+    B97   aug-cc-pVTZ       +2.71      +3.95   N...H-Cl / C-H...Cl / N...Cl-H
+    PBE   aug-cc-pVQZ       +3.18      +4.46   N...H-Cl / C-H...Cl / N...Cl-H
+    PW91  aug-cc-pVQZ       +3.26      +4.53   N...H-Cl / C-H...Cl / N...Cl-H
+    BP86  aug-cc-pVQZ       +3.07      +4.00   N...H-Cl / C-H...Cl / N...Cl-H (unbound)
+    BLYP  aug-cc-pVQZ       +2.75      +3.84   N...H-Cl / C-H...Cl / N...Cl-H
+    B97   aug-cc-pVQZ       +2.67      +3.87   N...H-Cl / C-H...Cl / N...Cl-H
+
+PART 4: CNEO-DFT minus DFT, same functional, basis and start, for the runs with a Hessian in both sets
+  Frequencies from the repaired Hessians, same masses (H 1.008) on both sides so the shift is the method alone;
+  modes matched by rank after sorting.  Geometry shifts in Angstrom (CNEO - DFT).
+==============================================================================================================
+global_min PBE aug-cc-pVDZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 56.1, 56.1, 124.8, 468.6, 468.6, 708.3, 708.3, 2131.6, 2622.4, 3374.9
+  CNEO vibrations: 56.4, 56.4, 137.5, 508.6, 508.6, 692.3, 692.3, 2125.6, 2452.6, 3241.7
+  CNEO - DFT     : +0.3, +0.3, +12.7, +39.9, +39.9, -16.1, -16.1, -6.0, -169.8, -133.2
+  CNEO - DFT geometry: d(C-H) +0.0219  d(C-N) -0.0000  d(H-Cl) +0.0297  d(N..H) -0.0694  d(N..Cl) -0.0397  d(H0..Cl) -0.0179
+  CNEO - DFT energy (Eh): +0.075430   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min PW91 aug-cc-pVDZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 56.3, 56.3, 128.4, 477.8, 477.8, 710.1, 710.1, 2136.0, 2610.1, 3383.1
+  CNEO vibrations: 56.5, 56.5, 141.8, 517.3, 517.3, 694.3, 694.3, 2130.1, 2440.8, 3249.4
+  CNEO - DFT     : +0.2, +0.2, +13.4, +39.5, +39.5, -15.8, -15.8, -5.9, -169.3, -133.7
+  CNEO - DFT geometry: d(C-H) +0.0219  d(C-N) -0.0000  d(H-Cl) +0.0299  d(N..H) -0.0676  d(N..Cl) -0.0378  d(H0..Cl) -0.0159
+  CNEO - DFT energy (Eh): +0.075529   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min BP86 aug-cc-pVDZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 55.6, 55.6, 123.4, 467.4, 467.4, 705.6, 705.6, 2124.3, 2604.1, 3365.0
+  CNEO vibrations: 56.0, 56.0, 137.0, 507.5, 507.5, 689.8, 689.8, 2118.3, 2436.4, 3232.8
+  CNEO - DFT     : +0.4, +0.4, +13.6, +40.2, +40.2, -15.8, -15.8, -6.0, -167.6, -132.1
+  CNEO - DFT geometry: d(C-H) +0.0219  d(C-N) -0.0000  d(H-Cl) +0.0298  d(N..H) -0.0696  d(N..Cl) -0.0397  d(H0..Cl) -0.0178
+  CNEO - DFT energy (Eh): +0.075352   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min BLYP aug-cc-pVDZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 57.6, 57.6, 111.0, 432.0, 432.0, 700.8, 700.8, 2115.7, 2631.8, 3366.7
+  CNEO vibrations: 58.6, 58.6, 122.5, 469.3, 469.3, 686.4, 686.4, 2109.6, 2472.8, 3233.7
+  CNEO - DFT     : +1.0, +1.0, +11.5, +37.3, +37.3, -14.4, -14.4, -6.1, -159.0, -132.9
+  CNEO - DFT geometry: d(C-H) +0.0219  d(C-N) +0.0001  d(H-Cl) +0.0288  d(N..H) -0.0705  d(N..Cl) -0.0418  d(H0..Cl) -0.0198
+  CNEO - DFT energy (Eh): +0.076080   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min B97 aug-cc-pVDZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 60.9, 60.9, 108.6, 418.0, 418.0, 736.5, 736.5, 2193.1, 2752.6, 3443.5
+  CNEO vibrations: 62.5, 62.5, 114.5, 459.5, 459.5, 719.7, 719.7, 2186.5, 2589.5, 3310.1
+  CNEO - DFT     : +1.6, +1.6, +5.9, +41.5, +41.5, -16.8, -16.8, -6.6, -163.1, -133.3
+  CNEO - DFT geometry: d(C-H) +0.0217  d(C-N) +0.0000  d(H-Cl) +0.0281  d(N..H) -0.0773  d(N..Cl) -0.0492  d(H0..Cl) -0.0275
+  CNEO - DFT energy (Eh): +0.075970   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min PBE aug-cc-pVTZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 52.9, 52.9, 122.2, 453.4, 453.4, 733.2, 733.2, 2140.0, 2654.1, 3357.3
+  CNEO vibrations: 54.4, 54.4, 136.8, 501.6, 501.6, 711.0, 711.0, 2134.0, 2462.1, 3216.6
+  CNEO - DFT     : +1.5, +1.5, +14.6, +48.2, +48.2, -22.2, -22.2, -6.0, -192.0, -140.7
+  CNEO - DFT geometry: d(C-H) +0.0249  d(C-N) -0.0001  d(H-Cl) +0.0340  d(N..H) -0.0830  d(N..Cl) -0.0490  d(H0..Cl) -0.0242
+  CNEO - DFT energy (Eh): +0.078339   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min PW91 aug-cc-pVTZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 52.8, 52.8, 125.6, 460.5, 460.5, 734.8, 734.8, 2145.8, 2647.3, 3366.4
+  CNEO vibrations: 54.6, 54.6, 140.6, 508.4, 508.4, 712.9, 712.9, 2139.7, 2456.7, 3224.2
+  CNEO - DFT     : +1.7, +1.7, +14.9, +48.0, +48.0, -22.0, -22.0, -6.0, -190.6, -142.2
+  CNEO - DFT geometry: d(C-H) +0.0250  d(C-N) -0.0001  d(H-Cl) +0.0342  d(N..H) -0.0805  d(N..Cl) -0.0464  d(H0..Cl) -0.0215
+  CNEO - DFT energy (Eh): +0.078486   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min BP86 aug-cc-pVTZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 53.6, 53.6, 121.0, 454.2, 454.2, 730.6, 730.6, 2135.6, 2640.7, 3352.5
+  CNEO vibrations: 55.2, 55.2, 136.0, 501.0, 501.0, 708.9, 708.9, 2129.5, 2453.2, 3211.9
+  CNEO - DFT     : +1.6, +1.6, +15.0, +46.8, +46.8, -21.8, -21.8, -6.1, -187.5, -140.7
+  CNEO - DFT geometry: d(C-H) +0.0250  d(C-N) -0.0001  d(H-Cl) +0.0340  d(N..H) -0.0816  d(N..Cl) -0.0476  d(H0..Cl) -0.0227
+  CNEO - DFT energy (Eh): +0.078373   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min BLYP aug-cc-pVTZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 53.8, 53.8, 108.8, 414.9, 414.9, 729.0, 729.0, 2129.5, 2672.7, 3356.9
+  CNEO vibrations: 56.4, 56.4, 120.6, 457.1, 457.1, 707.4, 707.4, 2123.2, 2497.2, 3215.4
+  CNEO - DFT     : +2.5, +2.5, +11.8, +42.3, +42.3, -21.5, -21.5, -6.3, -175.5, -141.5
+  CNEO - DFT geometry: d(C-H) +0.0251  d(C-N) -0.0000  d(H-Cl) +0.0326  d(N..H) -0.0807  d(N..Cl) -0.0482  d(H0..Cl) -0.0231
+  CNEO - DFT energy (Eh): +0.079576   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min B97 aug-cc-pVTZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 54.9, 54.9, 106.2, 404.7, 404.7, 762.5, 762.5, 2202.8, 2780.2, 3426.6
+  CNEO vibrations: 58.2, 58.2, 116.7, 454.2, 454.2, 739.2, 739.2, 2195.9, 2596.7, 3285.9
+  CNEO - DFT     : +3.4, +3.4, +10.5, +49.5, +49.5, -23.3, -23.3, -6.9, -183.5, -140.6
+  CNEO - DFT geometry: d(C-H) +0.0247  d(C-N) -0.0000  d(H-Cl) +0.0322  d(N..H) -0.0921  d(N..Cl) -0.0599  d(H0..Cl) -0.0352
+  CNEO - DFT energy (Eh): +0.078993   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min PBE aug-cc-pVQZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 50.5, 50.5, 121.6, 449.8, 449.8, 730.5, 730.5, 2140.1, 2655.0, 3358.5
+  CNEO vibrations: 51.5, 51.5, 134.8, 493.9, 493.9, 708.4, 708.4, 2134.0, 2468.7, 3222.2
+  CNEO - DFT     : +1.0, +1.0, +13.2, +44.1, +44.1, -22.1, -22.1, -6.1, -186.4, -136.2
+  CNEO - DFT geometry: d(C-H) +0.0250  d(C-N) -0.0001  d(H-Cl) +0.0336  d(N..H) -0.0794  d(N..Cl) -0.0458  d(H0..Cl) -0.0208
+  CNEO - DFT energy (Eh): +0.078125   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+global_min BLYP aug-cc-pVQZ   DFT structure N...H-Cl, CNEO structure N...H-Cl
+  DFT  vibrations: 51.7, 51.7, 107.8, 411.1, 411.1, 726.6, 726.6, 2129.3, 2671.0, 3357.7
+  CNEO vibrations: 53.8, 53.8, 119.4, 450.9, 450.9, 705.0, 705.0, 2122.9, 2499.9, 3219.6
+  CNEO - DFT     : +2.1, +2.1, +11.5, +39.8, +39.8, -21.6, -21.6, -6.4, -171.2, -138.1
+  CNEO - DFT geometry: d(C-H) +0.0252  d(C-N) +0.0000  d(H-Cl) +0.0324  d(N..H) -0.0791  d(N..Cl) -0.0466  d(H0..Cl) -0.0214
+  CNEO - DFT energy (Eh): +0.079479   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min PBE aug-cc-pVDZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 41.0, 41.0, 51.9, 187.1, 187.1, 698.6, 698.6, 2110.1, 2873.4, 3374.6
+  CNEO vibrations: 30.3, 30.3, 46.9, 169.2, 169.2, 682.2, 682.2, 2100.6, 2773.4, 3243.9
+  CNEO - DFT     : -10.7, -10.7, -5.0, -17.9, -17.9, -16.4, -16.4, -9.5, -100.0, -130.7
+  CNEO - DFT geometry: d(C-H) +0.0214  d(C-N) +0.0006  d(H-Cl) +0.0219  d(N..H) +0.0676  d(N..Cl) +0.0457  d(H0..Cl) +0.0677
+  CNEO - DFT energy (Eh): +0.077023   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min PW91 aug-cc-pVDZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 43.6, 43.6, 54.2, 192.0, 192.0, 699.8, 699.8, 2114.0, 2871.0, 3383.0
+  CNEO vibrations: 32.8, 32.8, 49.5, 173.7, 173.7, 683.7, 683.7, 2104.6, 2771.6, 3252.0
+  CNEO - DFT     : -10.8, -10.8, -4.7, -18.3, -18.3, -16.1, -16.1, -9.4, -99.3, -130.9
+  CNEO - DFT geometry: d(C-H) +0.0214  d(C-N) +0.0006  d(H-Cl) +0.0219  d(N..H) +0.0662  d(N..Cl) +0.0443  d(H0..Cl) +0.0662
+  CNEO - DFT energy (Eh): +0.077167   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min BP86 aug-cc-pVDZ   DFT structure C-H...Cl, CNEO structure N...Cl-H (unbound)
+  DFT  vibrations: 63.0, 70.6, 85.3, 203.6, 731.8, 741.1, 2094.3, 2846.7, 3301.1
+  CNEO vibrations: 9.0i, 6.4i, 6.1i, 1.2, 678.7, 678.7, 2091.4, 2758.3, 3234.3
+  CNEO - DFT     : -72.0, -77.0, -91.4, -202.4, -53.1, -62.4, -3.0, -88.4, -66.8
+  CNEO - DFT geometry: d(C-H) +0.0174  d(C-N) +0.0004  d(H-Cl) +0.0211  d(N..H) +7.7423  d(N..Cl) +6.7896  d(H0..Cl) +11.1849
+  CNEO - DFT energy (Eh): +0.078505   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min BLYP aug-cc-pVDZ   DFT structure N...Cl-H, CNEO structure N...Cl-H (unbound)
+  DFT  vibrations: 25.7, 35.0, 35.0, 158.2, 158.2, 690.4, 690.4, 2096.3, 2825.8, 3366.3
+  CNEO vibrations: 10.0i, 6.8i, 5.5i, 1.3, 674.6, 674.6, 2085.8, 2725.5, 3235.0
+  (different numbers of vibrations: one structure is linear and the other is not; no mode-by-mode shift)
+  CNEO - DFT geometry: d(C-H) +0.0217  d(C-N) +0.0007  d(H-Cl) +0.0225  d(N..H) +7.4997  d(N..Cl) +7.4958  d(H0..Cl) +7.4277
+  CNEO - DFT energy (Eh): +0.077166   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min B97 aug-cc-pVDZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 38.5, 38.5, 44.9, 175.2, 175.2, 726.1, 726.1, 2175.9, 2921.6, 3444.3
+  CNEO vibrations: 25.9, 25.9, 37.7, 156.1, 156.1, 707.9, 707.9, 2166.1, 2825.0, 3313.5
+  CNEO - DFT     : -12.6, -12.6, -7.2, -19.1, -19.1, -18.2, -18.2, -9.8, -96.6, -130.9
+  CNEO - DFT geometry: d(C-H) +0.0213  d(C-N) +0.0006  d(H-Cl) +0.0220  d(N..H) +0.0867  d(N..Cl) +0.0647  d(H0..Cl) +0.0866
+  CNEO - DFT energy (Eh): +0.077384   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min PBE aug-cc-pVTZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 22.9, 22.9, 44.0, 159.0, 159.0, 723.9, 723.9, 2120.2, 2890.0, 3356.7
+  CNEO vibrations: 24.0, 24.0, 41.6, 150.6, 150.6, 701.0, 701.0, 2110.5, 2773.5, 3218.7
+  CNEO - DFT     : +1.1, +1.1, -2.3, -8.4, -8.4, -22.9, -22.9, -9.6, -116.5, -138.0
+  CNEO - DFT geometry: d(C-H) +0.0245  d(C-N) +0.0005  d(H-Cl) +0.0255  d(N..H) +0.0589  d(N..Cl) +0.0334  d(H0..Cl) +0.0583
+  CNEO - DFT energy (Eh): +0.079996   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min PW91 aug-cc-pVTZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 23.1, 23.1, 43.9, 160.3, 160.3, 725.4, 725.4, 2125.7, 2891.0, 3366.2
+  CNEO vibrations: 25.2, 25.2, 42.0, 152.1, 152.1, 702.6, 702.6, 2116.2, 2775.1, 3226.8
+  CNEO - DFT     : +2.1, +2.1, -1.9, -8.3, -8.3, -22.8, -22.8, -9.6, -115.9, -139.4
+  CNEO - DFT geometry: d(C-H) +0.0245  d(C-N) +0.0005  d(H-Cl) +0.0256  d(N..H) +0.0583  d(N..Cl) +0.0328  d(H0..Cl) +0.0578
+  CNEO - DFT energy (Eh): +0.080189   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min BP86 aug-cc-pVTZ   DFT structure N...Cl-H (unbound), CNEO structure N...Cl-H (unbound)
+  DFT  vibrations: 3.2i, 1.0, 4.0, 4.9, 720.4, 720.4, 2113.8, 2878.7, 3355.7
+  CNEO vibrations: 6.6i, 6.5i, 1.1, 4.6, 4.8, 697.7, 697.7, 2104.5, 2760.5, 3216.2
+  (different numbers of vibrations: one structure is linear and the other is not; no mode-by-mode shift)
+  CNEO - DFT geometry: d(C-H) +0.0246  d(C-N) +0.0005  d(H-Cl) +0.0260  d(N..H) +0.1981  d(N..Cl) +0.1721  d(H0..Cl) +0.1981
+  CNEO - DFT energy (Eh): +0.079904   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min BLYP aug-cc-pVTZ   DFT structure N...Cl-H, CNEO structure N...Cl-H (unbound)
+  DFT  vibrations: 14.1, 18.1, 18.1, 122.8, 122.8, 719.3, 719.3, 2111.9, 2849.9, 3357.3
+  CNEO vibrations: 9.6i, 7.5i, 6.8i, 0.9, 696.3, 696.3, 2101.6, 2732.5, 3220.3
+  (different numbers of vibrations: one structure is linear and the other is not; no mode-by-mode shift)
+  CNEO - DFT geometry: d(C-H) +0.0245  d(C-N) +0.0006  d(H-Cl) +0.0262  d(N..H) +9.3558  d(N..Cl) +9.3717  d(H0..Cl) +9.2694
+  CNEO - DFT energy (Eh): +0.080640   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min B97 aug-cc-pVTZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 21.8, 21.8, 43.7, 148.2, 148.2, 752.5, 752.5, 2186.9, 2940.2, 3427.9
+  CNEO vibrations: 21.7, 21.7, 42.8, 139.5, 139.5, 728.0, 728.0, 2176.8, 2826.3, 3289.8
+  CNEO - DFT     : -0.1, -0.1, -0.9, -8.7, -8.7, -24.5, -24.5, -10.1, -113.9, -138.1
+  CNEO - DFT geometry: d(C-H) +0.0243  d(C-N) +0.0005  d(H-Cl) +0.0255  d(N..H) +0.0702  d(N..Cl) +0.0447  d(H0..Cl) +0.0695
+  CNEO - DFT energy (Eh): +0.080430   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min PBE aug-cc-pVQZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 15.1, 15.1, 43.2, 157.9, 157.9, 722.5, 722.5, 2120.6, 2886.6, 3358.4
+  CNEO vibrations: 11.8, 11.8, 40.7, 148.2, 148.2, 699.4, 699.4, 2111.0, 2774.2, 3224.8
+  CNEO - DFT     : -3.2, -3.2, -2.5, -9.6, -9.6, -23.1, -23.1, -9.6, -112.4, -133.6
+  CNEO - DFT geometry: d(C-H) +0.0246  d(C-N) +0.0005  d(H-Cl) +0.0255  d(N..H) +0.0604  d(N..Cl) +0.0349  d(H0..Cl) +0.0600
+  CNEO - DFT energy (Eh): +0.079718   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min PW91 aug-cc-pVQZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 15.0, 15.0, 43.2, 159.6, 159.6, 723.7, 723.7, 2125.7, 2886.6, 3367.3
+  CNEO vibrations: 13.3, 13.3, 41.2, 149.9, 149.9, 700.8, 700.8, 2116.1, 2774.3, 3232.5
+  CNEO - DFT     : -1.7, -1.7, -2.0, -9.8, -9.8, -22.9, -22.9, -9.6, -112.3, -134.8
+  CNEO - DFT geometry: d(C-H) +0.0246  d(C-N) +0.0005  d(H-Cl) +0.0256  d(N..H) +0.0613  d(N..Cl) +0.0357  d(H0..Cl) +0.0608
+  CNEO - DFT energy (Eh): +0.079966   (includes the protons' zero-point-like energy; not a binding-energy shift)
+==============================================================================================================
+xlocal_min B97 aug-cc-pVQZ   DFT structure N...Cl-H, CNEO structure N...Cl-H
+  DFT  vibrations: 12.2, 12.2, 43.8, 146.8, 146.8, 750.9, 750.9, 2187.8, 2940.6, 3428.8
+  CNEO vibrations: 7.2, 7.2, 34.9, 137.1, 137.1, 726.4, 726.4, 2177.4, 2828.9, 3293.4
+  CNEO - DFT     : -5.0, -5.0, -8.9, -9.7, -9.7, -24.5, -24.5, -10.4, -111.6, -135.3
+  CNEO - DFT geometry: d(C-H) +0.0245  d(C-N) +0.0005  d(H-Cl) +0.0255  d(N..H) +0.0733  d(N..Cl) +0.0478  d(H0..Cl) +0.0728
+  CNEO - DFT energy (Eh): +0.080235   (includes the protons' zero-point-like energy; not a binding-energy shift)

@@ -234,6 +234,31 @@ harmonic CNEO frequencies against harmonic DFT frequencies, i.e. the
 quantum-proton correction to the harmonic picture, not an anharmonic
 correction to the DFT value.
 
+Results of the original DFT HCN···HCl runs (`hcn_hcl_dft/february_analysis/`,
+45 cases, one rerun):
+
+- All 45 optimizations converged and all 45 Hessians finished. The 43
+  bound complexes are minima raw and repaired: 15 linear N···H–Cl, 15 bent
+  C–H···Cl and 13 linear halogen-bonded N···Cl–H (PBE, PW91, BLYP, B97;
+  BLYP binds it weakly, N···Cl 3.59–3.85 Å with intermolecular modes of
+  12–35 cm⁻¹). BP86 found no bound halogen complex: the monomers separated
+  at aVTZ and aVQZ and the aVDZ run collapsed to the bent minimum, as in
+  the CNEO runs, where BLYP failed too. The bent isomer lies 2.7–3.6
+  kcal/mol and the halogen-bonded isomer 3.8–4.9 kcal/mol above the linear
+  hydrogen-bonded one.
+- With 200 radial shells the chlorine violation was 2×10⁻⁷ to 5×10⁻⁴
+  Eh/Bohr² (0.02–0.4 at level 3 in the CNEO logs) and the repair changed no
+  vibration of a bound complex by more than 6 cm⁻¹ (median 0.06). The rotor
+  bug affected 29 of the 45 logged lists.
+- CNEO-DFT minus DFT for the 12 linear hydrogen-bonded pairs: H–Cl stretch
+  −159 to −192 cm⁻¹, C–H stretch −132 to −142, H–Cl libration pair +37 to
+  +50, HCN bend pair −14 to −23, intermolecular stretch +6 to +15; N···H
+  shorter by 0.068–0.092 Å, H–Cl longer by 0.028–0.034 Å. For the nine
+  halogen-bonded pairs (PBE, PW91, B97): H–Cl stretch −97 to −117, C–H
+  −131 to −139, every intermolecular mode lower by 1–19 cm⁻¹ and N···Cl
+  longer by 0.033–0.065 Å. The quantum protons strengthen the hydrogen bond
+  and weaken the halogen bond.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works

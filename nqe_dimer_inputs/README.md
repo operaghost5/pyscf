@@ -83,6 +83,16 @@ protocol and its provenance.
   below 3e-4 Eh/Bohr², yet the softest bent-complex mode moved by up to
   26 cm⁻¹ under the repair), plus CNEO-DFT minus DFT shifts for the ten
   runs with Hessians in both sets. See `hcn_hf_dft/README.md`.
+- `hcn_hcl_dft/` — HCN···HCl with conventional DFT. The 45 linear, bent and
+  halogen-bonded starts re-optimized from the February 2026 DFT geometries
+  (the three BP86 halogen-bonded starts substituted by the PBE geometry,
+  as in `hcn_hcl/`) with every setting of `hcn_hcl/` applied to `dft.RKS`,
+  isotope-averaged atomic masses, the sum-rule check and repair, and the
+  grid in the summary. `hcn_hcl_dft/february_analysis/`: all 43 bound
+  February DFT complexes are minima; BLYP binds the halogen-bonded isomer
+  here but BP86 does not; CNEO-DFT minus DFT shifts show the quantum
+  protons strengthening the hydrogen bond and weakening the halogen bond.
+  See `hcn_hcl_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),
