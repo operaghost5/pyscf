@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ global_min E=-921.241276782 Eh optimizer converged in 13 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.58895935      0.12209354      0.00000000
+Cl      -1.81598517      0.05619632      0.00000000
+H       -1.84441362     -1.24693775     -0.00000000
+Cl       1.89738591      0.01881956     -0.00000000
+4
+PW91/aug-cc-pVDZ global_min E=-921.595716694 Eh optimizer converged in 13 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.57872252      0.12055945     -0.00000000
+Cl      -1.80619408      0.05812042      0.00000000
+H       -1.83353441     -1.24434096     -0.00000000
+Cl       1.88687485      0.01582545     -0.00000000
+4
+BP86/aug-cc-pVDZ global_min E=-921.712846409 Eh optimizer converged in 14 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.59878140      0.11929964      0.00000000
+Cl      -1.82061172      0.05422168     -0.00000000
+H       -1.86213785     -1.25020637      0.00000000
+Cl       1.90994271      0.02685747      0.00000000
+4
+BLYP/aug-cc-pVDZ global_min E=-921.610600230 Eh optimizer converged in 16 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.67355214      0.12035908      0.00000000
+Cl      -1.87580231      0.03703498      0.00000000
+H       -1.95670695     -1.26700621     -0.00000000
+Cl       1.98492479      0.05978960     -0.00000000
+4
+B97/aug-cc-pVDZ global_min E=-921.504536238 Eh optimizer converged in 14 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.67522425      0.14463266     -0.00000000
+Cl      -1.88859361      0.03329510     -0.00000000
+H       -1.93417952     -1.26382536      0.00000000
+Cl       1.97326321      0.03602036     -0.00000000
+4
+PBE/aug-cc-pVTZ global_min E=-921.273481424 Eh optimizer converged in 13 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.60073362      0.12784524     -0.00000000
+Cl      -1.83140839      0.05063577     -0.00000000
+H       -1.84028960     -1.24243576      0.00000000
+Cl       1.89691189      0.01412586      0.00000000
+4
+PW91/aug-cc-pVTZ global_min E=-921.629200884 Eh optimizer converged in 14 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.59109139      0.12630438     -0.00000000
+Cl      -1.82252115      0.05239475     -0.00000000
+H       -1.82906607     -1.23962778     -0.00000000
+Cl       1.88651536      0.01108876     -0.00000000
+4
+BP86/aug-cc-pVTZ global_min E=-921.745960206 Eh optimizer converged in 16 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.61112015      0.12430696      0.00000000
+Cl      -1.83624252      0.04840330      0.00000000
+H       -1.85834802     -1.24536682      0.00000000
+Cl       1.90943987      0.02282012     -0.00000000
+4
+BLYP/aug-cc-pVTZ global_min E=-921.645386787 Eh optimizer converged in 15 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.68795325      0.12864985      0.00000000
+Cl      -1.89557659      0.03091077     -0.00000000
+H       -1.95205809     -1.26253310      0.00000000
+Cl       1.98564741      0.05315041      0.00000000
+4
+B97/aug-cc-pVTZ global_min E=-921.535731480 Eh optimizer converged in 14 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.68827882      0.15233448     -0.00000000
+Cl      -1.90392701      0.02710927     -0.00000000
+H       -1.93142420     -1.25963549     -0.00000000
+Cl       1.97358652      0.03031929      0.00000000
+4
+PBE/aug-cc-pVQZ global_min E=-921.281103039 Eh optimizer converged in 13 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.60314802      0.12929287     -0.00000000
+Cl      -1.83466976      0.04965173     -0.00000000
+H       -1.84004629     -1.24195516      0.00000000
+Cl       1.89751904      0.01318465      0.00000000
+4
+PW91/aug-cc-pVQZ global_min E=-921.636981538 Eh optimizer converged in 14 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.59419325      0.12723903     -0.00000000
+Cl      -1.82573655      0.05121980     -0.00000000
+H       -1.83037836     -1.23932638      0.00000000
+Cl       1.88793279      0.01102652      0.00000000
+4
+BP86/aug-cc-pVQZ global_min E=-921.753751870 Eh optimizer converged in 14 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.61629372      0.12399940     -0.00000000
+Cl      -1.84056474      0.04681448     -0.00000000
+H       -1.86292920     -1.24542847      0.00000000
+Cl       1.91312291      0.02474948     -0.00000000
+4
+BLYP/aug-cc-pVQZ global_min E=-921.653307593 Eh optimizer converged in 15 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.69233995      0.13054453      0.00000000
+Cl      -1.90045963      0.02945406      0.00000000
+H       -1.95408823     -1.26252910     -0.00000000
+Cl       1.98817345      0.05270953      0.00000000
+4
+B97/aug-cc-pVQZ global_min E=-921.543477077 Eh optimizer converged in 15 steps; hydrogens/chlorines reordered so that H0-Cl3 donates to Cl1 (April 2026 conventional-DFT run, Angstrom start read as Bohr)
+H        0.69192938      0.15464393      0.00000000
+Cl      -1.90882487      0.02552253      0.00000000
+H       -1.93211411     -1.25920137      0.00000000
+Cl       1.97465868      0.02910276     -0.00000000
+4
+PBE/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.3034 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.08716227      0.99849613      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.08716227     -0.99849613     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.3027 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.08760953      0.99796310      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.08760953     -0.99796310     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.3051 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.08610504      0.99975608      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.08610504     -0.99975608     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.3065 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.08516681      1.00087422      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.08516681     -1.00087422     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVDZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2979 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09071230      0.99426536      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09071230     -0.99426536     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2931 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09381004      0.99057363      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09381004     -0.99057363     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2920 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09449327      0.98975938      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09449327     -0.98975938     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2940 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09325921      0.99123007      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09325921     -0.99123007     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2947 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09279800      0.99177973      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09279800     -0.99177973     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVTZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2870 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09770758      0.98592872      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09770758     -0.98592872     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+PBE/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2916 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09476390      0.98943686      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09476390     -0.98943686     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+PW91/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2906 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09544754      0.98862213      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09544754     -0.98862213     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+BP86/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2924 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09423786      0.99006377      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09423786     -0.99006377     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+BLYP/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2931 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09381410      0.99056878      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09381410     -0.99056878     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000
+4
+B97/aug-cc-pVQZ c2h_saddle E=n/a Eh constructed C2h interchange-saddle start: Cl..Cl 3.85 A, r(H-Cl) 1.2849 A from the April DFT acceptor bond, tilt 50 deg, exact inversion symmetry
+H       -1.09905972      0.98431730      0.00000000
+Cl       1.92500000     -0.00000000     -0.00000000
+H        1.09905972     -0.98431730     -0.00000000
+Cl      -1.92500000      0.00000000      0.00000000

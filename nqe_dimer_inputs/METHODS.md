@@ -373,6 +373,28 @@ April 2026, 30 runs):
   stretch −100 to −124, H–Cl stretch −2 to −3, intermolecular modes up to
   +34, H–Br longer by 0.025–0.030 Å, H···Cl shorter by 0.056–0.079 Å.
 
+Results of the original DFT (HCl)₂ runs (`hcl_hcl_dft/april_analysis/`,
+April 2026, 30 runs):
+
+- The 15 global-minimum runs converged (13–16 steps) and all 15 Hessians
+  finished (11–13 CPHF iterations); all 15 are minima raw and repaired. The
+  15 local-minimum runs died on the undefined `DNE` geometry, as in the CNEO
+  set. Bent C_s structure: Cl···Cl 3.69–3.89 Å, H···Cl 2.39–2.60 Å,
+  Cl–H···Cl 172–176°, acceptor tilt 92–95°; the donor was H2 in the April
+  logs and the extractor moves it to H0.
+- With 200 radial shells the chlorine violation stayed below 10⁻⁴ Eh/Bohr²
+  and the repair moved no vibration by more than 0.6 cm⁻¹ (the April CNEO
+  Hessians at level 3 carried 0.07–0.42 and showed spurious 206i–555i
+  modes).
+- CNEO-DFT minus DFT (the April CNEO runs had only the acceptor proton
+  quantum): acceptor H–Cl stretch −103 to −119 cm⁻¹ where the two stretches
+  stay separated (PBE, PW91, BP86); for BLYP and B97 the lowered acceptor
+  stretch crosses the donor stretch and rank matching splits a total shift
+  of 108–125 cm⁻¹ over both. The donor stretch (classical in both) moves by
+  −8 to −10, the intermolecular modes by −2 to +8; H···Cl shortens by only
+  0.010–0.015 Å. A quantum acceptor proton hardly touches the hydrogen
+  bond, as in HF/HCl.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works

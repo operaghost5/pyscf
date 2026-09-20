@@ -141,6 +141,15 @@ protocol and its provenance.
   bromine defect is repaired; Cl–H···Br–H lower by 0.24 to 0.37 kcal/mol
   with all nuclei classical; CNEO-DFT minus DFT shifts with the quantum
   proton of each CNEO run noted. See `hcl_hbr_dft/README.md`.
+- `hcl_hcl_dft/` — (HCl)₂ with conventional DFT. The bent C_s minimum
+  re-optimized from the 15 April 2026 DFT geometries (donor moved to H0)
+  plus the constructed C₂h interchange-saddle start, with every setting of
+  `hcl_hcl/` applied to `dft.RKS` (400 radial shells on chlorine included),
+  isotope-averaged atomic masses, the sum-rule check and repair, and the
+  grid in the summary. `hcl_hcl_dft/april_analysis/`: all 15 April DFT
+  minima confirmed (the 15 local-minimum runs died on the undefined
+  geometry); CNEO-DFT minus DFT shifts show the quantum acceptor proton
+  barely touching the hydrogen bond. See `hcl_hcl_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),
