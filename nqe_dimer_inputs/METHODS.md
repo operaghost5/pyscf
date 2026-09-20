@@ -304,6 +304,29 @@ Results of the original DFT (HF)₂ runs (`hf_hf_dft/april_analysis/`, April
   +38; donor H–F longer by 0.023–0.025 Å, H···F shorter by 0.034–0.046 Å,
   F···F shorter by 0.010–0.022 Å.
 
+Results of the original DFT HF/HBr runs (`hf_hbr_dft/april_analysis/`, April
+2026, 30 runs):
+
+- All 30 optimizations converged (7–17 steps) and all 30 Hessians finished
+  (12–14 CPHF iterations); all 30 are minima raw and repaired. With every
+  nucleus classical the isomer energies are directly comparable, which the
+  April CNEO energies were not: F–H···Br–H lies below Br–H···F–H by
+  0.96–1.10 (PBE, PW91, BP86), 0.86–0.90 (BLYP) and 0.62–0.69 (B97)
+  kcal/mol. Geometries: HF-donor H···Br 2.36–2.50 Å, tilt 91–92°;
+  HBr-donor H···F 2.02–2.20 Å, tilt 110–119°.
+- The bromine violation was 4×10⁻⁶ to 10⁻⁴ Eh/Bohr² at aVDZ but 5×10⁻³ to
+  2.7×10⁻² at aVTZ and aVQZ with 200 radial shells; the repair moved the
+  intermolecular modes by up to 12 cm⁻¹ (median 6) without producing any
+  spurious imaginary mode, the softest mode (63 cm⁻¹) being stiffer than in
+  HCN···HBr.
+- CNEO-DFT minus DFT (each isomer's donor proton quantum in the April CNEO
+  runs): HF-donor isomer, H–F stretch −203 to −234 cm⁻¹, H–Br stretch (a
+  classical proton in both) within 1.5 cm⁻¹, intermolecular modes +3 to
+  +26, H–F longer by 0.023–0.025 Å, H···Br shorter by 0.035–0.050 Å;
+  HBr-donor isomer, H–Br stretch −102 to −122, H–F stretch −5 to −7,
+  intermolecular modes +4 to +45, H–Br longer by 0.025–0.030 Å, H···F
+  shorter by 0.058–0.071 Å.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works

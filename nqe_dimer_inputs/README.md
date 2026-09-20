@@ -113,6 +113,15 @@ protocol and its provenance.
   (the 15 local-minimum runs died on the undefined geometry); CNEO-DFT
   minus DFT shifts with the quantum proton of each CNEO run noted. See
   `hf_hf_dft/README.md`.
+- `hf_hbr_dft/` — HF/HBr with conventional DFT. The two isomers
+  (`hf-donor`, `hbr-donor`) re-optimized from the 30 April 2026 DFT
+  geometries with every setting of `hf_hbr/` applied to `dft.RKS` (400
+  radial shells on F and Br included), isotope-averaged atomic masses, the
+  sum-rule check and repair, and the grid in the summary.
+  `hf_hbr_dft/april_analysis/`: all 30 April DFT runs are minima; with all
+  nuclei classical the isomers can be ranked, F–H···Br–H lower by 0.6 to
+  1.1 kcal/mol; CNEO-DFT minus DFT shifts with the quantum proton of each
+  CNEO run noted. See `hf_hbr_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),
