@@ -122,6 +122,16 @@ protocol and its provenance.
   nuclei classical the isomers can be ranked, F–H···Br–H lower by 0.6 to
   1.1 kcal/mol; CNEO-DFT minus DFT shifts with the quantum proton of each
   CNEO run noted. See `hf_hbr_dft/README.md`.
+- `hf_hcl_dft/` — HF/HCl with conventional DFT. The two isomers
+  (`hf-donor`, `hcl-donor`) re-optimized from the 30 April 2026 DFT
+  geometries, one atom order for both, with every setting of `hf_hcl/`
+  applied to `dft.RKS` (400 radial shells on F and Cl included),
+  isotope-averaged atomic masses, the sum-rule check and repair, and the
+  grid in the summary. `hf_hcl_dft/april_analysis/`: all 30 April DFT runs
+  are minima; F–H···Cl–H lower by 0.3 to 0.7 kcal/mol with all nuclei
+  classical, against 0.1 to 0.4 in the April CNEO runs with the HCl proton
+  quantum; CNEO-DFT minus DFT shifts show a quantum acceptor proton barely
+  touching the hydrogen bond. See `hf_hcl_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),

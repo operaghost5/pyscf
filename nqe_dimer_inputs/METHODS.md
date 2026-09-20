@@ -327,6 +327,31 @@ Results of the original DFT HF/HBr runs (`hf_hbr_dft/april_analysis/`, April
   intermolecular modes +4 to +45, H–Br longer by 0.025–0.030 Å, H···F
   shorter by 0.058–0.071 Å.
 
+Results of the original DFT HF/HCl runs (`hf_hcl_dft/april_analysis/`, April
+2026, 30 runs):
+
+- All 30 optimizations converged (10–15 steps) and all 30 Hessians finished
+  (12–13 CPHF iterations); all 30 are minima raw and repaired. The isomer
+  energies are directly comparable: F–H···Cl–H lies below Cl–H···F–H by
+  0.53–0.67 (PBE, PW91, BP86), 0.49–0.52 (BLYP) and 0.28–0.36 (B97)
+  kcal/mol. The April CNEO runs, with the HCl proton quantum in both
+  isomers, gave 0.24–0.38 and 0.07–0.15, so the quantum HCl proton favours
+  the isomer in which it donates by about 0.2–0.3 kcal/mol. Geometries:
+  HF-donor H···Cl 2.21–2.35 Å, tilt 92–95°; HCl-donor H···F 1.95–2.11 Å,
+  tilt 110–118°. The April HF-donor inputs had the hydrogens in the other
+  order; the extractor reorders them from the distances.
+- With 200 radial shells the chlorine violation stayed below 6×10⁻⁵
+  Eh/Bohr² and the fluorine violation below 2.1×10⁻⁴; the repair moved no
+  vibration by more than 9 cm⁻¹ (median 0.5).
+- CNEO-DFT minus DFT (HCl proton quantum in both April CNEO isomers): in
+  the HF-donor isomer, where that proton is the acceptor's, the H–Cl
+  stretch drops 101–123 cm⁻¹ while the intermolecular modes change by only
+  −4 to +7 cm⁻¹ and H···Cl by less than 0.01 Å; in the HCl-donor isomer,
+  where it donates, the H–Cl stretch drops 126–148 cm⁻¹, the intermolecular
+  modes rise 2–44 cm⁻¹, H–Cl lengthens by 0.025–0.029 Å and H···F shortens
+  by 0.053–0.066 Å. A quantum acceptor proton hardly affects the hydrogen
+  bond; a quantum donor proton strengthens it.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works

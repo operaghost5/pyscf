@@ -1,0 +1,180 @@
+4
+PBE/aug-cc-pVDZ hf_donor E=-560.987339608 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.13245841      0.08528138     -0.00000000
+F        2.07194730     -0.00798717      0.00000000
+H       -1.15148515     -1.24851792      0.00000000
+Cl      -1.09936269      0.05464273     -0.00000000
+4
+PW91/aug-cc-pVDZ hf_donor E=-561.232707303 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.12320447      0.08412634      0.00000000
+F        2.06265182     -0.00917886      0.00000000
+H       -1.14264002     -1.24593206      0.00000000
+Cl      -1.08936673      0.05649557      0.00000000
+4
+BP86/aug-cc-pVDZ hf_donor E=-561.319061387 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.13941355      0.08316954     -0.00000000
+F        2.08093739     -0.00123966      0.00000000
+H       -1.16473196     -1.25137760     -0.00000000
+Cl      -1.10215997      0.05296232     -0.00000000
+4
+BLYP/aug-cc-pVDZ hf_donor E=-561.258171692 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.17027202      0.08643983      0.00000000
+F        2.11257103      0.01178004     -0.00000000
+H       -1.20391465     -1.25995506     -0.00000000
+Cl      -1.12537467      0.04513957      0.00000000
+4
+B97/aug-cc-pVDZ hf_donor E=-561.182556639 Eh optimizer converged in 11 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.19501284      0.09828363     -0.00000000
+F        2.12011633      0.00609435     -0.00000000
+H       -1.21325492     -1.25988716      0.00000000
+Cl      -1.14870088      0.03719326      0.00000000
+4
+PBE/aug-cc-pVTZ hf_donor E=-561.032174052 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.12938552      0.08935661      0.00000000
+F        2.06569724     -0.01681579     -0.00000000
+H       -1.13563675     -1.24134741      0.00000000
+Cl      -1.10589560      0.05222132      0.00000000
+4
+PW91/aug-cc-pVTZ hf_donor E=-561.278843580 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.12148253      0.08947692     -0.00000000
+F        2.05711717     -0.01940131     -0.00000000
+H       -1.12601191     -1.23870969      0.00000000
+Cl      -1.09863249      0.05387299     -0.00000000
+4
+BP86/aug-cc-pVTZ hf_donor E=-561.364522952 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.13590196      0.08629013     -0.00000000
+F        2.07446850     -0.00926751     -0.00000000
+H       -1.14896526     -1.24379616      0.00000000
+Cl      -1.10776838      0.05031246      0.00000000
+4
+BLYP/aug-cc-pVTZ hf_donor E=-561.305803307 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.17352041      0.09025373     -0.00000000
+F        2.11310516      0.00622624      0.00000000
+H       -1.19572842     -1.25367412      0.00000000
+Cl      -1.13734789      0.04060163     -0.00000000
+4
+B97/aug-cc-pVTZ hf_donor E=-561.226326919 Eh optimizer converged in 10 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.19017624      0.10089866      0.00000000
+F        2.11268025     -0.00062844     -0.00000000
+H       -1.19891630     -1.25243426     -0.00000000
+Cl      -1.15122092      0.03452063      0.00000000
+4
+PBE/aug-cc-pVQZ hf_donor E=-561.044188146 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.13053881      0.09029461      0.00000000
+F        2.06463151     -0.01794670      0.00000000
+H       -1.13431575     -1.24054038      0.00000000
+Cl      -1.10730500      0.05160524     -0.00000000
+4
+PW91/aug-cc-pVQZ hf_donor E=-561.291173169 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.12430062      0.09031295     -0.00000000
+F        2.05785464     -0.01883576     -0.00000000
+H       -1.12741765     -1.23831055     -0.00000000
+Cl      -1.10075100      0.05278941     -0.00000000
+4
+BP86/aug-cc-pVQZ hf_donor E=-561.376653290 Eh optimizer converged in 12 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.13714462      0.08768959      0.00000000
+F        2.07331703     -0.01107946     -0.00000000
+H       -1.14696777     -1.24294017     -0.00000000
+Cl      -1.10968611      0.04977991      0.00000000
+4
+BLYP/aug-cc-pVQZ hf_donor E=-561.318139894 Eh optimizer converged in 11 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.17453193      0.09169962     -0.00000000
+F        2.11165002      0.00450661      0.00000000
+H       -1.19377401     -1.25282683      0.00000000
+Cl      -1.13886138      0.04002129     -0.00000000
+4
+B97/aug-cc-pVQZ hf_donor E=-561.238061587 Eh optimizer converged in 11 steps; hydrogens swapped so that H0-F1 and H2-Cl3 are the covalent bonds (April 2026 conventional-DFT 'global_min' run)
+H        1.19151620      0.10194751      0.00000000
+F        2.11180413     -0.00232738      0.00000000
+H       -1.19753721     -1.25143837     -0.00000000
+Cl      -1.15321481      0.03354072      0.00000000
+4
+PBE/aug-cc-pVDZ hcl_donor E=-560.986487356 Eh optimizer converged in 12 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.37871782     -0.80624600     -0.00000000
+F       -2.09089882      0.08492245      0.00000000
+H       -0.13028717      0.15710684      0.00000000
+Cl       1.16695268     -0.03368781      0.00000000
+4
+PW91/aug-cc-pVDZ hcl_donor E=-561.231751307 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.37572055     -0.80400715      0.00000000
+F       -2.08264027      0.08506798      0.00000000
+H       -0.13619169      0.15450601     -0.00000000
+Cl       1.16104970     -0.03292386     -0.00000000
+4
+BP86/aug-cc-pVDZ hcl_donor E=-561.318200554 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.38666906     -0.80659660     -0.00000000
+F       -2.09495723      0.08420254      0.00000000
+H       -0.12576544      0.15373928     -0.00000000
+Cl       1.17457012     -0.02942849     -0.00000000
+4
+BLYP/aug-cc-pVDZ hcl_donor E=-561.257385579 Eh optimizer converged in 14 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.47485020     -0.80554414      0.00000000
+F       -2.12001726      0.06345321     -0.00000000
+H       -0.07103906      0.14592625      0.00000000
+Cl       1.23292927     -0.00176221      0.00000000
+4
+B97/aug-cc-pVDZ hcl_donor E=-561.182112145 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.49777556     -0.80127217     -0.00000000
+F       -2.12567286      0.04565882      0.00000000
+H       -0.05041685      0.15616060     -0.00000000
+Cl       1.24225738     -0.00137337     -0.00000000
+4
+PBE/aug-cc-pVTZ hcl_donor E=-561.031160402 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.40685847     -0.80678561     -0.00000000
+F       -2.10350976      0.07705299     -0.00000000
+H       -0.10430322      0.15987156      0.00000000
+Cl       1.18172190     -0.02803480      0.00000000
+4
+PW91/aug-cc-pVTZ hcl_donor E=-561.277773929 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.39479702     -0.80547486      0.00000000
+F       -2.09655203      0.07936789      0.00000000
+H       -0.11310139      0.16041920      0.00000000
+Cl       1.17153402     -0.03147282     -0.00000000
+4
+BP86/aug-cc-pVTZ hcl_donor E=-561.363456490 Eh optimizer converged in 14 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.41081790     -0.80754339      0.00000000
+F       -2.10951164      0.07783704     -0.00000000
+H       -0.10056061      0.15749315     -0.00000000
+Cl       1.18736720     -0.02540444     -0.00000000
+4
+BLYP/aug-cc-pVTZ hcl_donor E=-561.304976582 Eh optimizer converged in 10 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.48702786     -0.80621819     -0.00000000
+F       -2.12907722      0.05959057      0.00000000
+H       -0.05394888      0.14920891      0.00000000
+Cl       1.23709979     -0.00049155     -0.00000000
+4
+B97/aug-cc-pVTZ hcl_donor E=-561.225763174 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.50797761     -0.80283774     -0.00000000
+F       -2.13846082      0.04329091      0.00000000
+H       -0.03301982      0.16432612      0.00000000
+Cl       1.24677565     -0.00402196      0.00000000
+4
+PBE/aug-cc-pVQZ hcl_donor E=-561.043164043 Eh optimizer converged in 12 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.40999891     -0.80414336     -0.00000000
+F       -2.09854551      0.07500962      0.00000000
+H       -0.10512497      0.15547629      0.00000000
+Cl       1.18072609     -0.02423883      0.00000000
+4
+PW91/aug-cc-pVQZ hcl_donor E=-561.290110838 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.40224879     -0.80176551     -0.00000000
+F       -2.09061310      0.07655737      0.00000000
+H       -0.11278543      0.15370344     -0.00000000
+Cl       1.17243024     -0.02514972     -0.00000000
+4
+BP86/aug-cc-pVQZ hcl_donor E=-561.375577869 Eh optimizer converged in 15 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.41169535     -0.80537150     -0.00000000
+F       -2.10563818      0.07641776      0.00000000
+H       -0.10159748      0.15443148      0.00000000
+Cl       1.18573600     -0.02305910     -0.00000000
+4
+BLYP/aug-cc-pVQZ hcl_donor E=-561.317307417 Eh optimizer converged in 14 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.49091852     -0.80335508      0.00000000
+F       -2.12485548      0.05694838     -0.00000000
+H       -0.05376224      0.14542471     -0.00000000
+Cl       1.23659166      0.00306932     -0.00000000
+4
+B97/aug-cc-pVQZ hcl_donor E=-561.237480221 Eh optimizer converged in 13 steps (April 2026 conventional-DFT 'local_min' run)
+H       -2.51309143     -0.79999775      0.00000000
+F       -2.13391014      0.03997218      0.00000000
+H       -0.03188884      0.15908657     -0.00000000
+Cl       1.24714166      0.00109761      0.00000000
