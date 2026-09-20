@@ -93,6 +93,17 @@ protocol and its provenance.
   here but BP86 does not; CNEO-DFT minus DFT shifts show the quantum
   protons strengthening the hydrogen bond and weakening the halogen bond.
   See `hcn_hcl_dft/README.md`.
+- `hcn_hbr_dft/` — HCN···HBr with conventional DFT, bromine all-electron
+  with 400 radial shells as in `hcn_hbr/`. The 45 linear, bent and
+  halogen-bonded starts re-optimized from the February 2026 DFT
+  geometries with every setting of `hcn_hbr/` applied to `dft.RKS`,
+  isotope-averaged atomic masses, the sum-rule check and repair, and the
+  grid in the summary. `hcn_hbr_dft/february_analysis/`: all 30 aVDZ/aVQZ
+  February DFT Hessians are minima once the bromine defect is repaired
+  (two raw aVQZ halogen-bonded runs looked like saddles); all 15 aVTZ
+  Hessians died at one point in the TZ tier, as the CNEO ones did; CNEO-DFT
+  minus DFT shifts for the 11 runs with Hessians in both sets. See
+  `hcn_hbr_dft/README.md`.
 - `METHODS.md` — computational details for every system and both
   generations of runs (software, model, quantum nuclei, grids, optimizer
   and SCF/CPHF criteria, analysis protocol, sum-rule violations found),

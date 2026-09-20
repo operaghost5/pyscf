@@ -259,6 +259,33 @@ Results of the original DFT HCN···HCl runs (`hcn_hcl_dft/february_analysis/`,
   longer by 0.033–0.065 Å. The quantum protons strengthen the hydrogen bond
   and weaken the halogen bond.
 
+Results of the original DFT HCN···HBr runs (`hcn_hbr_dft/february_analysis/`,
+45 runs, bromine all-electron):
+
+- All 45 optimizations converged and every functional bound all three
+  isomers (the halogen-bonded N···Br–H complex included, N···Br 3.24–3.52
+  Å). All 15 aug-cc-pVTZ Hessians died at the same point, right after the
+  RHF partial Hessian and before the XC second derivatives, with no error
+  in the log; the CNEO aug-cc-pVTZ runs of this complex died in the same
+  tier at the start of the Hessian, so a TZ-tier memory or walltime limit
+  is the likely cause. The 30 aug-cc-pVDZ and aug-cc-pVQZ Hessians
+  finished.
+- All 30 are minima on the repaired Hessian. Raw, the BP86 and BLYP
+  halogen-bonded aVQZ runs looked like first-order saddle points (31.5i and
+  20.5i cm⁻¹): even with 200 radial shells the bromine violation at aVQZ
+  was 0.011–0.025 Eh/Bohr² and moved the 15–40 cm⁻¹ modes of these floppy
+  complexes by up to 57 cm⁻¹, while at aVDZ it was only 4×10⁻⁶ to 4×10⁻⁴.
+  The bent isomer lies 2.0–2.8 kcal/mol and the halogen-bonded isomer
+  2.5–3.3 kcal/mol above the linear hydrogen-bonded one. The rotor bug
+  affected 23 of the 30 logged lists.
+- CNEO-DFT minus DFT for the five linear hydrogen-bonded aVDZ pairs: H–Br
+  stretch −135 to −149 cm⁻¹, C–H stretch −132 to −134, H–Br libration pair
+  +35 to +40, HCN bend pair −14 to −17, intermolecular stretch +10 to +12;
+  N···H shorter by 0.081–0.089 Å, H–Br longer by 0.029–0.031 Å. For the six
+  halogen-bonded pairs: H–Br stretch −80 to −95, C–H −130 to −136, every
+  intermolecular mode lower by 3–18 cm⁻¹ and N···Br longer by 0.028–0.045
+  Å. The same pattern as HCN···HCl.
+
 ---
 
 ## Part B. Why the Hessian needed a sum-rule correction, and how it works
