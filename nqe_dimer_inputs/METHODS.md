@@ -63,7 +63,8 @@ fixes.
 
 ### A.3 Systems and structures
 
-Ten input sets exist; the eight distinct systems and their isomers are
+Ten CNEO-DFT input sets exist, plus the conventional-DFT reference set of
+A.9; the eight distinct systems and their isomers are
 listed with the atom order used in the inputs, the structure, and its
 status after the analysis of the original runs. "Minimum" and "saddle"
 refer to the repaired Hessian (B.4) unless stated otherwise.
@@ -177,6 +178,61 @@ tens to hundreds. The only runs with imaginary modes after repair are the
 BLYP and BP86 halogen-bonded HCN···HCl runs whose monomers had drifted
 apart to 10–13 Å; those geometries are not stationary points of a bound
 complex.
+
+### A.9 Conventional-DFT reference calculations (classical nuclei)
+
+The nuclear quantum effect is measured against conventional Kohn–Sham DFT
+(`pyscf.dft.RKS`) with every nucleus classical, run in February 2026 with
+the same functionals, bases and starting structures. The HCN···HF set has
+been analysed so far (30 non-5Z runs with Hessians; the halogen-bonded
+`xlocal_min` start was undefined, as in the CNEO set).
+
+| Setting | Original DFT runs (Feb 2026) | Re-optimization inputs (`hcn_hf_dft/`, Sep 2026) |
+|---|---|---|
+| Method | `dft.KS(mol, xc=...)`, restricted closed shell | `dft.RKS`, same functionals and bases |
+| DFT grid | **level 9**: 200 radial shells × 1454 Lebedev points on every atom (the CNEO runs used level 3) | level 5 (H 70×590, C/N/F 105×770), matching the CNEO re-optimization inputs; `ATOM_GRIDS = {'F': (400, 770)}` available |
+| SCF, optimizer, CPHF | as the original CNEO runs (A.5): `conv_tol` 1e-9, custom geomeTRIC criteria, 1500-step cap, RKS Hessian with the default 50-iteration CPHF | as the CNEO re-optimization inputs (A.6) |
+| Grid response in the gradient | off | on |
+| Masses in the harmonic analysis | PySCF isotope-averaged atomic masses (H 1.008 u) | CNEO convention: H 1.007276 u (nuclear mass), other atoms isotope-averaged; the atomic-mass frequencies are printed as well |
+
+Results of the original DFT HCN···HF runs (`hcn_hf_dft/february_analysis/`):
+
+- All 30 optimizations converged (6–9 steps linear, 16–29 bent) and all 30
+  Hessians finished; the CPHF needed 12–13 Krylov iterations against 59–69
+  for the CNEO Hessians of the same complexes, so the CPHF failures of the
+  CNEO set (B.8) are specific to the coupled electron–proton equations.
+- All 30 are minima on the raw and on the repaired Hessian; the bent isomer
+  lies 5.1–5.4 (PBE, PW91, BP86), 4.8–4.9 (BLYP) and 4.3–4.5 (B97) kcal/mol
+  above the linear one.
+- With 200 radial shells the fluorine sum-rule violation was 4×10⁻⁸ to
+  2×10⁻⁴ Eh/Bohr² and the hydrogen violation 10⁻⁸ to 3×10⁻⁴ (larger than in
+  the CNEO runs, where the quantum protons have no density cusp on the
+  hydrogen grid). Even at this level the softest intermolecular mode of the
+  bent B97 complex moved by 17–26 cm⁻¹ under the repair (raw 85.9, 58.8,
+  43.1 cm⁻¹ at DZ/TZ/QZ; repaired 68.2, 75.5, 69.5), which shows that the
+  soft modes of a floppy complex are sensitive to defects far below the
+  level that produces imaginary frequencies. The median change over all
+  vibrations was 1 cm⁻¹.
+- The pre-2.14 rotor bug (B.7) affected 20 of the 30 logged frequency
+  lists: for the linear complex PySCF printed nine frequencies instead of
+  ten, dropping one component of the degenerate 78 cm⁻¹ bend.
+- PySCF's RKS Hessian holds the grid fixed for GGA and hybrid-GGA
+  functionals exactly as the NEO Hessian does (its `grid_response`
+  attribute is not read on that path; the grid-response code in
+  `hessian/rks.py` serves the meta-GGA and VV10 paths only), so the same
+  check and repair apply to the conventional calculations.
+
+CNEO-DFT minus DFT for the ten linear HCN···HF runs with Hessians in both
+sets (aVDZ and aVTZ, repaired Hessians, H 1.008 u on both sides): the H–F
+stretch is lowered by 231–273 cm⁻¹ and the C–H stretch by 134–144 cm⁻¹,
+the C≡N stretch by 6–7 cm⁻¹; the degenerate pair near 650–690 cm⁻¹
+(mainly the H–F libration) rises by 10–35 cm⁻¹, the pair near 700–770 cm⁻¹
+(mainly the HCN bend) falls by up to 24 cm⁻¹, and the intermolecular
+stretch rises by 13–20 cm⁻¹; the N···H distance shortens by
+0.040–0.051 Å and the H–F bond lengthens by 0.026–0.028 Å. These are the
+harmonic CNEO frequencies against harmonic DFT frequencies, i.e. the
+quantum-proton correction to the harmonic picture, not an anharmonic
+correction to the DFT value.
 
 ---
 
