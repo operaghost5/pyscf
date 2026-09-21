@@ -136,7 +136,7 @@ system-specific labels.
 | SCF | `conv_tol` 1e-11 Eh, `conv_tol_grad` 1e-6, `max_cycle` 200 |
 | CPHF for the Hessian | `conv_tol_cpscf` 1e-9; Krylov `max_cycle` 300; level shift 0, one automatic retry with level shift 0.2 Eh if the solver raises |
 | DFT grid | level 5: H 70×590; C, N, F 105×770; Cl 110×770; Br 120×770; NWChem pruning, Treutler–Ahlrichs radial grid, Becke partitioning |
-| Dense radial grid on the heavy atom(s) | `atom_grid = {X: (400, 770)}` for X = F (hf_hf, hf_hbr, hf_hcl), Cl (hcn_hcl_densegrid, hf_hcl, hcl_hbr, hcl_hcl), Br (hcn_hbr, hf_hbr, hcl_hbr, hbr_hbr); hydrogen and C, N keep the level-5 table |
+| Dense radial grid on the heavy atom(s) | `atom_grid = {X: (400, 770)}` for X = F (hf_hf, hf_hbr, hf_hcl, hcn_hf_densegrid), Cl (hcn_hcl_densegrid, hf_hcl, hcl_hbr, hcl_hcl), Br (hcn_hbr, hf_hbr, hcl_hbr, hbr_hbr); hydrogen and C, N keep the level-5 table. The plain hcn_hf and hcn_hcl sets keep the level-5 table on the halogen; their dense-grid variants (`hcn_hf_densegrid`, `hcn_hcl_densegrid`, and `hcn_hf_dft_densegrid`, `hcn_hcl_dft_densegrid` for conventional DFT) carry an `f400`/`cl400` file token and run from a `densegrid` subdirectory of the plain sets' cluster directories |
 | Grid response in the gradient | on (`grad.grid_response = True`) |
 | Optimizer | geomeTRIC, `convergence_set='GAU_TIGHT'` (grms 1×10⁻⁵, gmax 1.5×10⁻⁵ Eh/Bohr; drms 4×10⁻⁵, dmax 6×10⁻⁵ Å) with `convergence_energy` 1e-8 Eh; `subfrctor=2` (net force and torque projected out of every gradient); 200-step cap; the Hessian is skipped if the optimizer does not converge |
 | Starting geometries | Ångström; the final geometry of the original run of the same functional, basis and isomer, or a constructed C₂h structure (homodimers), or the PBE geometry (BLYP/BP86 halogen-bonded HCN···HCl starts) |
@@ -155,7 +155,8 @@ projecting out the translations and the rotations about the centre of mass
 (Eckart vectors, Gram–Schmidt orthonormalized; 5 vectors for a linear
 complex, detected geometrically, 6 otherwise), giving the 3N−5 or 3N−6
 vibrations. The translational sum-rule violation was evaluated per atom as
-max over the 3×3 components of |Σ_B H_AB|. The repaired Hessian of B.4 was
+$\delta_A = \max_{\alpha\beta} |\sum_B (\mathbf{H}_{AB})_{\alpha\beta}|$
+(see B.2). The repaired Hessian of B.4 was
 built and diagonalized the same way. A run was classified as a minimum
 when all projected vibrational frequencies of the repaired Hessian were
 real, and as a saddle point of order n when n of them were imaginary; the
@@ -434,25 +435,31 @@ than 0.015 Å and 10 cm⁻¹, and quantum protons lengthen halogen bonds
 
 ### B.1 What the translational sum rule says
 
-Write the Cartesian Hessian in atom blocks, H_AB, each a 3×3 matrix of
-second derivatives ∂²E/∂R_A∂R_B. If every atom is displaced by the same
-vector **t**, the energy of an isolated molecule cannot change, because
-nothing in the Hamiltonian depends on where the molecule sits in space.
-Expanding E to second order in that displacement gives
+Write the Cartesian Hessian in atom blocks $\mathbf{H}_{AB}$, each a
+$3 \times 3$ matrix of second derivatives,
 
-  Σ_A Σ_B **t**ᵀ H_AB **t** = 0 for every **t**,
+$$\left(\mathbf{H}_{AB}\right)_{\alpha\beta} = \frac{\partial^{2} E}{\partial R_{A\alpha}\,\partial R_{B\beta}}, \qquad \alpha, \beta \in \{x, y, z\}.$$
 
-and applying the same argument to the gradient (∂E/∂R_A does not change
-under translation either) gives the stronger, row-wise statement
+If every atom is displaced by the same vector $\mathbf{t}$, the energy of
+an isolated molecule cannot change, because nothing in the Hamiltonian
+depends on where the molecule sits in space. Expanding $E$ to second order
+in that displacement gives
 
-  Σ_B H_AB = 0 for every atom A (each of the nine components).
+$$\sum_{A}\sum_{B} \mathbf{t}^{\mathsf{T}} \mathbf{H}_{AB}\, \mathbf{t} = 0 \qquad \text{for every } \mathbf{t},$$
+
+and applying the same argument to the gradient ($\partial E / \partial
+\mathbf{R}_A$ does not change under translation either) gives the stronger,
+row-wise statement
+
+$$\sum_{B} \mathbf{H}_{AB} = \mathbf{0} \qquad \text{for every atom } A \text{ (each of the nine components).}$$
 
 This is the translational sum rule. In solid-state language it is the
 acoustic sum rule: the uniform translation is an acoustic phonon of zero
 frequency. Its consequences for the vibrational analysis are that the
 three translation vectors are exact null vectors of the mass-weighted
-Hessian, so three of the 3N eigenvalues are exactly zero and the remaining
-3N−3 are unaffected by them. Rotations give an analogous condition: at a
+Hessian $\tilde{\mathbf{H}}_{AB} = \mathbf{H}_{AB} / \sqrt{m_A m_B}$, so
+three of the $3N$ eigenvalues are exactly zero and the remaining $3N-3$
+are unaffected by them. Rotations give an analogous condition: at a
 stationary point (zero gradient) the three infinitesimal rotations about
 the centre of mass are also null vectors, which is why 3N−6 vibrations
 remain (3N−5 for a linear molecule, which has only two rotations). Wilson,
@@ -490,16 +497,23 @@ and weight fixed.
 
 That approximation breaks translational invariance in a specific way.
 Consider the XC energy of a single atom's core density integrated on that
-atom's own radial grid. If the density is shifted by a small vector **t**
-while the grid stays put, the quadrature error changes; to second order it
-changes as ½ **t**ᵀ **K**_A **t**, where **K**_A is the curvature of the
+atom's own radial grid. If the density is shifted by a small vector
+$\mathbf{t}$ while the grid stays put, the quadrature error changes; to
+second order it changes as $\tfrac{1}{2}\,\mathbf{t}^{\mathsf{T}}
+\mathbf{K}_A\, \mathbf{t}$, where $\mathbf{K}_A$ is the curvature of the
 quadrature error with respect to sliding the density off the grid. The
-fixed-grid Hessian contains exactly this term in the diagonal block H_AA,
-and nothing compensates it in the off-diagonal blocks, so the row sum
-Σ_B H_AB is no longer zero but equals **K**_A. The quantity we measured as
-the "sum-rule violation" of atom A is the largest component of **K**_A.
+fixed-grid Hessian contains exactly this term in the diagonal block
+$\mathbf{H}_{AA}$, and nothing compensates it in the off-diagonal blocks,
+so the row sum is no longer zero:
 
-Three properties of **K**_A follow from this picture and were all
+$$\sum_{B} \mathbf{H}_{AB} = \mathbf{K}_A \neq \mathbf{0}.$$
+
+The quantity we measured as the "sum-rule violation" of atom $A$ is the
+largest component of $\mathbf{K}_A$,
+
+$$\delta_A = \max_{\alpha\beta} \left| \sum_{B} \left(\mathbf{H}_{AB}\right)_{\alpha\beta} \right| .$$
+
+Three properties of $\mathbf{K}_A$ follow from this picture and were all
 observed:
 
 1. It is isotropic (the radial grid has no preferred direction), so the
@@ -525,26 +539,34 @@ derivative is than the energy.
 
 Why the basis matters as well: the aug-cc-pVTZ violation for bromine
 (9.5–18) is larger than the aug-cc-pVDZ (1.4–2.7) and aug-cc-pVQZ (2.7–3.3)
-ones at the same grid. The curvature **K**_A depends on how sharply the
+ones at the same grid. The curvature $\mathbf{K}_A$ depends on how sharply the
 core density is represented, which differs between the contraction schemes
 of the three basis sets; the effect is not monotonic in the cardinal
 number.
 
 ### B.3 What the defect does to the frequencies
 
-An isotropic error δ **1** added to the diagonal block of atom A changes
-the mass-weighted Hessian in the translation direction. The three
-translation vectors, normalized in mass-weighted coordinates, have
-components √(m_B/M) on atom B, where M is the total mass; the Rayleigh
-quotient of the defective Hessian along such a vector is δ/M. If nothing
-else mixed in, the translations would appear as modes of frequency
+An isotropic error $\delta_A \mathbf{1}$ added to the diagonal block of
+atom $A$ changes the mass-weighted Hessian in the translation direction.
+The three translation vectors, normalized in mass-weighted coordinates,
+have components $\sqrt{m_B / M}$ on atom $B$ along one Cartesian axis,
+where $M = \sum_B m_B$ is the total mass. The Rayleigh quotient of the
+defective Hessian along such a vector collects the defects of all atoms,
 
-  ω_T ≈ √(δ/M).
+$$\mathbf{t}^{\mathsf{T}} \tilde{\mathbf{H}}\, \mathbf{t} = \frac{1}{M} \sum_{A}\sum_{B} \left(\mathbf{H}_{AB}\right)_{\alpha\alpha} = \frac{1}{M} \sum_{A} \delta_A ,$$
 
-For HCN···HBr, δ = 0.73 Eh/Bohr² and M = 108 u give ω_T ≈ 423 cm⁻¹; the
-raw Hessian indeed showed its three translations at 438, 438 and 491 cm⁻¹
-instead of zero. A positive δ produces spurious real modes, a negative δ
-spurious imaginary ones; both signs occurred. The chlorine defect at
+which for a single defective atom is $\delta / M$. If nothing else mixed
+in, the translations would appear as modes of frequency
+
+$$\omega_T \approx \sqrt{\frac{\delta}{M}} \qquad \text{or, with several defective atoms,} \qquad \omega_T \approx \sqrt{\frac{1}{M}\sum_{A}\delta_A}\,,$$
+
+the sign of the sum deciding whether that frequency is real or imaginary.
+
+For HCN···HBr, $\delta = 0.73$ Eh/Bohr² and $M = 108$ u give
+$\omega_T \approx 423$ cm⁻¹; the raw Hessian indeed showed its three
+translations at 438, 438 and 491 cm⁻¹ instead of zero. A positive $\delta$
+produces spurious real modes, a negative $\delta$ spurious imaginary ones;
+both signs occurred. The chlorine defect at
 aug-cc-pVDZ and aug-cc-pVQZ and the bromine defect at aug-cc-pVQZ
 displaced the translations to imaginary frequency, the bromine defect at
 aug-cc-pVDZ and aug-cc-pVTZ to real frequency. The sign is a property of
@@ -555,17 +577,17 @@ frequency they mix with the genuine low-frequency intermolecular modes
 (the intermolecular stretch and the librations, 40–200 cm⁻¹ in these
 complexes) whenever the translation frequency is comparable, and after
 PySCF's projection the residual is redistributed over the 3N−6
-"vibrations". The symptoms depend on the size of δ:
+"vibrations". The symptoms depend on the size of $\delta$:
 
-- Small δ (fluorine, 10⁻³): translations at a few cm⁻¹, low intermolecular
-  modes shifted by a few cm⁻¹; at 10⁻² (fluorine, aVQZ) the two lowest
-  modes of (HF)₂ shift by 12–22 cm⁻¹.
-- Intermediate δ (chlorine, 0.1–0.4): the displaced translation lands on
+- Small $\delta$ (fluorine, $10^{-3}$): translations at a few cm⁻¹, low
+  intermolecular modes shifted by a few cm⁻¹; at $10^{-2}$ (fluorine,
+  aVQZ) the two lowest modes of (HF)₂ shift by 12–22 cm⁻¹.
+- Intermediate $\delta$ (chlorine, 0.1–0.4): the displaced translation lands on
   top of the lowest intermolecular mode, and the projected spectrum acquires
   one imaginary frequency of 50–550i cm⁻¹ that is not a real curvature.
   This is why every aug-cc-pVDZ and aug-cc-pVQZ Hessian of the chlorine
   systems looked like a first-order saddle point.
-- Large δ (bromine, 1–18): the displaced translation appears as a spurious
+- Large $\delta$ (bromine, 1–18): the displaced translation appears as a spurious
   mode anywhere from 400 to 2300 cm⁻¹, the lowest real mode is pushed out
   of the 3N−6 list altogether, and at aug-cc-pVQZ a spurious 700–1045i
   mode appears. For (HBr)₂ the raw vibrational list was wrong at every
@@ -580,7 +602,7 @@ translation frequency and change by less than 1 cm⁻¹ under the repair.
 Because the defect sits in the diagonal blocks and the off-diagonal blocks
 are correct, the sum rule determines the correct diagonal blocks uniquely:
 
-  H_AA ← − Σ_{B≠A} H_AB, followed by one symmetrization H ← ½(H + Hᵀ).
+$$\mathbf{H}_{AA} \leftarrow -\sum_{B \neq A} \mathbf{H}_{AB}, \qquad \text{followed by one symmetrization} \qquad \mathbf{H} \leftarrow \tfrac{1}{2}\left(\mathbf{H} + \mathbf{H}^{\mathsf{T}}\right).$$
 
 This replaces each atom's self-interaction block by minus the sum of its
 interactions with every other atom, which is what translational invariance
@@ -622,15 +644,22 @@ vectors out of the mass-weighted Hessian before diagonalizing. It is
 tempting to think this removes the defect. It does not, for a simple
 reason: the projection assumes the Hessian is already exactly invariant,
 so that the translation subspace contains nothing but numerical noise. If
-the Hessian has a component δ/M along the translation direction, the
-projection removes that component's action within the translation subspace
-but not its coupling to the vibrational subspace; the coupling terms are
-what mix the displaced translation into the low modes. Mathematically,
-P H P with P the projector onto the vibrational subspace is not the
-vibrational block of the exact Hessian when H has translation–vibration
-cross terms, and those cross terms are generated by the same diagonal-block
-error. Repairing the diagonal blocks first makes P H P correct; projecting
-alone leaves the contamination in place. This is why the original
+the Hessian has a component $\delta / M$ along the translation direction,
+the projection removes that component's action within the translation
+subspace but not its coupling to the vibrational subspace; the coupling
+terms are what mix the displaced translation into the low modes.
+Mathematically, with $\mathbf{t}_k$ the orthonormal translation and
+rotation vectors in mass-weighted coordinates and
+
+$$\mathbf{P} = \mathbf{1} - \sum_{k} \mathbf{t}_k \mathbf{t}_k^{\mathsf{T}}$$
+
+the projector onto the vibrational subspace, the projected matrix
+$\mathbf{P}\tilde{\mathbf{H}}\mathbf{P}$ is not the vibrational block of
+the exact Hessian when $\tilde{\mathbf{H}}$ has translation–vibration cross
+terms $\mathbf{t}_k^{\mathsf{T}}\tilde{\mathbf{H}}\mathbf{v}_j \neq 0$, and
+those cross terms are generated by the same diagonal-block error.
+Repairing the diagonal blocks first makes $\mathbf{P}\tilde{\mathbf{H}}\mathbf{P}$
+correct; projecting alone leaves the contamination in place. This is why the original
 PySCF-projected frequencies were wrong even though PySCF had "removed" the
 translations.
 
@@ -696,7 +725,7 @@ minima are linear and were affected in the original logs.
 Because the exchange–correlation contribution to the Hessian is evaluated
 on atom-centred quadrature grids whose points and weights are held fixed
 during differentiation, the computed Hessian violates the translational
-sum rule Σ_B ∂²E/∂R_A∂R_B = 0 by an isotropic error confined to the
+sum rule $\sum_B \partial^{2}E / \partial\mathbf{R}_A \partial\mathbf{R}_B = \mathbf{0}$ by an isotropic error confined to the
 diagonal block of each atom, whose magnitude is a quadrature error that
 grows steeply with nuclear charge (≈10⁻³ Eh/Bohr² for F, 0.02–0.4 for Cl
 and 1–18 for Br on PySCF's level-3 grid) and vanishes as the radial grid
