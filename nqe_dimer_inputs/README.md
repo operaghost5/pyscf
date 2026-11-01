@@ -167,6 +167,12 @@ protocol and its provenance.
   a graduate-level explanation of the translational sum-rule defect of
   the fixed-grid Hessian and its diagonal-block repair, suggested methods
   wording and references.
+- `GRID_LEVEL_NOTE.md` — why the original CNEO-DFT runs stayed at DFT grid
+  level 3 although level 9 had been written into the cluster copy of
+  `neo/ks.py`: the inputs set no grid, the patched lines sat behind the
+  EPC-only early returns, and `mf.grids` on the NEO object is the EPC
+  screening grid, not the electronic one. Gives the setting that works and
+  a table of grid sizes per element and level.
 
 ## Requirements
 
