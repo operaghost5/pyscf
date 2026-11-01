@@ -173,6 +173,11 @@ protocol and its provenance.
   EPC-only early returns, and `mf.grids` on the NEO object is the EPC
   screening grid, not the electronic one. Gives the setting that works and
   a table of grid sizes per element and level.
+- `PROJECT_SUMMARY.md` — status of the project as of 1 November 2026:
+  scope, what the original runs showed, the new input sets and their
+  shared settings, CNEO-DFT against conventional DFT, documents, items
+  delivered but not committed, open questions. The documents are also
+  collected with PDF renderings in `operaghost5/dimer-systems`.
 
 ## Requirements
 
